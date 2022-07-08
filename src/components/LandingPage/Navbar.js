@@ -1,6 +1,26 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
+const NavLoad = keyframes`
+  
+  0% {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+  /* 50%{
+    transform: translateY(-50%);
+    opacity: 0.5;
+  }
+  75%{
+    transform: translateY(-25%);
+    opacity: 0.75;
+  } */
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+`;
 const Component = styled.div`
     /* width: 100%; */
     height: 15vh;
@@ -9,6 +29,12 @@ const Component = styled.div`
     align-items: center;
     padding: 0 20px;
     color: white;
+    animation: ${NavLoad} 900ms ease-in;
+    /* animation-duration:1000ms;
+    animation-delay: 100ms; */
+    /* animation:ease-in; */
+    /* animation-timing-function: ease-in; */
+    
 `;
 const Logo = styled.img`
     width: 13%;
