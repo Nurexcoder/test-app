@@ -1,13 +1,16 @@
-import logo from "./logo.svg";
-import "./App.css";
-import LandingMain from "./components/LandingPage/LandingMain";
-import ContactUs from "./components/ContactUs/ContactUs";
+
+import logo from './logo.svg';
+import './App.css';
+import Landing from './components/LandingPage/Landing';
+import RCMMain from './components/RCM/RCMMain';
 
 function App() {
   return (
     <>
-      {/* <LandingMain /> */}
-      <ContactUs />
+
+    {/* <Landing/> */}
+    {/* <Landing/> */}
+    <RCMMain/>
     </>
   );
 }
