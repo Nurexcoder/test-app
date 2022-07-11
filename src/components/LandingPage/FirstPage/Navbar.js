@@ -38,9 +38,12 @@ const Component = styled.div`
 `;
 const Logo = styled.img`
     width: 13%;
+    cursor:pointer ;
     height: auto;
 `;
-const CenterText = styled.div``;
+const CenterText = styled.div`
+  cursor:pointer;
+`;
 const ContactButton = styled.button`
     padding: 10px 15px;
 
@@ -50,6 +53,10 @@ const ContactButton = styled.button`
     box-shadow: 0px 4px 64px rgba(58, 58, 58, 0.13);
     border-radius: 4px;
     color: #fff;
+    &:hover{
+      transition: 1s ease;
+      background-color: #000;
+    }
 `;
 
 const Navbar = () => {

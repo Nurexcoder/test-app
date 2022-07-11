@@ -14,8 +14,8 @@ const Component = styled.div`
 const Triangle = styled.div`
     width: 0;
     height: 0;
-    border-left: 50vw solid transparent;
-    border-right: 50vw solid transparent;
+    border-left: 48vw solid transparent;
+    border-right: 48vw solid transparent;
     border-bottom: 30vh solid #fff;
     position: absolute;
     bottom: 0;
