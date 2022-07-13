@@ -9,43 +9,77 @@ const Component = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  @media (max-width: 1000px) {
+    width: 100%;
+    height: 300px;
+    justify-content: space-between;
+  }
 `;
 
 const LeftComponent = styled.div`
   width: 40%;
-  height: 80%;
+  height: 60%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: space-around;
 `;
 const PlayLogo = styled.img`
   width: 200px;
   height: auto;
+  @media (max-width: 1000px) {
+    width: 50px;
+  }
 `;
 const MapLogo = styled.img`
   width: 350px;
   height: auto;
+  @media (max-width: 1000px) {
+    width: 150px;
+  }
 `;
 const RightComponent = styled.div`
   width: 50%;
-  height: 100%;
+  height: 60%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  
 `;
 const Message = styled.div`
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
+  width: 500px;
   font-size: 2rem;
+  color: #3a3a3a;
+  @media (max-width: 1000px) {
+    width: 200px;
+    font-size: 1rem;
+  }
+  /* display: flex; */
 `;
-const ColoredText = styled.div``;
+const ColoredText = styled.span`
+  color: #2979ff;
+`;
 const QR = styled.div`
   width: 200px;
   height: auto;
+  margin: 20px 0;
+  background-color: #fff;
+  filter: drop-shadow(0px 8px 22px rgba(0, 0, 0, 0.12))
+    drop-shadow(0px 7px 8px rgba(0, 0, 0, 0.2));
+  border-radius: 20px;
+  @media (max-width: 1000px) {
+    width: 100px;
+    font-size: 1rem;
+  }
 `;
-const FotterText = styled.span``;
+const FotterText = styled.span`
+  font-weight: 200;
+  font-size: 0.6rem;
+`;
 const DownloadPage = () => {
   const defaultOptions = {
     loop: true,
@@ -66,7 +100,7 @@ const DownloadPage = () => {
           Ready to <ColoredText>Experience</ColoredText> Roads in a New Way?
         </Message>{" "}
         <QR>
-          <Lottie options={defaultOptions} width="90%" height="90%" />
+          <Lottie options={defaultOptions} width="90%" height="auto" />
         </QR>
         <FotterText>
           Scan with your phone’s camera or QR code app to view

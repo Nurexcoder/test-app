@@ -81,7 +81,7 @@ const ColoredMessage = styled(Message)`
 `;
 const MapComponent = styled.div`
   z-index: 10;
-  width: 460px;
+  width: 420px;
   height: 448px;
   margin-top: 15px;
   background: #f5f5f5;
@@ -105,20 +105,22 @@ const MapComponent = styled.div`
   }
 `;
 const ButtonComponent = styled.div`
-  margin-top: 10px;
+  margin-top: 5px;
   z-index: 100;
-  width: 60%;
-  max-width:420px ;
+  width: 45%;
+  max-width: 400px;
   display: flex;
+  font-family: Roboto;
+  font-weight: 600;
   justify-content: center;
   @media (max-width: 1000px) {
-    width:100%;
+    width: 100%;
     background-color: #fff;
   }
-
 `;
 const LeftButton = styled.div`
   width: 40%;
+  border-left: 0.8px solid rgba(0, 0, 0, 0.5);
 `;
 const RightButton = styled.div`
   width: 60%;
@@ -127,7 +129,6 @@ const RightButton = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border-left: 0.5px solid rgba(0, 0, 0, 0.5); */
   position: relative;
 `;
 
@@ -135,7 +136,7 @@ const GetStartedButton = styled.button`
   z-index: 100;
   padding: 8px 15px;
   color: #fff;
-  
+
   font-weight: 600;
   background: #023047;
   border: 3px solid #023047;
@@ -148,11 +149,9 @@ const GetStartedButton = styled.button`
     transition: ease;
   }
   @media (max-width: 1000px) {
-    width:100%;
+    width: 100%;
     padding: 8px 5px;
-    
   }
-
 `;
 
 const Button = styled.button`
@@ -201,9 +200,8 @@ const Button = styled.button`
     /* background-color: yellow; */
   }
   @media (max-width: 1000px) {
-    width:100%;
+    width: 100%;
   }
-
 `;
 const Icon = styled.img`
   width: 15%;

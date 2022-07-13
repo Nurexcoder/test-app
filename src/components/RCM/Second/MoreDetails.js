@@ -78,6 +78,8 @@ const ColoredRightBox = styled.div`
     height: 30%;
     width: 25%;
     padding: 10px 6px;
+
+    height: 54%;
     /* justify-content: space-between; */
   }
 

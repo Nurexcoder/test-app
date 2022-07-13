@@ -106,6 +106,8 @@ const CircleText = styled.div`
   text-align: center;
   @media (max-width: 860px) {
     font-size: 0.8rem;
+    /* top: 40%;
+    right: 7%; */
   }
 `;
 const CircleText2 = styled(CircleText)`
@@ -113,7 +115,10 @@ const CircleText2 = styled(CircleText)`
   top: 40%;
   @media (max-width: 860px) {
     font-size: 0.8rem;
+    top: 40%;
+    left: 0%;
   }
+  z-index:1;
   left: 10%;
 `;
 const CircleText3 = styled(CircleText)`
@@ -122,6 +127,8 @@ const CircleText3 = styled(CircleText)`
   right: 15%;
   @media (max-width: 860px) {
     font-size: 0.8rem;
+    top: 40%;
+    right: 7%;
   }
 `;
 

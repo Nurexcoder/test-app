@@ -7,10 +7,22 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import DownloadPage from "./DownloadPage/DownloadPage";
+import styled from "styled-components";
 
+const Component = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 const LandingMain = () => {
   const boxVariant = {
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.7,ease: [0.61, 1, 0.88, 1], } },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.7, ease: [0.61, 1, 0.88, 1] },
+    },
     hidden: { opacity: 0.5, scale: 0.5 },
   };
 
@@ -41,9 +53,8 @@ const LandingMain = () => {
   return (
     <>
       <Landing />
-      <Box page={<Infos/>} />
-      <Box page={<Download />} />
-      
+      <Box page={<Infos />} />
+      <Box page={<DownloadPage />} />
     </>
   );
 };

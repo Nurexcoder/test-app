@@ -60,11 +60,16 @@ const TabItem = styled(Tab)`
   font-size: 0.8rem !important;
   font-weight: 1000 !important;
   /* width: 1px !important; */
+
+  text-underline-offset: 9px;
+  text-decoration: ${(props) =>
+    props.selected ? "underline 2px !important" : "none"};
+  border-width: 60%;
   text-transform: none !important;
   color: ${(props) => props.selectedColor} !important;
   /* back */
   @media (max-width: 580px) {
-   font-size: 0.6rem;
+    font-size: 0.6rem;
   }
 `;
 const TabPanelComponent = styled.p`
@@ -190,10 +195,14 @@ export default function TabsComponent() {
         <Tabs
           value={value}
           onChange={handleChange}
-          TabIndicatorProps={{ style: { background: color } }}
+          TabIndicatorProps={{
+            style: {
+              background: "none",
+            },
+          }}
           // selectionFollowsFocus
           textColor="inherit"
-          // colorIndicator="secondary"
+          colorIndicator="none"
           variant="fullWidth"
           // style={{ overflowX: "scroll", }}
           aria-label="wrapped label tabs example"

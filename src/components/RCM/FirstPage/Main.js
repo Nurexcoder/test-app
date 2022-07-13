@@ -15,7 +15,7 @@ const Component = styled.div`
   width: 100%;
   height: 80vh;
   
-  background-color: #367b9d;
+  /* background-color: #367b9d; */
   
 /* background: radial-gradient(circle, rgba(54,123,157,1) 74%, rgba(255,255,255,1) 78%); */
   position: relative;
@@ -33,12 +33,29 @@ const Component = styled.div`
   }
 `;
 
-const Triangle = styled.div`
-  /* width:100%;
-    height: 20vh;
-    background-color: #fff;
-    position: absolute;
-    bottom: 0; */
+const Circle = styled.div`
+  width: 150vw;
+  height: 150vh;
+  border-radius: 50%;
+  background-color: #367b9d;
+  position: absolute;
+  top: -90%;
+  left: -25%;
+  z-index: -11;
+  @media (max-width: 1000px) {
+    height: 600px;
+    height: 600px;
+    top: -10%;
+    left: -25%;
+    z-index: -11;
+  }
+  @media (max-width: 590px) {
+    height: 600px;
+    height: 600px;
+    top: -50%;
+    left: -25%;
+    z-index: -11;
+  }
 `;
 
 const Main = () => {
@@ -47,6 +64,7 @@ const Main = () => {
       <Component>
         <Navbar />
         <Body />
+        <Circle/>
       </Component>
     </MainComponent>
   );

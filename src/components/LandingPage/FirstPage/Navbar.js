@@ -28,7 +28,7 @@ const Component = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 50px;
   color: white;
   position: relative;
   animation: ${NavLoad} 900ms ease-in;
@@ -50,6 +50,7 @@ const Hidden = styled.div`
 const Logo = styled.img`
   /* flex: 1; */
   width: 180px;
+  /* margin-left:20px; */
   cursor: pointer;
   height: auto;
 
@@ -66,10 +67,12 @@ const CenterText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  font-family: "Quicksand";
+  font-weight: 600;
   text-align: center;
   height: 100%;
   margin-right: 10px;
+
   :hover {
     color: #fad65d;
   }
@@ -87,6 +90,7 @@ const HiddenMessage = styled.p`
   border-radius: 10px;
   background-color: #f5f5f5;
   padding: 10px 20px;
+  filter: drop-shadow(16px 24px 8px rgba(0, 0, 0, 0.25));
   display: ${(props) => (props.isHover ? "block" : "none")};
   color: #696969;
   ::before {
@@ -109,7 +113,7 @@ const ContactButton = styled.button`
   padding: 10px 5px;
 
   /* flex: 1; */
-  width: 180px;
+  width: 120px;
   border: none;
   outline: none;
   background: #000;
@@ -183,10 +187,7 @@ const Navbar = () => {
       <Component>
         <Hidden />
         <Logo src="/images/logo.png" />
-        <CenterText
-          onMouseOver={() => setIsHover(true)}
-          onMouseLeave={() => setIsHover(false)}
-        >
+        <CenterText onClick={() => setIsHover(!isHover)}>
           Road Condition Mapping
         </CenterText>
         <HiddenMessage
