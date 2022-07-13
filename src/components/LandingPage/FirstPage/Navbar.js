@@ -48,25 +48,68 @@ const Hidden = styled.div`
   }
 `;
 const Logo = styled.img`
-  width: 13%;
+  /* flex: 1; */
+  width: 180px;
   cursor: pointer;
   height: auto;
 
   @media (max-width: 1000px) {
     /* margin-left: 30%; */
-    width: 150px;
+    width: 120px;
     height: auto;
   }
 `;
 const CenterText = styled.div`
+  flex: 1;
   cursor: pointer;
+  /* width: 250px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  height: 100%;
+  margin-right: 10px;
+  :hover {
+    color: #fad65d;
+  }
   @media (max-width: 1000px) {
     display: none;
   }
 `;
+const HiddenMessage = styled.p`
+  z-index: 1000000;
+  width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  min-height: 55px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+  display: ${(props) => (props.isHover ? "block" : "none")};
+  color: #696969;
+  ::before {
+    content: "";
+    position: absolute;
+    visibility: visible;
+    top: -24px;
+    left: 14px;
+    border: 9px solid transparent;
+    border-bottom: 15px solid #f5f5f5;
+  }
+  @media (max-width: 1000px) {
+    width: 63%;
+    top: 172px;
+    left: 99px;
+    background-color: #000;
+  }
+`;
 const ContactButton = styled.button`
-  padding: 10px 15px;
+  padding: 10px 5px;
 
+  /* flex: 1; */
+  width: 180px;
   border: none;
   outline: none;
   background: #000;
@@ -117,7 +160,7 @@ const HCenterText = styled(CenterText)`
   display: block;
   color: #696969;
   font-size: 1.3rem;
-
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,20 +168,35 @@ const HCenterText = styled(CenterText)`
 `;
 const HContactButton = styled(ContactButton)`
   display: block;
+  bottom: 5%;
   position: relative;
-  bottom:5%;
   margin-top: 40%;
   width: 80%;
-  float:bottom;
+  float: bottom;
 `;
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [isHover, setIsHover] = useState(false);
+  // console.log(isHover);
   return (
     <>
       <Component>
         <Hidden />
         <Logo src="/images/logo.png" />
-        <CenterText>Road Condition Mapping</CenterText>
+        <CenterText
+          onMouseOver={() => setIsHover(true)}
+          onMouseLeave={() => setIsHover(false)}
+        >
+          Road Condition Mapping
+        </CenterText>
+        <HiddenMessage
+          onMouseOver={() => setIsHover(true)}
+          onMouseLeave={() => setIsHover(false)}
+          isHover={isHover}
+        >
+          Road Condition Mapper deticated towards Preventing Accidents and
+          Fastering the Commute
+        </HiddenMessage>
         <ContactButton>Contact Us</ContactButton>
         <Hamburger onClick={() => setOpen(true)} src="/images/hamburger.png" />
       </Component>
@@ -148,8 +206,8 @@ const Navbar = () => {
           <Logo src="/images/logoBlack.png" />
           <Close onClick={() => setOpen(!open)} />{" "}
         </HamburgerControl>
-        <HCenterText>
-          Road Condition Mapping <Help style={{margin:"0 5px"}}/>
+        <HCenterText onClick={() => setIsHover(!isHover)}>
+          Road Condition Mapping <Help style={{ margin: "0 5px" }} />
         </HCenterText>
         <HContactButton>Contact Us</HContactButton>
       </Manu>

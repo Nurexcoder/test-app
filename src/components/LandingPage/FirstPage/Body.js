@@ -67,7 +67,7 @@ const Message = styled.div`
   flex-direction: column;
   align-items: center;
 
-  font-size: 3.1rem;
+  font-size: 3.3rem;
   letter-spacing: 1px;
   font-weight: 700;
   color: #fff;
@@ -108,6 +108,7 @@ const ButtonComponent = styled.div`
   margin-top: 10px;
   z-index: 100;
   width: 60%;
+  max-width:420px ;
   display: flex;
   justify-content: center;
   @media (max-width: 1000px) {

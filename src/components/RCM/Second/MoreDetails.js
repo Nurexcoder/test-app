@@ -27,7 +27,7 @@ const LeftComponent = styled.div`
   align-items: flex-start;
   @media (max-width: 1000px) {
     height: 60%;
-    width:100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
   }
@@ -39,7 +39,7 @@ const MapComponent = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  
+
   @media (max-width: 1000px) {
     height: 100%;
     width: 100%;
@@ -76,8 +76,8 @@ const ColoredRightBox = styled.div`
 
   @media (max-width: 1000px) {
     height: 30%;
-    width:25%;
-  padding: 10px 6px;
+    width: 25%;
+    padding: 10px 6px;
     /* justify-content: space-between; */
   }
 
@@ -92,7 +92,7 @@ const ColoredBoxHeader = styled.div`
   font-size: 1rem;
   font-weight: 700;
   margin-top: 7px;
-
+  font-family: "Inter";
   @media (max-width: 1000px) {
     /* justify-content: space-between; */
     font-size: 0.6rem;
@@ -104,6 +104,8 @@ const ColoredBoxHeader = styled.div`
 `;
 const ColoredBoxText = styled.div`
   margin-top: 7px;
+  font-family: "Montserrat";
+  font-weight: 500;
   color: ${(props) => (props.isActive ? "#FFFFFF" : "#838383")};
   @media (max-width: 1000px) {
     justify-content: space-between;
