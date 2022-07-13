@@ -1,4 +1,5 @@
-import React from "react";
+import { Close, Help } from "@mui/icons-material";
+import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 
 const NavLoad = keyframes`
@@ -29,9 +30,10 @@ const Component = styled.div`
   align-items: center;
   padding: 0 20px;
   color: white;
+  position: relative;
   animation: ${NavLoad} 900ms ease-in;
   @media (max-width: 1000px) {
-   height: 90px;
+    height: 90px;
   }
 
   /* animation-duration:1000ms;
@@ -39,17 +41,17 @@ const Component = styled.div`
   /* animation:ease-in; */
   /* animation-timing-function: ease-in; */
 `;
-const Hidden=styled.div`
-  display:none;
+const Hidden = styled.div`
+  display: none;
   @media (max-width: 1000px) {
-   display: block;
+    display: block;
   }
-`
+`;
 const Logo = styled.img`
   width: 13%;
   cursor: pointer;
   height: auto;
-  
+
   @media (max-width: 1000px) {
     /* margin-left: 30%; */
     width: 150px;
@@ -67,7 +69,7 @@ const ContactButton = styled.button`
 
   border: none;
   outline: none;
-  background: #4d4d4d;
+  background: #000;
   box-shadow: 0px 4px 64px rgba(58, 58, 58, 0.13);
   border-radius: 4px;
   color: #fff;
@@ -85,15 +87,73 @@ const Hamburger = styled.img`
     display: block;
   }
 `;
+const Manu = styled.div`
+  /* display: none; */
+  position: absolute;
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+  z-index: 100000;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  height: 500px;
+  /* right: 0; */
+  color: #000;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+
+  transition: transform 0.4s ease-in-out;
+`;
+const HamburgerControl = styled.div`
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  /* margin-top: 10px; */
+  /* padding: 0 10px; */
+`;
+const HCenterText = styled(CenterText)`
+  display: block;
+  color: #696969;
+  font-size: 1.3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+`;
+const HContactButton = styled(ContactButton)`
+  display: block;
+  position: relative;
+  bottom:5%;
+  margin-top: 40%;
+  width: 80%;
+  float:bottom;
+`;
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
-    <Component>
-      <Hidden/>
-      <Logo src="/images/logo.png" />
-      <CenterText>Road Condition Mapping</CenterText>
-      <ContactButton>Contact Us</ContactButton>
-      <Hamburger src="/images/hamburger.png" />
-    </Component>
+    <>
+      <Component>
+        <Hidden />
+        <Logo src="/images/logo.png" />
+        <CenterText>Road Condition Mapping</CenterText>
+        <ContactButton>Contact Us</ContactButton>
+        <Hamburger onClick={() => setOpen(true)} src="/images/hamburger.png" />
+      </Component>
+      <Manu open={open}>
+        <HamburgerControl>
+          <div />
+          <Logo src="/images/logoBlack.png" />
+          <Close onClick={() => setOpen(!open)} />{" "}
+        </HamburgerControl>
+        <HCenterText>
+          Road Condition Mapping <Help style={{margin:"0 5px"}}/>
+        </HCenterText>
+        <HContactButton>Contact Us</HContactButton>
+      </Manu>
+    </>
   );
 };
 

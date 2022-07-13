@@ -1,16 +1,40 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
+const bodyLoad = keyframes`
+  
+  0% {
+    width:100%;
+    height:550px;
+    /* position:absolute; */
+}
+/* 50%{
+    transform: translateY(-50%);
+    opacity: 0.5;
+}
+75%{
+  transform: translateY(-25%);
+  opacity: 0.75;
+} */
+100% {
+  width: 800px;
+  opacity: 1;
+  height: 440px;
+    /* position:absolute;  */
+  }
+
+`;
 const CircleContainer = styled.div`
   margin: 28px 0;
   width: 800px;
   height: 440px;
 
   align-items: center;
+  animation: ${bodyLoad} 800ms ease-in;
   position: relative;
   @media (max-width: 860px) {
     width: 360px;
-    height:300px;
+    height: 300px;
   }
 `;
 const Circle = styled.div`

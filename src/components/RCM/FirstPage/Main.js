@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Body from "./Body";
-import CircularContainer from "./CircularContainer";
 import Navbar from "./Navbar";
 
 const MainComponent = styled.div`
@@ -48,7 +47,6 @@ const Main = () => {
         <Navbar />
         <Body />
       </Component>
-      <CircularContainer />
     </MainComponent>
   );
 };

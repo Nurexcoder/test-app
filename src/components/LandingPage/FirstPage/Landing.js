@@ -5,7 +5,9 @@ import Navbar from "./Navbar";
 
 const Component = styled.div`
   width: 100%;
-  /* height: 100vh; */
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100vh;
   background-color: #367b9d;
   position: relative;
   /* overflow-y: scroll; */

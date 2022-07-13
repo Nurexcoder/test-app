@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import AddIcon from "@mui/icons-material/Add";
+import { useInView } from "react-intersection-observer";
 
 const NavLoad = keyframes`
   
@@ -122,35 +123,43 @@ const CompanyMessage = styled.p`
 `;
 
 const Points = () => {
-  return (
-    <Component>
-      <Header>Points</Header>
-      <Message>
-        From our location points the route might be different but you will reach
-        there in the shortest time
-      </Message>
-      <MapAndCompany>
-        <Map>
-          <MapHeader>Maps</MapHeader>
-          <MapMessage>
-            Maps are limited to Distance, <br /> Time & Navigation
-          </MapMessage>
-        </Map>
-        <Plus>
-          <PlusIcon />
-        </Plus>
-        <Company>
-          <CompanyImage src="/images/logoBlack.png" />
-          <CompanyMessage>
-            We go beyond by
-            <ColoredText> analysing </ColoredText>
-            adversities
-            <br /> and visualise roads for better AI data driven decisions
-          </CompanyMessage>
-        </Company>
-      </MapAndCompany>
-    </Component>
-  );
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0.4,
+  });
+  
+    return (
+      
+      <Component ref={ref}>
+        <Header>Points</Header>
+        <Message>
+          From our location points the route might be different but you will
+          reach there in the shortest time
+        </Message>
+        <MapAndCompany>
+          <Map>
+            <MapHeader>Maps</MapHeader>
+            <MapMessage>
+              Maps are limited to Distance, <br /> Time & Navigation
+            </MapMessage>
+          </Map>
+          <Plus>
+            <PlusIcon />
+          </Plus>
+          <Company>
+            <CompanyImage src="/images/logoBlack.png" />
+            <CompanyMessage>
+              We go beyond by
+              <ColoredText> analysing </ColoredText>
+              adversities
+              <br /> and visualise roads for better AI data driven decisions
+            </CompanyMessage>
+          </Company>
+        </MapAndCompany>
+      </Component>
+    );
+
+  
 };
 
 export default Points;
