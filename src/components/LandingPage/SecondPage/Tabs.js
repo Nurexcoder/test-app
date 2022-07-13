@@ -28,32 +28,50 @@ const Component = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1000px) {
+    width: 98%;
+  }
 `;
 const MapComponent = styled.div`
   margin: 20px 0;
-  width: 100%;
-  height: 62vh;
+
   border-radius: 20px;
   background-color: #f3f3f3;
   display: flex;
   align-items: center;
+  @media (max-width: 1000px) {
+    width: 700px;
+    height: 400px;
+  }
+  @media (max-width: 820px) {
+    width: 560px;
+    height: 320px;
+  }
+  @media (max-width: 580px) {
+    width: 360px;
+    height: 220px;
+  }
 `;
 const Menu = styled.div`
   background-color: transparent !important;
   color: ${(props) => (props.selected ? "#F8BF01" : "#636363 !important")};
 `;
 const TabItem = styled(Tab)`
-  font-size: 0.7rem !important;
+  font-size: 0.8rem !important;
   font-weight: 1000 !important;
   /* width: 1px !important; */
+  text-transform: none !important;
   color: ${(props) => props.selectedColor} !important;
-  back
+  /* back */
+  @media (max-width: 580px) {
+   font-size: 0.6rem;
+  }
 `;
 const TabPanelComponent = styled.p`
   font-family: Inter !important;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   line-height: 1.4rem;
   color: #929292;
   width: 100%;
@@ -61,18 +79,21 @@ const TabPanelComponent = styled.p`
   display: flex !important;
   align-items: center;
   justify-content: center !important;
+  /* overflow-y: scroll !important; */
 `;
 const Compact = styled.div`
   width: 70%;
 `;
 const LearnButton = styled(Button)`
   /* text-decoration: underline; */
+  margin-top: 15px !important;
   font-size: 0.8rem !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-family: ROBOTO;
+  font-family: "Roboto", sans-serif;
   font-weight: 600 !important;
+  text-transform: none !important;
 `;
 const Image = styled.img`
   /* color:blue; */
@@ -162,7 +183,7 @@ export default function TabsComponent() {
   return (
     <Component>
       <MapComponent>
-        <Lottie width="85%" height="100%" options={defaultOptions} />
+        <Lottie width="95%" height="98%" options={defaultOptions} />
       </MapComponent>
       <Box sx={{ width: "100%", height: "25vh" }}>
         {/* <Menu position="static"> */}
@@ -174,6 +195,7 @@ export default function TabsComponent() {
           textColor="inherit"
           // colorIndicator="secondary"
           variant="fullWidth"
+          // style={{ overflowX: "scroll", }}
           aria-label="wrapped label tabs example"
         >
           <TabItem

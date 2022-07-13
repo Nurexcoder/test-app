@@ -1,6 +1,27 @@
 import React from "react";
-import styled from "styled-components";
-import AddIcon from '@mui/icons-material/Add';
+import styled, { keyframes } from "styled-components";
+import AddIcon from "@mui/icons-material/Add";
+
+const NavLoad = keyframes`
+  
+  0% {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+  /* 50%{
+    transform: translateY(-50%);
+    opacity: 0.5;
+  }
+  75%{
+    transform: translateY(-25%);
+    opacity: 0.75;
+  } */
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+`;
 const Component = styled.div`
   width: 50%;
   display: flex;
@@ -8,6 +29,10 @@ const Component = styled.div`
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", sans-serif;
+  @media (max-width: 1000px) {
+    width: 98%;
+    margin: 20px 0;
+  }
 `;
 const Header = styled.div`
   font-size: 3.5rem;
@@ -21,6 +46,9 @@ const Message = styled.p`
   line-height: 1.4rem;
   font-size: 1.2rem;
   color: #838383;
+  @media (max-width: 1000px) {
+    width: 85%;
+  }
 `;
 const MapAndCompany = styled.div`
   display: flex;
@@ -62,9 +90,9 @@ const Plus = styled.div`
   margin: 0;
   padding: 0;
 `;
-const PlusIcon=styled(AddIcon)`
-    transform:scale(1.3);
-`
+const PlusIcon = styled(AddIcon)`
+  transform: scale(1.3);
+`;
 const Company = styled.div`
   flex: 3;
   height: 100%;
@@ -77,9 +105,12 @@ const Company = styled.div`
 const CompanyImage = styled.img`
   width: 65%;
   height: auto;
+  @media (max-width: 1000px) {
+    width: 150px;
+  }
 `;
 const ColoredText = styled.span`
-  color: #E1B318;
+  color: #e1b318;
 `;
 const CompanyMessage = styled.p`
   text-align: center;
@@ -105,14 +136,16 @@ const Points = () => {
             Maps are limited to Distance, <br /> Time & Navigation
           </MapMessage>
         </Map>
-        <Plus><PlusIcon/></Plus>
+        <Plus>
+          <PlusIcon />
+        </Plus>
         <Company>
           <CompanyImage src="/images/logoBlack.png" />
           <CompanyMessage>
             We go beyond by
             <ColoredText> analysing </ColoredText>
-             adversities
-            <br/> and visualise roads for better AI data driven decisions
+            adversities
+            <br /> and visualise roads for better AI data driven decisions
           </CompanyMessage>
         </Company>
       </MapAndCompany>

@@ -35,6 +35,9 @@ const Component = styled.div`
   align-items: center;
   overflow: none !important;
   z-index: 100;
+  @media (max-width: 1000px) {
+    height: 60vh;
+  }
 `;
 const BoxContainer = styled.div`
   width: 60%;
@@ -43,6 +46,14 @@ const BoxContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1000px) {
+    font-size: 2.3rem;
+    width: 90%;
+  }
+  @media (max-width: 560px) {
+    font-size: 1.1rem;
+    width: 90%;
+  }
 
   animation: ${bodyLoad} 900ms ease-in;
   /* animation-delay:200ms; */
@@ -56,10 +67,13 @@ const Message = styled.div`
   flex-direction: column;
   align-items: center;
 
-  font-size: 3.3rem;
+  font-size: 3.1rem;
   letter-spacing: 1px;
   font-weight: 700;
   color: #fff;
+  @media (max-width: 1000px) {
+    font-size: 1.5rem;
+  }
 `;
 const ColoredMessage = styled(Message)`
   margin: 0;
@@ -67,16 +81,28 @@ const ColoredMessage = styled(Message)`
 `;
 const MapComponent = styled.div`
   z-index: 10;
-  width: 62%;
-  height: 299px;
+  width: 460px;
+  height: 448px;
   margin-top: 15px;
   background: #f5f5f5;
-  -webkit-filter: drop-shadow(0px 4px 35px rgba(0, 0, 0, 0.13));
+  /* -webkit-filter: drop-shadow(0px 4px 35px rgba(0, 0, 0, 0.13)); */
   filter: drop-shadow(0px 4px 35px rgba(0, 0, 0, 0.13));
   border-radius: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1000px) {
+    /* width: 70%;
+    height: 75vh; */
+    width: 300px;
+    height: 200px;
+  }
+  @media (max-width: 560px) {
+    width: 280px;
+    height: 200px;
+    /* width: 70%;
+    height: 75vh; */
+  }
 `;
 const ButtonComponent = styled.div`
   margin-top: 10px;
@@ -84,6 +110,11 @@ const ButtonComponent = styled.div`
   width: 60%;
   display: flex;
   justify-content: center;
+  @media (max-width: 1000px) {
+    width:100%;
+    background-color: #fff;
+  }
+
 `;
 const LeftButton = styled.div`
   width: 40%;
@@ -95,7 +126,7 @@ const RightButton = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-left: 0.5px solid rgba(0, 0, 0, 0.5);
+  /* border-left: 0.5px solid rgba(0, 0, 0, 0.5); */
   position: relative;
 `;
 
@@ -103,7 +134,7 @@ const GetStartedButton = styled.button`
   z-index: 100;
   padding: 8px 15px;
   color: #fff;
-
+  
   font-weight: 600;
   background: #023047;
   border: 3px solid #023047;
@@ -115,6 +146,12 @@ const GetStartedButton = styled.button`
     border: 3px solid #000;
     transition: ease;
   }
+  @media (max-width: 1000px) {
+    width:100%;
+    padding: 8px 5px;
+    
+  }
+
 `;
 
 const Button = styled.button`
@@ -139,8 +176,8 @@ const Button = styled.button`
   /* display: inline-block; */
   /* padding: 15px 20px; */
   position: relative;
-  &:hover{
-    transform:scale(1.1);
+  &:hover {
+    transform: scale(1.1);
     transition: ease-in-out;
   }
   &:after {
@@ -162,6 +199,10 @@ const Button = styled.button`
   &:hover {
     /* background-color: yellow; */
   }
+  @media (max-width: 1000px) {
+    width:100%;
+  }
+
 `;
 const Icon = styled.img`
   width: 15%;
@@ -192,7 +233,7 @@ const Body = () => {
             options={defaultOptions}
             width="96%"
             radius="5px"
-            height="96%"
+            height="auto"
             style={{
               borderRadius: "40px !important",
             }}

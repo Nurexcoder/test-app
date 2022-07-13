@@ -1,4 +1,4 @@
-import Lottie from 'react-lottie'
+import Lottie from "react-lottie";
 import React, { useRef, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 // import animationData from './hero.json'
@@ -27,79 +27,96 @@ const bodyLoad = keyframes`
 
 `;
 const Component = styled.div`
-    height: 85vh;
-    width: 100%;
+  height: 85vh;
+  width: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: none !important;
-    z-index: 100;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: none !important;
+  z-index: 100;
+  flex-direction: column;
+  /* @media (max-width: 1000px) {
+    height: 40vh;
+    justify-content: space-between;
+  } */
+
+  /* @media (max-width: 1000px) {
+  } */
 `;
 const BoxContainer = styled.div`
-    width: 60%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  width: 60%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 
-    animation: ${bodyLoad} 900ms ease-in;
-    /* animation-delay:200ms; */
-    overflow: none !important;
-    /* background-color: #fff; */
+  animation: ${bodyLoad} 900ms ease-in;
+  /* animation-delay:200ms; */
+  overflow: none !important;
+  /* background-color: #fff; */
 `;
 
 const Message = styled.div`
-    /* margin-top: 20px; */
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
+  /* margin-top: 20px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    font-size: 3.3rem;
-    letter-spacing: 1px;
-    font-weight: 700;
-    color: #fff;
-    `;
-const ColoredMessage = styled(Message)`
-    margin: 0;
-    color: #fad65d;
-    `;
-const SmallMessage = styled.div`
-        margin-top:10px;
-        display: flex; 
-        flex-direction: column;
-        font-family:Montserrat;
-        align-items: center;
-        text-align:center;
-
+  font-size: 3.3rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #fff;
+  text-align:center;
+  @media (max-width: 1000px) {
+    font-size: 1.8rem;
+  }
+  @media (max-width: 860px) {
     font-size: 1.2rem;
-    letter-spacing: 1.2px;
-    font-weight: 500;
-    color: #fff;
-`
+  }
+`;
+const ColoredMessage = styled(Message)`
+  margin: 0;
+  color: #fad65d;
+`;
+const SmallMessage = styled.div`
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: Montserrat;
+  align-items: center;
+  text-align: center;
+
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
+  font-weight: 500;
+  color: #fff;
+  @media (max-width: 1000px) {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  @media (max-width: 860px) {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+`;
 
 const Body = () => {
-
-
-    return (
-        <Component>
-            <BoxContainer>
-                <Message>
-                    Why? <br />
-                    <ColoredMessage>
-                        Road Condition Mapper
-                    </ColoredMessage>
-                </Message>
-                <SmallMessage>
-                    Road Condition Mapper dedicated towards <br /> Preventing Accidents and Fastening the <br /> Commute
-                </SmallMessage>
-
-            </BoxContainer>
-           
-        </Component>
-    );
+  return (
+    <Component>
+      <BoxContainer>
+        <Message align="center">
+          Why? <br />
+          <ColoredMessage>Road Condition Mapper</ColoredMessage>
+        </Message>
+        <SmallMessage>
+          Road Condition Mapper dedicated towards <br /> Preventing Accidents
+          and Fastening the <br /> Commute
+        </SmallMessage>
+      </BoxContainer>
+    </Component>
+  );
 };
 
 export default Body;

@@ -3,11 +3,15 @@ import styled from "styled-components";
 
 const CircleContainer = styled.div`
   margin: 28px 0;
-  width: 100%;
-  height: 60vh;
+  width: 800px;
+  height: 440px;
 
   align-items: center;
   position: relative;
+  @media (max-width: 860px) {
+    width: 360px;
+    height:300px;
+  }
 `;
 const Circle = styled.div`
   width: 260px;
@@ -20,7 +24,11 @@ const Circle = styled.div`
   align-items: center;
   position: absolute;
   top: 0;
-  left: 40%;
+  left: 30%;
+  @media (max-width: 860px) {
+    width: 180px;
+    height: 180px;
+  }
 `;
 const Circle2 = styled.div`
   width: 260px;
@@ -32,8 +40,14 @@ const Circle2 = styled.div`
   justify-content: flex-start;
   align-items: center;
   position: absolute;
-  top: 52%;
-  left: 32%;
+  top: 40%;
+  left: 20%;
+  @media (max-width: 860px) {
+    width: 180px;
+    height: 180px;
+    top: 35%;
+    left: 10%;
+  }
 `;
 const Circle3 = styled.div`
   width: 260px;
@@ -45,8 +59,14 @@ const Circle3 = styled.div`
   justify-content: flex-start;
   align-items: center;
   position: absolute;
-  top: 52%;
-  right: 30%;
+  top: 40%;
+  right: 20%;
+  @media (max-width: 860px) {
+    width: 180px;
+    height: 180px;
+    top: 35%;
+    right: 10%;
+  }
 `;
 const CircleText = styled.div`
   /* margin-top: 70px; */
@@ -59,17 +79,26 @@ const CircleText = styled.div`
   position: absolute;
   top: 30%;
   right: 20%;
-  text-align:center;
+  text-align: center;
+  @media (max-width: 860px) {
+    font-size: 0.8rem;
+  }
 `;
 const CircleText2 = styled(CircleText)`
   position: absolute;
   top: 40%;
+  @media (max-width: 860px) {
+    font-size: 0.8rem;
+  }
   left: 10%;
 `;
 const CircleText3 = styled(CircleText)`
   position: absolute;
   top: 30%;
   right: 15%;
+  @media (max-width: 860px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const CircularContainer = () => {
