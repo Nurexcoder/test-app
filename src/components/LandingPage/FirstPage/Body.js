@@ -75,13 +75,14 @@ const Message = styled.div`
     font-size: 1.5rem;
   }
 `;
+
 const ColoredMessage = styled(Message)`
   margin: 0;
   color: #fad65d;
 `;
 const MapComponent = styled.div`
   z-index: 10;
-  width: 420px;
+  width: 450px;
   height: 448px;
   margin-top: 15px;
   background: #f5f5f5;
@@ -107,23 +108,24 @@ const MapComponent = styled.div`
 const ButtonComponent = styled.div`
   margin-top: 5px;
   z-index: 100;
-  width: 45%;
-  max-width: 400px;
+  width: 50%;
+  max-width: 420px;
   display: flex;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-weight: 600;
-  justify-content: center;
+  justify-content: space-between;
+  align-items:center;
   @media (max-width: 1000px) {
     width: 100%;
     background-color: #fff;
   }
 `;
 const LeftButton = styled.div`
-  width: 40%;
+  width: 35%;
   border-left: 0.8px solid rgba(0, 0, 0, 0.5);
 `;
 const RightButton = styled.div`
-  width: 60%;
+  width: 55%;
   /* padding:0 5px */
   padding-left: 10px;
   display: flex;
@@ -153,7 +155,10 @@ const GetStartedButton = styled.button`
     padding: 8px 5px;
   }
 `;
-
+const Line = styled.div`
+  height: 75%;
+  border: 0.8px solid #696969;
+`;
 const Button = styled.button`
   margin-left: 10px;
   display: flex;
@@ -242,6 +247,7 @@ const Body = () => {
           <LeftButton>
             <GetStartedButton>Get Started Now</GetStartedButton>
           </LeftButton>
+          <Line />
           <RightButton>
             <Button>
               Learn More <Icon src="/images/rightArrow.png" />

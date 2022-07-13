@@ -97,7 +97,7 @@ const DownloadPage = () => {
       </LeftComponent>
       <RightComponent>
         <Message>
-          Ready to <ColoredText>Experience</ColoredText> Roads in a New Way?
+          Ready to <ColoredText>Experience</ColoredText> Roads <br/> in a New Way?
         </Message>{" "}
         <QR>
           <Lottie options={defaultOptions} width="90%" height="auto" />

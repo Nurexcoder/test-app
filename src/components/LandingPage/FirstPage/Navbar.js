@@ -116,7 +116,7 @@ const ContactButton = styled.button`
   width: 120px;
   border: none;
   outline: none;
-  background: #000;
+  background: #4D4D4D;
   box-shadow: 0px 4px 64px rgba(58, 58, 58, 0.13);
   border-radius: 4px;
   color: #fff;
