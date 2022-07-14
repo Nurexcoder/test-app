@@ -5,6 +5,7 @@ import styled, { keyframes } from "styled-components";
 const NavLoad = keyframes`
   
   0% {
+    transform: translateY(-25%);
     transform: translateY(-30%);
     opacity: 0;
   }
@@ -13,7 +14,6 @@ const NavLoad = keyframes`
     opacity: 0.5;
   }
   75%{
-    transform: translateY(-25%);
     opacity: 0.75;
   } */
   100% {
@@ -23,7 +23,7 @@ const NavLoad = keyframes`
 
 `;
 const Component = styled.div`
-  /* width: 100%; */
+  width: 90%;
   height: 15vh;
   display: flex;
   justify-content: space-between;
@@ -48,9 +48,20 @@ const Hidden = styled.div`
     display: block;
   }
 `;
+const Div = styled.div`
+  min-width: 200px;
+  width:15%;
+  height:60%;
+  display: flex;
+  justify-content: flex-end;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+`;
 const Logo = styled.img`
   /* flex: 1; */
-  width: 180px;
+  min-width: 180px;
+  width: 15%;
   /* margin-left:20px; */
   cursor: pointer;
   height: auto;
@@ -72,8 +83,8 @@ const CenterText = styled.div`
   font-weight: 600;
   text-align: center;
   height: 100%;
-  margin-right: 10px;
-
+  /* margin-right: 10px; */
+  font-size: 1rem;
   :hover {
     color: #fad65d;
   }
@@ -87,7 +98,7 @@ const HiddenMessage = styled.p`
   position: absolute;
   top: 50%;
   left: 48%;
-  min-height: 55px;
+  height: 55px;
   border-radius: 10px;
   background-color: #f5f5f5;
   padding: 10px 20px;
@@ -114,21 +125,24 @@ const HiddenMessage = styled.p`
     width: 90%;
     filter: none;
     ::before {
-    content: "";
-    position: absolute;
-    visibility: none;
-    top: -24px;
-    left: 14px;
-    border: none;
-    border-bottom: none;
-  }
+      content: "";
+      position: absolute;
+      visibility: none;
+      top: -24px;
+      left: 14px;
+      border: none;
+      border-bottom: none;
+    }
   }
 `;
 const ContactButton = styled.button`
-  padding: 10px 5px;
-
+  padding: 10px 8px;
+  
   /* flex: 1; */
-  width: 120px;
+  min-width: 100px;
+  /* width:80%; */
+  height: 60%;
+  min-height: 33px;
   border: none;
   outline: none;
   background: #4d4d4d;
@@ -191,6 +205,7 @@ const HContactButton = styled(ContactButton)`
   position: relative;
   /* margin-top: 40%; */
   width: 80%;
+  max-height:30px;
   float: bottom;
 `;
 const Navbar = () => {
@@ -201,10 +216,13 @@ const Navbar = () => {
     <>
       <Component>
         <Hidden />
-        <Logo src="/images/logo.png" />
-        <CenterText onClick={() => setIsHover(!isHover)}>
-          Road Condition Mapping
-        </CenterText>
+          <Logo src="/images/logo.png" />
+       
+        {/* <Div> */}
+          <CenterText onClick={() => setIsHover(!isHover)}>
+            Road Condition Mapping
+          </CenterText>
+        {/* </Div> */}
         <HiddenMessage
           onMouseOver={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
@@ -213,7 +231,9 @@ const Navbar = () => {
           Road Condition Mapper deticated towards Preventing Accidents and
           Fastering the Commute
         </HiddenMessage>
-        <ContactButton>Contact Us</ContactButton>
+        <Div>
+          <ContactButton>Contact Us</ContactButton>
+        </Div>
         <Hamburger onClick={() => setOpen(true)} src="/images/hamburger.png" />
       </Component>
       <Manu open={open}>

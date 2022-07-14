@@ -8,12 +8,18 @@ const Component = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
   height: 100vh;
+  /* max-height:1000px; */
+  /* min-height:300px; */
   background-color: #367b9d;
   position: relative;
   /* overflow-y: scroll; */
   border-bottom: transparent;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   @media (max-width: 1000px) {
-    height: 62vh;
+    height: auto;
     background: linear-gradient(to bottom, #367b9d 80%, #fff 20%);
   }
   /* clip-path: polygon(100% 100%, 100% 100%, 100% 100%); */

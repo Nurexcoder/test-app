@@ -57,25 +57,30 @@ const Menu = styled.div`
   color: ${(props) => (props.selected ? "#F8BF01" : "#636363 !important")};
 `;
 const TabItem = styled(Tab)`
-  font-size: 0.8rem !important;
+  font-size: 0.9rem !important;
   font-weight: 1000 !important;
-  /* width: 1px !important; */
-
+  font-family: "Inter";
+  font-style: normal;
+  /* font-weight: 700; */
   text-underline-offset: 9px;
-  text-decoration: ${(props) =>
-    props.selected ? "underline 2px !important" : "none"};
-  border-width: 60%;
+
+  /* text-decoration: ${(props) =>
+    props.selected ? "underline 3px !important" : "none"}; */
+  border-width: 100%;
   text-transform: none !important;
   color: ${(props) => props.selectedColor} !important;
-  /* back */
+
+  border-bottom: #eeedeb 3px solid !important;
+  padding: 0 !important;
+
   @media (max-width: 1080px) {
     font-size: 0.6rem;
     text-decoration: none !important;
-    border-bottom:${props=>props.selectedColor} 1px solid !important;
+    /* border-bottom: ${(props) => props.selectedColor} 1px solid !important; */
   }
 `;
 const TabPanelComponent = styled.p`
-  font-family: Inter !important;
+  font-family: "Inter" !important;
   font-style: normal;
   font-weight: 500;
   font-size: 0.9rem;
@@ -102,7 +107,7 @@ const LearnButton = styled(Button)`
   font-weight: 600 !important;
   text-transform: none !important;
   @media (max-width: 780px) {
-    margin-top:35px !important;
+    margin-top: 35px !important;
   }
 `;
 const Image = styled.img`
@@ -113,6 +118,18 @@ const Image = styled.img`
 `;
 const Underline = styled.div`
   border-bottom: 1px solid #388ab6 !important;
+`;
+const Indicator = styled.span`
+  width: ${(props) =>
+    props.value === 0
+      ? "70%"
+      : props.value === 1
+      ? "45%"
+      : props.value === 2
+      ? "75%"
+      : "60%"};
+  height: 3px;
+  background-color: ${(props) => props.selectedColor};
 `;
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
@@ -195,15 +212,27 @@ export default function TabsComponent() {
       <MapComponent>
         <Lottie width="95%" height="98%" options={defaultOptions} />
       </MapComponent>
-      <Box sx={{ width: "100%", height: "25vh" }}>
+      <Box sx={{ width: "100%", height: "25vh", marginBottom: "30px" }}>
         {/* <Menu position="static"> */}
         <Tabs
           value={value}
           onChange={handleChange}
+          // TabIndicatorProps={{
+          //   style: {
+          //     background: color,
+          //     height: "3px",
+          //     width: "13px",
+          //   },
+          // }}
           TabIndicatorProps={{
             style: {
-              background: "none",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "transparent",
             },
+
+            children: <Indicator value={value} selectedColor={color} />,
           }}
           // selectionFollowsFocus
           textColor="inherit"

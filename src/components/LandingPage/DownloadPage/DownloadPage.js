@@ -4,11 +4,13 @@ import styled from "styled-components";
 import animationData from "./qrcode.json";
 const Component = styled.div`
   margin-top: 40px;
-  width: 100%;
+  width: 60%;
   height: 400px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+
+  border-radius: 43px;
   @media (max-width: 1000px) {
     width: 100%;
     height: 200px;

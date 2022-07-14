@@ -23,10 +23,10 @@ const LandingMain = () => {
       scale: 1,
       transition: { duration: 0.7, ease: [0.61, 1, 0.88, 1] },
     },
-    hidden: { opacity: 0.5, scale: 0.5 },
+    hidden: { opacity: 0.5, scale: 0.7 },
   };
 
-  const Box = ({ page }) => {
+  const Box = ({ page, bgColor }) => {
     const control = useAnimation();
     const [ref, inView] = useInView();
 
@@ -45,17 +45,24 @@ const LandingMain = () => {
         variants={boxVariant}
         initial="hidden"
         animate={control}
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          backgroundColor: bgColor ? bgColor : "transparent",
+          borderRadius: bgColor ? "66px 0" : "0",
+        }}
       >
         {page}
       </motion.div>
     );
   };
   return (
-    <>
+    <Component>
       <Landing />
       <Box page={<Infos />} />
-      <Box page={<DownloadPage />} />
-    </>
+      <Box page={<DownloadPage />} bgColor={"#f9f9fa"} />
+    </Component>
   );
 };
 

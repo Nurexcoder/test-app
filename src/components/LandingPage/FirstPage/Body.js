@@ -32,7 +32,7 @@ const Component = styled.div`
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   overflow: none !important;
   z-index: 100;
   @media (max-width: 1000px) {
@@ -44,7 +44,7 @@ const BoxContainer = styled.div`
   height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: space-around; */
   align-items: center;
   @media (max-width: 1000px) {
     font-size: 2.3rem;
@@ -67,10 +67,19 @@ const Message = styled.div`
   flex-direction: column;
   align-items: center;
 
-  font-size: 3.3rem;
+  font-size: 48px;
   letter-spacing: 1px;
   font-weight: 700;
   color: #fff;
+
+  @media (min-width: 1700px) {
+    width: 1100px;
+    height: 40%;
+    /* width: 70%;
+    height: 75vh; */
+    /* width: 300px;
+    height: 200px; */
+  }
   @media (max-width: 1000px) {
     font-size: 1.5rem;
   }
@@ -82,8 +91,8 @@ const ColoredMessage = styled(Message)`
 `;
 const MapComponent = styled.div`
   z-index: 10;
-  width: 450px;
-  height: 448px;
+  width: 40%;
+  height: auto;
   margin-top: 15px;
   background: #f5f5f5;
   /* -webkit-filter: drop-shadow(0px 4px 35px rgba(0, 0, 0, 0.13)); */
@@ -95,12 +104,28 @@ const MapComponent = styled.div`
   @media (max-width: 1000px) {
     /* width: 70%;
     height: 75vh; */
-    width: 300px;
+    width:250px;
     height: 200px;
+  }
+  @media (min-width: 1500px) {
+    width: 560px;
+    height: 458px;
+    /* width: 70%;
+    height: 75vh; */
+    /* width: 300px;
+    height: 200px; */
+  }
+  @media (min-width: 1700px) {
+    width: 700px;
+    height: 458px;
+    /* width: 70%;
+    height: 75vh; */
+    /* width: 300px;
+    height: 200px; */
   }
   @media (max-width: 560px) {
     width: 280px;
-    height: 200px;
+    height: auto;
     /* width: 70%;
     height: 75vh; */
   }
@@ -108,7 +133,7 @@ const MapComponent = styled.div`
 const ButtonComponent = styled.div`
   margin-top: 5px;
   z-index: 100;
-  width: 50%;
+  width: 38%;
   max-width: 420px;
   display: flex;
   font-family: "Roboto";
@@ -117,13 +142,13 @@ const ButtonComponent = styled.div`
   align-items: center;
   @media (max-width: 1000px) {
     width: 100%;
-    background-color: #fff;
-    margin-top:10px;
+    /* background-color: #fff; */
+    margin-top: 10px;
   }
 `;
 const LeftButton = styled.div`
   width: 35%;
-  border-left: 0.8px solid rgba(0, 0, 0, 0.5);
+  /* border-left: 0.8px solid rgba(0, 0, 0, 0.5); */
 `;
 const RightButton = styled.div`
   width: 55%;
@@ -141,7 +166,7 @@ const RightButton = styled.div`
 
 const GetStartedButton = styled.button`
   z-index: 100;
-  padding: 8px 15px;
+  padding: 8px 5px;
   color: #fff;
 
   font-weight: 600;
@@ -159,7 +184,6 @@ const GetStartedButton = styled.button`
     width: 100%;
     padding: 4px 0px;
   }
-  
 `;
 const Line = styled.div`
   height: 75%;
@@ -242,8 +266,8 @@ const Body = () => {
           <Lottie
             options={defaultOptions}
             width="96%"
-            radius="5px"
-            height="auto"
+            borderRadius="5px"
+            height="95%"
             style={{
               borderRadius: "40px !important",
             }}

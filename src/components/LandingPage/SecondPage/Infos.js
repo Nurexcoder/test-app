@@ -9,7 +9,7 @@ const Component=styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 40px 0;
   padding: 0;
 `;
 
