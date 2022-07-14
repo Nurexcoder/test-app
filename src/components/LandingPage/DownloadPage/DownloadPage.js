@@ -5,23 +5,23 @@ import animationData from "./qrcode.json";
 const Component = styled.div`
   margin-top: 40px;
   width: 100%;
-  height: 500px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   @media (max-width: 1000px) {
     width: 100%;
-    height: 300px;
+    height: 200px;
     justify-content: space-between;
   }
 `;
 
 const LeftComponent = styled.div`
   width: 40%;
-  height: 60%;
+  height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 `;
 const PlayLogo = styled.img`
@@ -40,12 +40,11 @@ const MapLogo = styled.img`
 `;
 const RightComponent = styled.div`
   width: 50%;
-  height: 60%;
+  height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  
 `;
 const Message = styled.div`
   font-family: "Poppins";
@@ -54,6 +53,7 @@ const Message = styled.div`
   width: 500px;
   font-size: 2rem;
   color: #3a3a3a;
+  text-align: center;
   @media (max-width: 1000px) {
     width: 200px;
     font-size: 1rem;
@@ -78,6 +78,7 @@ const QR = styled.div`
 `;
 const FotterText = styled.span`
   font-weight: 200;
+  text-align: center;
   font-size: 0.6rem;
 `;
 const DownloadPage = () => {
@@ -97,7 +98,8 @@ const DownloadPage = () => {
       </LeftComponent>
       <RightComponent>
         <Message>
-          Ready to <ColoredText>Experience</ColoredText> Roads <br/> in a New Way?
+          Ready to <ColoredText>Experience</ColoredText> <br /> Roads in a New
+          Way?
         </Message>{" "}
         <QR>
           <Lottie options={defaultOptions} width="90%" height="auto" />

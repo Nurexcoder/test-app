@@ -36,11 +36,11 @@ const Component = styled.div`
   overflow: none !important;
   z-index: 100;
   @media (max-width: 1000px) {
-    height: 60vh;
+    height: 50vh;
   }
 `;
 const BoxContainer = styled.div`
-  width: 60%;
+  width: 80%;
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -114,10 +114,11 @@ const ButtonComponent = styled.div`
   font-family: "Roboto";
   font-weight: 600;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   @media (max-width: 1000px) {
     width: 100%;
     background-color: #fff;
+    margin-top:10px;
   }
 `;
 const LeftButton = styled.div`
@@ -132,6 +133,10 @@ const RightButton = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
+  @media (max-width: 1000px) {
+    width: 60%;
+    padding-left: 0;
+  }
 `;
 
 const GetStartedButton = styled.button`
@@ -152,8 +157,9 @@ const GetStartedButton = styled.button`
   }
   @media (max-width: 1000px) {
     width: 100%;
-    padding: 8px 5px;
+    padding: 4px 0px;
   }
+  
 `;
 const Line = styled.div`
   height: 75%;

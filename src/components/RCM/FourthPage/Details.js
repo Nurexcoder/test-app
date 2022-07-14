@@ -112,11 +112,14 @@ const BoxDown = styled.div`
   flex-direction: column;
   align-items: center;
   height: 40%;
+  font-family: "Inter";
 `;
 const BoxQuestion = styled.div`
   color: #dbb639;
   font-size: 1.2rem;
-`;
+  text-align: center;
+  font-family: "Inter";
+  `;
 const BoxDetails = styled.div`
   margin-top: 10px;
   text-align: center;
@@ -127,6 +130,7 @@ const BoxDetails = styled.div`
   align-items: center;
   /* color: #023047; */
   color: ${(props) => (props.textColor ? props.textColor : "#fff")};
+  text-align: center;
 `;
 const Image = styled.img`
   width: 14%;
@@ -141,7 +145,7 @@ const BoxLowerHeader = styled(HeaderTitle)`
 const ButtonContainer = styled.div`
   /* margin-top: 50px; */
   margin-bottom: 50px;
-  width: 20%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
 `;
@@ -159,7 +163,7 @@ const ContactButton = styled.button`
     background-color: #000;
   }
   @media (max-width: 1000px) {
-    display: none;
+    /* display: none; */
   }
 `;
 const Button = styled(ContactButton)`

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import CircularContainer from "./CircularContainer";
+// import CircularContainer from "./CircularContainer";
 import MoreDetails from "./MoreDetails";
 import Points from "./Points";
 
@@ -15,7 +15,7 @@ const Container = styled.div`
 const SecondMain = () => {
   return (
     <Container>
-      <CircularContainer />
+      {/* <CircularContainer /> */}
       <Points />
       <MoreDetails />
     </Container>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Lottie from "react-lottie";
 import ReactPlayer from "react-player";
 import styled from "styled-components";
@@ -20,16 +20,22 @@ const How = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+  const vidRef = useRef();
+
+  useEffect(() => {
+    vidRef.current.play();
+  }, []);
   return (
     <Component>
-      <ReactPlayer
-        url="/video.mp4"
-        playing={true}
-        controls
+      <video
+        src="/video.mp4"
+        ref={vidRef}
+        muted
+        autoPlay
+        loop
         width="100%"
         height="100%"
       />
-      
     </Component>
   );
 };

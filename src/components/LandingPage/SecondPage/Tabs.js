@@ -68,8 +68,10 @@ const TabItem = styled(Tab)`
   text-transform: none !important;
   color: ${(props) => props.selectedColor} !important;
   /* back */
-  @media (max-width: 580px) {
+  @media (max-width: 1080px) {
     font-size: 0.6rem;
+    text-decoration: none !important;
+    border-bottom:${props=>props.selectedColor} 1px solid !important;
   }
 `;
 const TabPanelComponent = styled.p`
@@ -99,6 +101,9 @@ const LearnButton = styled(Button)`
   font-family: "Roboto", sans-serif;
   font-weight: 600 !important;
   text-transform: none !important;
+  @media (max-width: 780px) {
+    margin-top:35px !important;
+  }
 `;
 const Image = styled.img`
   /* color:blue; */

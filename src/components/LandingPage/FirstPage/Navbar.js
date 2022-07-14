@@ -33,6 +33,7 @@ const Component = styled.div`
   position: relative;
   animation: ${NavLoad} 900ms ease-in;
   @media (max-width: 1000px) {
+    padding: 0 10px;
     height: 90px;
   }
 
@@ -103,10 +104,24 @@ const HiddenMessage = styled.p`
     border-bottom: 15px solid #f5f5f5;
   }
   @media (max-width: 1000px) {
-    width: 63%;
-    top: 172px;
-    left: 99px;
-    background-color: #000;
+    /* width: 80%; */
+    /* position: relative; */
+    top: 260px;
+    left: 11px;
+    margin: 0 auto;
+    color: #fad65d;
+    background-color: transparent;
+    width: 90%;
+    filter: none;
+    ::before {
+    content: "";
+    position: absolute;
+    visibility: none;
+    top: -24px;
+    left: 14px;
+    border: none;
+    border-bottom: none;
+  }
   }
 `;
 const ContactButton = styled.button`
@@ -116,7 +131,7 @@ const ContactButton = styled.button`
   width: 120px;
   border: none;
   outline: none;
-  background: #4D4D4D;
+  background: #4d4d4d;
   box-shadow: 0px 4px 64px rgba(58, 58, 58, 0.13);
   border-radius: 4px;
   color: #fff;
@@ -172,9 +187,9 @@ const HCenterText = styled(CenterText)`
 `;
 const HContactButton = styled(ContactButton)`
   display: block;
-  bottom: 5%;
+  bottom: 15%;
   position: relative;
-  margin-top: 40%;
+  /* margin-top: 40%; */
   width: 80%;
   float: bottom;
 `;
