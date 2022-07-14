@@ -115,7 +115,7 @@ const HiddenMessage = styled.p`
     border-bottom: 15px solid #f5f5f5;
   }
   @media (max-width: 1000px) {
-    /* width: 80%; */
+    width: 80%;
     /* position: relative; */
     top: 260px;
     left: 11px;

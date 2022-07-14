@@ -39,6 +39,10 @@ const Header = styled.div`
   font-size: 3.5rem;
   font-weight: 800;
   color: #023047;
+
+  @media (max-width: 1000px) {
+    font-size: 2.5rem;
+  }
 `;
 const Message = styled.p`
   width: 50%;
@@ -46,6 +50,7 @@ const Message = styled.p`
   font-weight: 500;
   line-height: 1.4rem;
   font-size: 1.2rem;
+
   color: #838383;
   @media (max-width: 1000px) {
     width: 85%;
@@ -127,39 +132,36 @@ const Points = () => {
     /* Optional options */
     threshold: 0.4,
   });
-  
-    return (
-      
-      <Component ref={ref}>
-        <Header>Points</Header>
-        <Message>
-          From our location points the route might be different but you will
-          reach there in the shortest time
-        </Message>
-        <MapAndCompany>
-          <Map>
-            <MapHeader>Maps</MapHeader>
-            <MapMessage>
-              Maps are limited to Distance, <br /> Time & Navigation
-            </MapMessage>
-          </Map>
-          <Plus>
-            <PlusIcon />
-          </Plus>
-          <Company>
-            <CompanyImage src="/images/logoBlack.png" />
-            <CompanyMessage>
-              We go beyond by
-              <ColoredText> analysing </ColoredText>
-              adversities
-              <br /> and visualise roads for better AI data driven decisions
-            </CompanyMessage>
-          </Company>
-        </MapAndCompany>
-      </Component>
-    );
 
-  
+  return (
+    <Component ref={ref}>
+      <Header>Points</Header>
+      <Message>
+        From our location points the route might be different but you will reach
+        there in the shortest time
+      </Message>
+      <MapAndCompany>
+        <Map>
+          <MapHeader>Maps</MapHeader>
+          <MapMessage>
+            Maps are limited to Distance, <br /> Time & Navigation
+          </MapMessage>
+        </Map>
+        <Plus>
+          <PlusIcon />
+        </Plus>
+        <Company>
+          <CompanyImage src="/images/logoBlack.png" />
+          <CompanyMessage>
+            We go beyond by
+            <ColoredText> analysing </ColoredText>
+            adversities
+            <br /> and visualise roads for better AI data driven decisions
+          </CompanyMessage>
+        </Company>
+      </MapAndCompany>
+    </Component>
+  );
 };
 
 export default Points;
