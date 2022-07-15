@@ -33,7 +33,7 @@ const CircleContainer = styled.div`
   /* width: ${(props) => (props.inView ? "800px" : "1500px")};
   height: ${(props) => (props.inView ? "440px" : "600px")}; */
   /* transition: 30s ease-in-out; */
-  margin: 28px 0;
+  margin: 38px 0;
   width: 800px;
   height: 440px;
 
@@ -79,17 +79,17 @@ const Circle2 = styled.div`
   position: absolute;
   /* top: 40%;
   left: 20%; */
-  top: ${(props) => (props.inView ? "40%" : "40%")};
+  top: ${(props) => (props.inView ? "34%" : "34%")};
   left: ${(props) => (props.inView ? "20%" : "5%")};
   transition: 1s ease-in-out;
-  
+
   @media (max-width: 860px) {
     width: 180px;
     height: 180px;
     /* top: 35%;
     left: 10%; */
     top: ${(props) => (props.inView ? "35%" : "35%")};
-    left: ${(props) => (props.inView ? "10%" : "0%")};
+    left: ${(props) => (props.inView ? "12%" : "0%")};
   }
 `;
 const Circle3 = styled.div`
@@ -104,8 +104,8 @@ const Circle3 = styled.div`
   position: absolute;
   top: 40%;
   right: 20%;
-  top: ${(props) => (props.inView ? "40%" : "40%")};
-  right: ${(props) => (props.inView ? "22%" : "10%")};
+  top: ${(props) => (props.inView ? "34%" : "34%")};
+  right: ${(props) => (props.inView ? "2%" : "10%")};
   transition: 1s ease-in-out;
   @media (max-width: 860px) {
     width: 180px;
@@ -133,28 +133,64 @@ const CircleText = styled.div`
     /* top: 40%;
     right: 7%; */
   }
+  @media (max-width: 560px) {
+    font-size: 0.6rem;
+    /* top: 40%;
+    right: 7%; */
+  }
 `;
 const CircleText2 = styled(CircleText)`
   position: absolute;
-  top: 40%;
+  text-align: justify;
+  top: 42%;
   @media (max-width: 860px) {
     font-size: 0.8rem;
     top: 40%;
-    left: 0%;
+    left: 6%;
+  }
+  @media (max-width: 560px) {
+    font-size: 0.6rem;
+    left: 6%;
+    /* top: 40%;
+    right: 7%; */
   }
   z-index: 1;
-  left: 10%;
 `;
 const CircleText3 = styled(CircleText)`
   position: absolute;
-  top: 30%;
-  right: 15%;
+  top: 35%;
+  right: 3%;
+  text-align: justify;
   @media (max-width: 860px) {
     font-size: 0.8rem;
     top: 40%;
     right: 7%;
   }
+  @media (max-width: 560px) {
+    font-size: 0.6rem;
+    /* top: 40%;
+    right: 7%; */
+  }
 `;
+const CircleText4 = styled(CircleText)`
+  font-weight: 700;
+  top: 51%;
+  right: 50%;
+  transition: 1s ease-in-out;
+  opacity: ${(props) => (props.inView ? "1" : "0")};
+  transition-delay: 0.7s;
+  @media (max-width: 860px) {
+    font-size: 0.8rem;
+    top: 51%;
+    right: 44%;
+  }
+  @media (max-width: 560px) {
+    font-size: 0.6rem;
+    /* top: 40%;
+    right: 7%; */
+  }
+`;
+const ViewDiv = styled.div``;
 
 const CircularContainer = () => {
   const boxVariant = {
@@ -163,7 +199,7 @@ const CircularContainer = () => {
       scale: 1,
       transition: { duration: 0.6, ease: [0.61, 1, 0.88, 1] },
     },
-    hidden: { opacity: 0.5, scale: 0.8 },
+    hidden: { opacity: 0.9, scale: 0.9 },
   };
 
   // const Box = ({ page }) => {
@@ -180,11 +216,10 @@ const CircularContainer = () => {
       control.start("hidden");
     }
   }, [control, inView]);
-
+  console.log(inView);
   return (
     <motion.div
       className="box"
-      ref={ref}
       variants={boxVariant}
       initial="hidden"
       animate={control}
@@ -195,14 +230,16 @@ const CircularContainer = () => {
             Potholes and Bad <br /> Road Infrastructure
           </CircleText>
         </Circle>
-        <Circle2 inView={inView}>
+        <Circle2 ref={ref} inView={inView}>
           <CircleText2 align="left">Road Blockage</CircleText2>
         </Circle2>
-        <Circle3 ref={ref} inView={inView}>
+        <Circle3 inView={inView}>
           <CircleText3>
             Water Logging <br /> and Bad Weather <br /> Conditions
           </CircleText3>
         </Circle3>
+        <CircleText4 inView={inView}>RCM</CircleText4>
+        {/* <ViewDiv ref=/> */}
       </CircleContainer>
     </motion.div>
   );

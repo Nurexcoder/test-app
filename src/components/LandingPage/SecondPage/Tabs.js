@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Lottie from "react-lottie";
 import abnormalRoad from "./abnormalRoad.json";
-import accidentDetect from "./accidentDetect.json";
+import accidentDetect from "./accidentDetection.json";
 import roadBlock from "./roadBlock.json";
 import waterLogging from "./waterLogging.json";
 import { Button } from "@mui/material";

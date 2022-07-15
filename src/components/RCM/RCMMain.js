@@ -22,8 +22,10 @@ const RCMMain = () => {
       opacity: 1,
       scale: 1,
       transition: { duration: 0.6, ease: [0.61, 1, 0.88, 1] },
+      transform: "translateX(0)",
+      y: "0",
     },
-    hidden: { opacity: 0.5, scale: 0.5 },
+    hidden: { opacity: 0,y:"15%", scale:0.9 },
   };
 
   const Box = ({ page }) => {
@@ -41,10 +43,10 @@ const RCMMain = () => {
     return (
       <motion.div
         className="box"
-        ref={ref}
         variants={boxVariant}
         initial="hidden"
         animate={control}
+        ref={ref}
       >
         {page}
       </motion.div>

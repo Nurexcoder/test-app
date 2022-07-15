@@ -11,10 +11,17 @@ const MainComponent = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-`;
+  margin-bottom: 20px;
+
+  `;
 const Component = styled.div`
   width: 100%;
   height: 80vh;
+  margin-bottom: 20px;
+  min-height:500px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
   
   /* background-color: #367b9d; */
   
@@ -44,9 +51,9 @@ const Circle = styled.div`
   left: -25%;
   z-index: -11;
   @media (max-width: 1000px) {
-    height: 600px;
-    height: 600px;
-    top: -10%;
+    height: 400px;
+    height: 400px;
+    top: -18%;
     left: -25%;
     z-index: -11;
   }

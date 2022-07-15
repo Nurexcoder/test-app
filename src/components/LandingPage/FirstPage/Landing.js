@@ -8,6 +8,7 @@ const Component = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
   height: 100vh;
+  margin-bottom: 30px;
   /* max-height:1000px; */
   /* min-height:300px; */
   background-color: #367b9d;

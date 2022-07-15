@@ -145,9 +145,12 @@ const BoxLowerHeader = styled(HeaderTitle)`
 const ButtonContainer = styled.div`
   /* margin-top: 50px; */
   margin-bottom: 50px;
-  width: 60%;
+  width: 20%;
   display: flex;
   justify-content: space-between;
+  @media(max-width:1000px){
+    width:60%;
+  }
 `;
 const ContactButton = styled.button`
   padding: 10px 15px;

@@ -33,7 +33,7 @@ const Component = styled.div`
   position: relative;
   animation: ${NavLoad} 900ms ease-in;
   @media (max-width: 1000px) {
-    padding: 0 10px;
+    padding: 0 20px;
     height: 90px;
   }
 
@@ -68,7 +68,7 @@ const Logo = styled.img`
 
   @media (max-width: 1000px) {
     /* margin-left: 30%; */
-    width: 120px;
+    min-width: 120px;
     height: auto;
   }
 `;
@@ -84,7 +84,7 @@ const CenterText = styled.div`
   text-align: center;
   height: 100%;
   /* margin-right: 10px; */
-  font-size: 1rem;
+  font-size: 1.2rem;
   :hover {
     color: #fad65d;
   }

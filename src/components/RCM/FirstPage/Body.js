@@ -36,22 +36,25 @@ const Component = styled.div`
   overflow: none !important;
   z-index: 100;
   flex-direction: column;
+  margin-top: 30px;
   /* @media (max-width: 1000px) {
     height: 40vh;
     justify-content: space-between;
   } */
-
+  
   /* @media (max-width: 1000px) {
   } */
-`;
+  `;
 const BoxContainer = styled.div`
   width: 60%;
   height: 90%;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
+  
+  min-height: 400px;
   animation: ${bodyLoad} 900ms ease-in;
   /* animation-delay:200ms; */
   overflow: none !important;
@@ -64,13 +67,19 @@ const Message = styled.div`
   flex-direction: column;
   align-items: center;
 
-  font-size: 3.3rem;
+  font-size: 3.7rem;
   letter-spacing: 1px;
   font-weight: 700;
   color: #fff;
-  text-align:center;
+  text-align: center;
   @media (max-width: 1000px) {
     font-size: 1.8rem;
+  }
+  @media (min-width: 1600px) {
+    font-size: 4.8rem;
+  }
+  @media (min-width: 2000px) {
+    font-size: 6.8rem;
   }
   @media (max-width: 860px) {
     font-size: 1.2rem;
@@ -93,12 +102,19 @@ const SmallMessage = styled.div`
   font-weight: 500;
   color: #fff;
   @media (max-width: 1000px) {
+  color: #fff;
     margin-top: 20px;
     font-size: 1rem;
   }
   @media (max-width: 860px) {
     margin-top: 20px;
     font-size: 0.9rem;
+  }
+  @media (min-width: 1600px) {
+    font-size: 1.8rem;
+  }
+  @media (min-width: 2000px) {
+    font-size: 2.5rem;
   }
 `;
 

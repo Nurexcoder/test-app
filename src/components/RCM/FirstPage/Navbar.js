@@ -5,6 +5,7 @@ import styled, { keyframes } from "styled-components";
 const NavLoad = keyframes`
   
   0% {
+    transform: translateY(-25%);
     transform: translateY(-30%);
     opacity: 0;
   }
@@ -13,7 +14,6 @@ const NavLoad = keyframes`
     opacity: 0.5;
   }
   75%{
-    transform: translateY(-25%);
     opacity: 0.75;
   } */
   100% {
@@ -23,16 +23,17 @@ const NavLoad = keyframes`
 
 `;
 const Component = styled.div`
-  /* width: 100%; */
+  width: 90%;
   height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 50px;
   color: white;
   position: relative;
   animation: ${NavLoad} 900ms ease-in;
   @media (max-width: 1000px) {
+    padding: 0 20px;
     height: 90px;
   }
 
@@ -47,15 +48,27 @@ const Hidden = styled.div`
     display: block;
   }
 `;
+const Div = styled.div`
+  min-width: 200px;
+  width:15%;
+  height:60%;
+  display: flex;
+  justify-content: flex-end;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+`;
 const Logo = styled.img`
   /* flex: 1; */
-  width: 180px;
+  min-width: 180px;
+  width: 15%;
+  /* margin-left:20px; */
   cursor: pointer;
   height: auto;
 
   @media (max-width: 1000px) {
     /* margin-left: 30%; */
-    width: 120px;
+    min-width: 120px;
     height: auto;
   }
 `;
@@ -66,10 +79,12 @@ const CenterText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  font-family: "Quicksand";
+  font-weight: 600;
   text-align: center;
   height: 100%;
-  margin-right: 10px;
+  /* margin-right: 10px; */
+  font-size: 1.2rem;
   :hover {
     color: #fad65d;
   }
@@ -83,10 +98,11 @@ const HiddenMessage = styled.p`
   position: absolute;
   top: 50%;
   left: 48%;
-  min-height: 55px;
+  height: 55px;
   border-radius: 10px;
   background-color: #f5f5f5;
   padding: 10px 20px;
+  filter: drop-shadow(16px 24px 8px rgba(0, 0, 0, 0.25));
   display: ${(props) => (props.isHover ? "block" : "none")};
   color: #696969;
   ::before {
@@ -99,20 +115,37 @@ const HiddenMessage = styled.p`
     border-bottom: 15px solid #f5f5f5;
   }
   @media (max-width: 1000px) {
-    width: 63%;
-    top: 172px;
-    left: 99px;
-    background-color: #000;
+    width: 80%;
+    /* position: relative; */
+    top: 260px;
+    left: 11px;
+    margin: 0 auto;
+    color: #fad65d;
+    background-color: transparent;
+    width: 90%;
+    filter: none;
+    ::before {
+      content: "";
+      position: absolute;
+      visibility: none;
+      top: -24px;
+      left: 14px;
+      border: none;
+      border-bottom: none;
+    }
   }
 `;
 const ContactButton = styled.button`
-  padding: 10px 5px;
-
+  padding: 10px 8px;
+  
   /* flex: 1; */
-  width: 180px;
+  min-width: 100px;
+  /* width:80%; */
+  height: 60%;
+  min-height: 33px;
   border: none;
   outline: none;
-  background-color: #4d4d4d;
+  background: #4d4d4d;
   box-shadow: 0px 4px 64px rgba(58, 58, 58, 0.13);
   border-radius: 4px;
   color: #fff;
@@ -168,10 +201,11 @@ const HCenterText = styled(CenterText)`
 `;
 const HContactButton = styled(ContactButton)`
   display: block;
-  bottom: 5%;
+  bottom: 15%;
   position: relative;
-  margin-top: 40%;
+  /* margin-top: 40%; */
   width: 80%;
+  max-height:30px;
   float: bottom;
 `;
 const Navbar = () => {
@@ -182,13 +216,13 @@ const Navbar = () => {
     <>
       <Component>
         <Hidden />
-        <Logo src="/images/logo.png" />
-        <CenterText
-          onMouseOver={() => setIsHover(true)}
-          onMouseLeave={() => setIsHover(false)}
-        >
-          Road Condition Mapping
-        </CenterText>
+          <Logo src="/images/logo.png" />
+       
+        {/* <Div> */}
+          <CenterText onClick={() => setIsHover(!isHover)}>
+            Road Condition Mapping
+          </CenterText>
+        {/* </Div> */}
         <HiddenMessage
           onMouseOver={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
@@ -197,7 +231,9 @@ const Navbar = () => {
           Road Condition Mapper deticated towards Preventing Accidents and
           Fastering the Commute
         </HiddenMessage>
-        <ContactButton>Contact Us</ContactButton>
+        <Div>
+          <ContactButton>Contact Us</ContactButton>
+        </Div>
         <Hamburger onClick={() => setOpen(true)} src="/images/hamburger.png" />
       </Component>
       <Manu open={open}>

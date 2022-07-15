@@ -53,6 +53,7 @@ const Message = styled.p`
 
   color: #838383;
   @media (max-width: 1000px) {
+    font-size: 1rem;
     width: 85%;
   }
 `;
@@ -78,6 +79,9 @@ const MapHeader = styled.div`
   font-weight: 700;
   font-size: 1.8rem;
   color: #333333;
+  @media (max-width: 1000px) {
+    font-size: 1.5rem;
+  }
 `;
 const MapMessage = styled.p`
   text-align: center;
@@ -85,6 +89,9 @@ const MapMessage = styled.p`
   color: #929292;
   font-weight: 500;
   line-height: 1.3;
+  @media (max-width: 1000px) {
+    font-size: 0.7rem;
+  }
 `;
 const Plus = styled.div`
   flex: 1;
@@ -125,6 +132,9 @@ const CompanyMessage = styled.p`
   font-weight: 500;
   line-height: 1.3;
   width: 100%;
+  @media (max-width: 1000px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const Points = () => {

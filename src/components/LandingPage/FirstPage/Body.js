@@ -27,7 +27,7 @@ const bodyLoad = keyframes`
 
 `;
 const Component = styled.div`
-  height: 85vh;
+  height: 80vh;
   width: 100%;
 
   display: flex;
@@ -41,10 +41,11 @@ const Component = styled.div`
 `;
 const BoxContainer = styled.div`
   width: 80%;
-  height: 90%;
+  /* margin-top: 40px; */
+  height: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
+  justify-content: space-around;
   align-items: center;
   @media (max-width: 1000px) {
     font-size: 2.3rem;
@@ -67,18 +68,13 @@ const Message = styled.div`
   flex-direction: column;
   align-items: center;
 
-  font-size: 48px;
+  font-size: 3.5rem;
   letter-spacing: 1px;
   font-weight: 700;
   color: #fff;
 
-  @media (min-width: 1700px) {
-    width: 1100px;
-    height: 40%;
-    /* width: 70%;
-    height: 75vh; */
-    /* width: 300px;
-    height: 200px; */
+  @media (min-width: 1500px) {
+    font-size: 3.8rem;
   }
   @media (max-width: 1000px) {
     font-size: 1.5rem;
@@ -91,9 +87,9 @@ const ColoredMessage = styled(Message)`
 `;
 const MapComponent = styled.div`
   z-index: 10;
-  width: 40%;
+  width: 42%;
   height: auto;
-  margin-top: 15px;
+  /* margin-top: 5px; */
   background: #f5f5f5;
   /* -webkit-filter: drop-shadow(0px 4px 35px rgba(0, 0, 0, 0.13)); */
   filter: drop-shadow(0px 4px 35px rgba(0, 0, 0, 0.13));
@@ -101,34 +97,24 @@ const MapComponent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  /* @media(max-height:400px){
+    width:70%;
+  } */
   @media (max-width: 1000px) {
-    /* width: 70%;
-    height: 75vh; */
-    width:250px;
-    height: 200px;
-  }
-  @media (min-width: 1500px) {
-    width: 560px;
-    height: 458px;
-    /* width: 70%;
-    height: 75vh; */
-    /* width: 300px;
-    height: 200px; */
-  }
-  @media (min-width: 1700px) {
-    width: 700px;
-    height: 458px;
-    /* width: 70%;
-    height: 75vh; */
-    /* width: 300px;
-    height: 200px; */
+      width:40%;
   }
   @media (max-width: 560px) {
+    width: 60%;
+    /* height: 458px; */
+  }
+  /* @media (min-width: 1700px) {
+    width: 700px;
+    height: 458px;
+  } */
+  /* @media (max-width: 560px) {
     width: 280px;
     height: auto;
-    /* width: 70%;
-    height: 75vh; */
-  }
+  } */
 `;
 const ButtonComponent = styled.div`
   margin-top: 5px;
@@ -138,8 +124,9 @@ const ButtonComponent = styled.div`
   display: flex;
   font-family: "Roboto";
   font-weight: 600;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  font-size: 0.8rem;
   @media (max-width: 1000px) {
     width: 100%;
     /* background-color: #fff; */
@@ -151,16 +138,15 @@ const LeftButton = styled.div`
   /* border-left: 0.8px solid rgba(0, 0, 0, 0.5); */
 `;
 const RightButton = styled.div`
-  width: 55%;
-  /* padding:0 5px */
+  width: 60%;
+  /* paddg:0 5px */
   padding-left: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: relative;
   @media (max-width: 1000px) {
-    width: 60%;
-    padding-left: 0;
+    width: 70%;
   }
 `;
 
@@ -169,6 +155,7 @@ const GetStartedButton = styled.button`
   padding: 8px 5px;
   color: #fff;
 
+  font-size: 0.7rem;
   font-weight: 600;
   background: #023047;
   border: 3px solid #023047;
@@ -180,13 +167,17 @@ const GetStartedButton = styled.button`
     border: 3px solid #000;
     transition: ease;
   }
+  @media (min-width: 1600px) {
+    font-size: 1rem;
+  }
   @media (max-width: 1000px) {
     width: 100%;
     padding: 4px 0px;
   }
-`;
+  `;
 const Line = styled.div`
   height: 75%;
+  margin:0 8px;
   border: 0.8px solid #696969;
 `;
 const Button = styled.button`
@@ -194,12 +185,16 @@ const Button = styled.button`
   display: flex;
   /* width: 300px; */
   padding: 8px 0px;
+  font-size: 0.8rem ;
   border: none;
   outline: none;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
+  @media (min-width: 1600px) {
+    font-size: 1rem;
+  }
+  
   font-weight: 600;
   color: #696969;
 
@@ -265,9 +260,9 @@ const Body = () => {
         <MapComponent>
           <Lottie
             options={defaultOptions}
-            width="96%"
+            width="100%"
             borderRadius="5px"
-            height="95%"
+            height="auto"
             style={{
               borderRadius: "40px !important",
             }}
