@@ -12,8 +12,13 @@ const Component = styled.div`
   overflow: hidden;
   border-radius: 43px;
   @media (max-width: 1000px) {
+    width: 60%;
+    min-height: 200px;
+    justify-content: space-between;
+  }
+  @media (max-width: 560px) {
     width: 100%;
-    height: 200px;
+    min-height: 200px;
     justify-content: space-between;
   }
 `;
@@ -30,14 +35,16 @@ const PlayLogo = styled.img`
   width: 15vw;
   height: auto;
   @media (max-width: 1000px) {
-    width: 50px;
+    /* width: 50px; */
+    width: 15vw;
   }
 `;
 const MapLogo = styled.img`
   width: 28vw;
   height: auto;
   @media (max-width: 1000px) {
-    width: 150px;
+    /* width: 150px; */
+    width: 28vw;
   }
 `;
 const RightComponent = styled.div`
@@ -59,7 +66,8 @@ const Message = styled.div`
   text-align: center;
   @media (max-width: 1000px) {
     width: 200px;
-    font-size: 1rem;
+    /* font-size: 1rem; */
+    font-size: 2vh;
   }
   /* display: flex; */
 `;
@@ -70,12 +78,12 @@ const QR = styled.div`
   width: 14vw;
   height: auto;
   margin: 20px 0;
-  background-color: #fff;
+  /* background-color: #fff; */
   filter: drop-shadow(0px 8px 22px rgba(0, 0, 0, 0.12))
     drop-shadow(0px 7px 8px rgba(0, 0, 0, 0.2));
   border-radius: 20px;
   @media (max-width: 1000px) {
-    width: 100px;
+    width: 20vw;
     font-size: 1rem;
   }
 `;

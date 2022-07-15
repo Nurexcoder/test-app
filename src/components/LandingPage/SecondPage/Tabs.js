@@ -14,7 +14,7 @@ import accidentDetect from "./accidentDetection.json";
 import roadBlock from "./roadBlock.json";
 import waterLogging from "./waterLogging.json";
 import { Button } from "@mui/material";
-
+import {Link} from 'react-router-dom'
 interface TabPanelProps {
   children?: React.ReactNode;
   dir?: string;
@@ -29,7 +29,7 @@ const Component = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin:20px 0; 
+  margin: 20px 0;
   @media (max-width: 1000px) {
     width: 98%;
   }
@@ -41,7 +41,7 @@ const MapComponent = styled.div`
   background-color: #f3f3f3;
   display: flex;
   align-items: center;
-  width:90%;
+  width: 90%;
 
   @media (max-width: 1000px) {
     width: 700px;
@@ -78,7 +78,7 @@ const TabItem = styled(Tab)`
   padding: 0 !important;
 
   @media (max-width: 1080px) {
-    font-size: 0.6rem;
+    font-size: 1.5vh !important;
     text-decoration: none !important;
     /* border-bottom: ${(props) => props.selectedColor} 1px solid !important; */
   }
@@ -103,13 +103,14 @@ const Compact = styled.div`
 const LearnButton = styled(Button)`
   /* text-decoration: underline; */
   margin-top: 15px !important;
-  font-size: 0.8rem !important;
+  font-size: 2vh !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   font-family: "Roboto", sans-serif;
   font-weight: 600 !important;
   text-transform: none !important;
+  min-width: 20vw !important;
   @media (max-width: 780px) {
     margin-top: 35px !important;
   }
@@ -117,7 +118,7 @@ const LearnButton = styled(Button)`
 const Image = styled.img`
   /* color:blue; */
   /* background-color: blue; */
-  width: 14%;
+  width: 2vh;
   margin: 2px 5px;
 `;
 const Underline = styled.div`
@@ -299,8 +300,10 @@ export default function TabsComponent() {
         </SwipeableViews>
       </Box>
       <LearnButton>
-        <Underline>Learn More RCM</Underline>
-        <Image src="images/blueArrow.png" />
+        <Link to="/rcm">
+          <Underline>Learn More RCM</Underline>
+          <Image src="images/blueArrow.png" />
+        </Link>
       </LearnButton>
     </Component>
   );

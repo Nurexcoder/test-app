@@ -2,3 +2,11 @@ body {
   /* outline: 1px solid red; */
   box-sizing: border-box;
 }
+a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #388AB6;
+  
+}

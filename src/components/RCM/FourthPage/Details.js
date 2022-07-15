@@ -18,21 +18,27 @@ const Header = styled.div`
 `;
 const HeaderTitle = styled.div`
   font-weight: 800;
-  font-size: 2.2rem;
+  font-size: 6vh;
   font-family: "Inter", sans-serif;
 
   font-style: normal;
   text-align: center;
   color: #023047;
+  @media(max-width:1000px){
+    font-size:2rem;
+  }
 `;
 const HeaderMessage = styled.p`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 2.5vh;
   text-align: center;
   color: #838383;
   width: 70%;
+  @media(max-width:1000px){
+    font-size:1rem;
+  }
 `;
 const BoxContainer = styled.div`
   margin-top: 20px;
@@ -52,21 +58,28 @@ const BoxContainer = styled.div`
 `;
 const Box = styled.div`
   width: 35%;
-  height: 330px;
+  height: 45vh;
   background: ${(props) => (props.bgColor ? props.bgColor : "#ffffff")};
   box-shadow: 0px 2px 40px rgba(58, 58, 58, 0.07);
-  border-radius: 8px;
+  border-radius: 1vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px 20px;
   margin: 15px 0%;
   justify-content: space-between;
-
+  
   @media (max-width: 1000px) {
     width: 80%;
     flex-direction: column;
-    height: 430px;
+    height: 50vh;
+    justify-content: space-around;
+  }
+  @media (max-width: 560px) {
+    width: 80%;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: space-around;
   }
 `;
 const BoxUpper = styled.div`
@@ -78,15 +91,18 @@ const BoxUpper = styled.div`
 
 const BoxLevel = styled.div`
   color: ${(props) => (props.textColor ? props.textColor : "#fff")};
-  font-size: 1rem;
+  font-size: 2.5vh;
   text-align: center;
   margin: 10px 0;
   font-family: "Inter";
   font-weight: 600;
+  @media(max-width:100px){
+    font-size:1.2rem;
+  }
 `;
 const BoxHeader = styled.div`
   color: #d0a100;
-  font-size: 1.5rem;
+  font-size: 4vh;
   text-align: center;
   margin: 5px 0;
   font-family: "Inter";
@@ -95,16 +111,22 @@ const BoxHeader = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media(max-width:1000px){
+    font-size:1.6rem;
+  }
 `;
 const BoxAbout = styled.div`
   color: #023047;
-  font-size: 1rem;
+  font-size: 2.7vh;
   text-align: center;
   font-family: "Inter";
   margin: 5px 0;
   font-weight: 600;
   padding: 0 20px;
   color: ${(props) => (props.textColor ? props.textColor : "#fff")};
+  @media(max-width:1000px){
+    font-size:1.2rem;
+  }
 `;
 const BoxDown = styled.div`
   margin-top: 15px;
@@ -116,14 +138,18 @@ const BoxDown = styled.div`
 `;
 const BoxQuestion = styled.div`
   color: #dbb639;
-  font-size: 1.2rem;
+  font-size: 3vh;
   text-align: center;
   font-family: "Inter";
-  `;
+  @media(max-width:1000px){
+    font-size:1.2rem;
+  }
+ `;
 const BoxDetails = styled.div`
   margin-top: 10px;
   text-align: center;
   width: 70%;
+  font-size: 2.7vh;
   font-family: "Inter";
   display: flex;
   justify-content: center;
@@ -131,6 +157,10 @@ const BoxDetails = styled.div`
   /* color: #023047; */
   color: ${(props) => (props.textColor ? props.textColor : "#fff")};
   text-align: center;
+  @media(max-width:1000px){
+    font-size:1rem;
+    width:100%;
+  }
 `;
 const Image = styled.img`
   width: 14%;
@@ -141,11 +171,12 @@ const BoxLowerHeader = styled(HeaderTitle)`
   margin-top: 50px;
   margin-bottom: 20px;
   text-align: center;
+
 `;
 const ButtonContainer = styled.div`
   /* margin-top: 50px; */
   margin-bottom: 50px;
-  width: 20%;
+  width: 20vw;
   display: flex;
   justify-content: space-between;
   @media(max-width:1000px){
@@ -172,6 +203,7 @@ const ContactButton = styled.button`
 const Button = styled(ContactButton)`
   background: #fff;
   color: #023047;
+  font-size:2vh;
   border: 1px solid #023047;
   &:hover {
     transition: 1s ease;

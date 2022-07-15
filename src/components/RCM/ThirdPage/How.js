@@ -9,6 +9,8 @@ const Component = styled.div`
   /* height: 600px; */
   /* background-color: #000; */
   margin: 40px 0;
+
+  overflow: hidden;
   border-radius: 10px;
 `;
 const How = () => {

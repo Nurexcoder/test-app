@@ -68,7 +68,7 @@ const ColoredRightBox = styled.div`
   background-color: ${(props) => (props.isActive ? "#023047" : "#f5f5f5")};
   padding: 10px 16px;
   border: ${(props) =>
-    props.isActive ? "2px solid transparent" : " 2px solid #367b9d"};
+    props.isActive ? "0.5vh solid transparent" : " 0.5vh solid #367b9d"};
   /* box-shadow: 0px 4px 44px rgba(54, 123, 157, 0.25); */
   display: flex;
   flex-direction: column;
@@ -80,9 +80,11 @@ const ColoredRightBox = styled.div`
     background-color: #023047;
   }
   @media (max-width: 1000px) {
-    height: 30%;
+    min-height: 30%;
     width: 25%;
     padding: 10px 6px;
+    border: ${(props) =>
+    props.isActive ? "1px solid transparent" : " 1px solid #367b9d"};
 
     height: 54%;
     /* justify-content: space-between; */
@@ -96,7 +98,7 @@ const RightBox = styled(ColoredRightBox)`
 
 const ColoredBoxHeader = styled.div`
   color: ${(props) => (props.isActive ? "#FAD65D" : props.isHover? "#FAD65D": "#464646")};
-  font-size: 1rem;
+  font-size: 2.5vh;
   font-weight: 700;
   margin-top: 7px;
   font-family: "Inter";
@@ -116,7 +118,7 @@ const ColoredBoxText = styled.div`
   margin-top: 7px;
   font-family: "Montserrat";
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 2.2vh;
 
   color: ${(props) => (props.isActive||props.isHover ? "#FFFFFF" : "#838383")};
 

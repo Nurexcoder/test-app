@@ -2,11 +2,15 @@ import React from "react";
 import How from "./How";
 import styled from "styled-components";
 const Component = styled.div`
-  width: 100%;
+  width: 90vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: ; */
+  height:100vh ;
+  overflow: hidden;
+  @media(max-width:860px){
+    height: auto;
+  }
 `;
 const ThirdMain = () => {
   

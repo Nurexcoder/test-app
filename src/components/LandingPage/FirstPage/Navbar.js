@@ -33,6 +33,7 @@ const Component = styled.div`
   position: relative;
   animation: ${NavLoad} 900ms ease-in;
   @media (max-width: 1000px) {
+    width: 98vw;
     padding: 0 20px;
     height: 90px;
   }
@@ -44,9 +45,9 @@ const Component = styled.div`
 `;
 const Hidden = styled.div`
   display: none;
-  @media (max-width: 1000px) {
+  /* @media (max-width: 1000px) {
     display: block;
-  }
+  } */
 `;
 const Div = styled.div`
   min-width: 200px;
