@@ -13,6 +13,7 @@ const Component = styled.div`
   /* min-height:300px; */
   background-color: #367b9d;
   position: relative;
+  min-height: 600px;
   /* overflow-y: scroll; */
   border-bottom: transparent;
   display:flex;
@@ -20,7 +21,14 @@ const Component = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 1000px) {
-    height: auto;
+    height: 80vh;
+    justify-content: space-between;
+    /* height: auto; */
+    background: linear-gradient(to bottom, #367b9d 80%, #fff 20%);
+  }
+  @media (max-width: 560px) {
+    height: 50vh;
+    /* height: auto; */
     background: linear-gradient(to bottom, #367b9d 80%, #fff 20%);
   }
   /* clip-path: polygon(100% 100%, 100% 100%, 100% 100%); */

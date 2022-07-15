@@ -25,9 +25,11 @@ interface TabPanelProps {
 const Component = styled.div`
   width: 60%;
   display: flex;
+  /* height:80vh; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin:20px 0; 
   @media (max-width: 1000px) {
     width: 98%;
   }
@@ -39,6 +41,8 @@ const MapComponent = styled.div`
   background-color: #f3f3f3;
   display: flex;
   align-items: center;
+  width:90%;
+
   @media (max-width: 1000px) {
     width: 700px;
     height: 400px;
@@ -57,7 +61,7 @@ const Menu = styled.div`
   color: ${(props) => (props.selected ? "#F8BF01" : "#636363 !important")};
 `;
 const TabItem = styled(Tab)`
-  font-size: 0.9rem !important;
+  font-size: 2.2vh !important;
   font-weight: 1000 !important;
   font-family: "Inter";
   font-style: normal;
@@ -83,8 +87,8 @@ const TabPanelComponent = styled.p`
   font-family: "Inter" !important;
   font-style: normal;
   font-weight: 500;
-  font-size: 0.9rem;
-  line-height: 1.4rem;
+  font-size: 2.2vh !important;
+  line-height: 2.5vh;
   color: #929292;
   width: 100%;
   text-align: center;
@@ -122,11 +126,11 @@ const Underline = styled.div`
 const Indicator = styled.span`
   width: ${(props) =>
     props.value === 0
-      ? "70%"
+      ? "85%"
       : props.value === 1
       ? "45%"
       : props.value === 2
-      ? "75%"
+      ? "885%"
       : "60%"};
   height: 3px;
   background-color: ${(props) => props.selectedColor};
@@ -210,9 +214,9 @@ export default function TabsComponent() {
   return (
     <Component>
       <MapComponent>
-        <Lottie width="95%" height="98%" options={defaultOptions} />
+        <Lottie width="100%" height="auto" options={defaultOptions} />
       </MapComponent>
-      <Box sx={{ width: "100%", height: "25vh", marginBottom: "30px" }}>
+      <Box sx={{ width: "90%", height: "25vh", marginBottom: "30px" }}>
         {/* <Menu position="static"> */}
         <Tabs
           value={value}

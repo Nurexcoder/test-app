@@ -48,13 +48,11 @@ const Component = styled.div`
 const BoxContainer = styled.div`
   width: 60%;
   height: 90%;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  
-  min-height: 400px;
   animation: ${bodyLoad} 900ms ease-in;
   /* animation-delay:200ms; */
   overflow: none !important;
@@ -67,7 +65,7 @@ const Message = styled.div`
   flex-direction: column;
   align-items: center;
 
-  font-size: 3.7rem;
+  font-size: 9.7vh;
   letter-spacing: 1px;
   font-weight: 700;
   color: #fff;
@@ -75,12 +73,12 @@ const Message = styled.div`
   @media (max-width: 1000px) {
     font-size: 1.8rem;
   }
-  @media (min-width: 1600px) {
+  /* @media (min-width: 1600px) {
     font-size: 4.8rem;
   }
   @media (min-width: 2000px) {
     font-size: 6.8rem;
-  }
+  } */
   @media (max-width: 860px) {
     font-size: 1.2rem;
   }
@@ -97,7 +95,7 @@ const SmallMessage = styled.div`
   align-items: center;
   text-align: center;
 
-  font-size: 1.2rem;
+  font-size: 3vh;
   letter-spacing: 1.2px;
   font-weight: 500;
   color: #fff;
@@ -110,12 +108,12 @@ const SmallMessage = styled.div`
     margin-top: 20px;
     font-size: 0.9rem;
   }
-  @media (min-width: 1600px) {
+  /* @media (min-width: 1600px) {
     font-size: 1.8rem;
   }
   @media (min-width: 2000px) {
     font-size: 2.5rem;
-  }
+  } */
 `;
 
 const Body = () => {

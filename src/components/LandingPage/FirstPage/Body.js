@@ -35,8 +35,14 @@ const Component = styled.div`
   align-items: flex-end;
   overflow: none !important;
   z-index: 100;
-  @media (max-width: 1000px) {
+  
+  @media (max-width: 560px) {
     height: 50vh;
+    margin-top: 20vh;
+  }
+  @media (max-width: 1000px) {
+      height: 50vh;
+      margin-top:10%;
   }
 `;
 const BoxContainer = styled.div`
@@ -48,6 +54,7 @@ const BoxContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   @media (max-width: 1000px) {
+  
     font-size: 2.3rem;
     width: 90%;
   }
@@ -68,14 +75,14 @@ const Message = styled.div`
   flex-direction: column;
   align-items: center;
 
-  font-size: 3.5rem;
+  font-size: 7.8vh;
   letter-spacing: 1px;
   font-weight: 700;
   color: #fff;
 
-  @media (min-width: 1500px) {
+  /* @media (min-width: 1500px) {
     font-size: 3.8rem;
-  }
+  } */
   @media (max-width: 1000px) {
     font-size: 1.5rem;
   }
@@ -87,7 +94,7 @@ const ColoredMessage = styled(Message)`
 `;
 const MapComponent = styled.div`
   z-index: 10;
-  width: 42%;
+  width: 38vw;
   height: auto;
   /* margin-top: 5px; */
   background: #f5f5f5;
@@ -97,14 +104,14 @@ const MapComponent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* @media(max-height:400px){
-    width:70%;
-  } */
-  @media (max-width: 1000px) {
-      width:40%;
+  @media(max-width:1000px){
+    width:60%;
   }
   @media (max-width: 560px) {
-    width: 60%;
+    width: 80%;
+  }
+  @media (max-width: 560px) {
+    width: 90%;
     /* height: 458px; */
   }
   /* @media (min-width: 1700px) {
@@ -119,16 +126,22 @@ const MapComponent = styled.div`
 const ButtonComponent = styled.div`
   margin-top: 5px;
   z-index: 100;
-  width: 38%;
-  max-width: 420px;
+  width: 30vw;
+  /* max-width: 420px; */
   display: flex;
   font-family: "Roboto";
   font-weight: 600;
   justify-content: flex-end;
   align-items: center;
   font-size: 0.8rem;
+
   @media (max-width: 1000px) {
-    width: 100%;
+    width: 55%;
+    /* background-color: #fff; */
+    margin-top: 10px;
+  }
+  @media (max-width: 560px) {
+    width: 85%;
     /* background-color: #fff; */
     margin-top: 10px;
   }
@@ -154,11 +167,16 @@ const GetStartedButton = styled.button`
   z-index: 100;
   padding: 8px 5px;
   color: #fff;
-
-  font-size: 0.7rem;
+  
+  font-size: 2vh;
+  height: 5.8vh;
+  width: 10vw;
   font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #023047;
-  border: 3px solid #023047;
+  border: 6px solid #023047;
   box-shadow: 0px 4px 58px rgba(2, 48, 71, 0.25);
   border-radius: 4px;
   &:hover {
@@ -167,17 +185,21 @@ const GetStartedButton = styled.button`
     border: 3px solid #000;
     transition: ease;
   }
-  @media (min-width: 1600px) {
+  /* @media (min-width: 1600px) {
     font-size: 1rem;
-  }
+  } */
   @media (max-width: 1000px) {
+  padding: 8px 2px;
+  font-size:1vh;
     width: 100%;
-    padding: 4px 0px;
-  }
-  `;
+    height: 2.8vh;
+  /* width: 10vw; */
+}
+`;
 const Line = styled.div`
-  height: 75%;
-  margin:0 8px;
+  padding: 4px 0px;
+  height: 1vh;
+  margin: 0 8px;
   border: 0.8px solid #696969;
 `;
 const Button = styled.button`
@@ -185,16 +207,29 @@ const Button = styled.button`
   display: flex;
   /* width: 300px; */
   padding: 8px 0px;
-  font-size: 0.8rem ;
+  font-size: 2vh;
+  height: 5.5vh;
+  width: 10vw;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   outline: none;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  @media (min-width: 1600px) {
+  @media (max-width: 1000px) {
+  padding: 8px 2px;
+  font-size:1vh;
+    width: 100%;
+    height: 2.8vh;
+  /* width: 10vw; */
+}
+  /* @media (min-width: 1600px) {
     font-size: 1rem;
-  }
-  
+  } */
+
   font-weight: 600;
   color: #696969;
 

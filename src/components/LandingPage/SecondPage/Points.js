@@ -24,21 +24,26 @@ const NavLoad = keyframes`
 
 `;
 const Component = styled.div`
-  width: 50%;
+  width: 55%;
   display: flex;
+  min-height: 50vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", sans-serif;
+  margin: 30px 0;
   @media (max-width: 1000px) {
     width: 98%;
     margin: 20px 0;
   }
 `;
 const Header = styled.div`
-  font-size: 3.5rem;
+  font-size: 8vh;
   font-weight: 800;
   color: #023047;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
 
   @media (max-width: 1000px) {
     font-size: 2.5rem;
@@ -48,9 +53,11 @@ const Message = styled.p`
   width: 50%;
   text-align: center;
   font-weight: 500;
-  line-height: 1.4rem;
-  font-size: 1.2rem;
-
+  line-height: 3vh;
+  font-size: 3vh;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
   color: #838383;
   @media (max-width: 1000px) {
     font-size: 1rem;
@@ -77,7 +84,11 @@ const Map = styled.div`
 const MapHeader = styled.div`
   font-family: "Quicksand", sans-serif;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 7vh;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #333333;
   @media (max-width: 1000px) {
     font-size: 1.5rem;
@@ -85,7 +96,7 @@ const MapHeader = styled.div`
 `;
 const MapMessage = styled.p`
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 2.5vh;
   color: #929292;
   font-weight: 500;
   line-height: 1.3;
@@ -99,12 +110,17 @@ const Plus = styled.div`
   align-items: flex-start;
   justify-content: center;
   height: 100%;
-  font-size: 3rem;
-  margin: 0;
+  font-size: 2.5rem;
+
   padding: 0;
 `;
 const PlusIcon = styled(AddIcon)`
-  transform: scale(1.3);
+  margin-top: 10px !important;
+  transform: scale(1.5);
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 const Company = styled.div`
   flex: 3;
@@ -114,20 +130,27 @@ const Company = styled.div`
   justify-content: flex-start;
 
   align-items: center;
+  width: 100%;
 `;
 const CompanyImage = styled.img`
-  width: 65%;
+  width: 16vw;
+  /* font-size:9vh; */
   height: auto;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media (max-width: 1000px) {
     width: 150px;
   }
 `;
 const ColoredText = styled.span`
   color: #e1b318;
+  font-size: 2.5vh;
 `;
 const CompanyMessage = styled.p`
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 2.5vh;
   color: #929292;
   font-weight: 500;
   line-height: 1.3;

@@ -4,12 +4,12 @@ import styled from "styled-components";
 import animationData from "./qrcode.json";
 const Component = styled.div`
   margin-top: 40px;
-  width: 60%;
-  height: 400px;
-  display: flex;
+  width: 70%;
+  min-height: 400px;
   align-items: center;
   justify-content: space-between;
-
+  display: flex;
+  overflow: hidden;
   border-radius: 43px;
   @media (max-width: 1000px) {
     width: 100%;
@@ -27,33 +27,34 @@ const LeftComponent = styled.div`
   align-items: center;
 `;
 const PlayLogo = styled.img`
-  width: 200px;
+  width: 15vw;
   height: auto;
   @media (max-width: 1000px) {
     width: 50px;
   }
 `;
 const MapLogo = styled.img`
-  width: 350px;
+  width: 28vw;
   height: auto;
   @media (max-width: 1000px) {
     width: 150px;
   }
 `;
 const RightComponent = styled.div`
-  width: 50%;
+  width: 60%;
   height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-`;
+  `;
 const Message = styled.div`
   font-family: "Poppins";
   font-style: normal;
+  min-width: 600px;
   font-weight: 700;
-  width: 500px;
-  font-size: 2rem;
+  width: 40vw;
+  font-size: 7vh;
   color: #3a3a3a;
   text-align: center;
   @media (max-width: 1000px) {
@@ -66,7 +67,7 @@ const ColoredText = styled.span`
   color: #2979ff;
 `;
 const QR = styled.div`
-  width: 200px;
+  width: 14vw;
   height: auto;
   margin: 20px 0;
   background-color: #fff;

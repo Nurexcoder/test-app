@@ -102,10 +102,10 @@ const Circle3 = styled.div`
   justify-content: flex-start;
   align-items: center;
   position: absolute;
-  top: 40%;
-  right: 20%;
+  /* top: 40%;
+  right: 20%; */
   top: ${(props) => (props.inView ? "34%" : "34%")};
-  right: ${(props) => (props.inView ? "2%" : "10%")};
+  right: ${(props) => (props.inView ? "24%" : "10%")};
   transition: 1s ease-in-out;
   @media (max-width: 860px) {
     width: 180px;
@@ -143,6 +143,7 @@ const CircleText2 = styled(CircleText)`
   position: absolute;
   text-align: justify;
   top: 42%;
+  left:5%;
   @media (max-width: 860px) {
     font-size: 0.8rem;
     top: 40%;
@@ -175,7 +176,7 @@ const CircleText3 = styled(CircleText)`
 const CircleText4 = styled(CircleText)`
   font-weight: 700;
   top: 51%;
-  right: 50%;
+  right: 49%;
   transition: 1s ease-in-out;
   opacity: ${(props) => (props.inView ? "1" : "0")};
   transition-delay: 0.7s;

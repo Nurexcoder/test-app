@@ -50,18 +50,18 @@ const Hidden = styled.div`
 `;
 const Div = styled.div`
   min-width: 200px;
-  width:15%;
-  height:60%;
+  width: 15%;
+
   display: flex;
   justify-content: flex-end;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 `;
 const Logo = styled.img`
   /* flex: 1; */
   min-width: 180px;
-  width: 15%;
+  width: 12vw;
   /* margin-left:20px; */
   cursor: pointer;
   height: auto;
@@ -84,7 +84,7 @@ const CenterText = styled.div`
   text-align: center;
   height: 100%;
   /* margin-right: 10px; */
-  font-size: 1.2rem;
+  font-size: 2.8vh;
   :hover {
     color: #fad65d;
   }
@@ -137,17 +137,18 @@ const HiddenMessage = styled.p`
 `;
 const ContactButton = styled.button`
   padding: 10px 8px;
-  
+
   /* flex: 1; */
-  min-width: 100px;
+  /* min-width: 100px; */
+  width: 9vw;
   /* width:80%; */
-  height: 60%;
-  min-height: 33px;
+  min-height: 5vh;
   border: none;
   outline: none;
   background: #4d4d4d;
   box-shadow: 0px 4px 64px rgba(58, 58, 58, 0.13);
   border-radius: 4px;
+  font-size: 2vh;
   color: #fff;
   &:hover {
     transition: 1s ease;
@@ -205,7 +206,7 @@ const HContactButton = styled(ContactButton)`
   position: relative;
   /* margin-top: 40%; */
   width: 80%;
-  max-height:30px;
+  max-height: 30px;
   float: bottom;
 `;
 const Navbar = () => {
@@ -216,12 +217,12 @@ const Navbar = () => {
     <>
       <Component>
         <Hidden />
-          <Logo src="/images/logo.png" />
-       
+        <Logo src="/images/logo.png" />
+
         {/* <Div> */}
-          <CenterText onClick={() => setIsHover(!isHover)}>
-            Road Condition Mapping
-          </CenterText>
+        <CenterText onClick={() => setIsHover(!isHover)}>
+          Road Condition Mapping
+        </CenterText>
         {/* </Div> */}
         <HiddenMessage
           onMouseOver={() => setIsHover(true)}
