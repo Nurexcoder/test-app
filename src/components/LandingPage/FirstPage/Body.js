@@ -32,7 +32,7 @@ const Component = styled.div`
 
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
   overflow: none !important;
   z-index: 100;
   
@@ -75,7 +75,7 @@ const Message = styled.div`
   flex-direction: column;
   align-items: center;
 
-  font-size: 9vh;
+  font-size: 8vh;
   letter-spacing: 1px;
   font-weight: 700;
   color: #fff;
@@ -94,7 +94,7 @@ const ColoredMessage = styled(Message)`
 `;
 const MapComponent = styled.div`
   z-index: 10;
-  width: 38vw;
+  width: 35vw;
   height: auto;
   /* margin-top: 5px; */
   background: #f5f5f5;
@@ -115,8 +115,8 @@ const MapComponent = styled.div`
 const ButtonComponent = styled.div`
   margin-top: 5px;
   z-index: 100;
-  width: 32vw;
-  /* max-width: 420px; */
+  min-width: 32vw;
+  min-width: calc(40ch);
   display: flex;
   font-family: "Roboto";
   font-weight: 600;

@@ -15,6 +15,7 @@ const Component = styled.div`
   @media (max-width: 1000px) {
     width: 60%;
     min-height: 200px;
+    min-width: 60%;
     justify-content: space-between;
   }
   @media (max-width: 560px) {
