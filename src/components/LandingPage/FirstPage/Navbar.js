@@ -137,11 +137,11 @@ const HiddenMessage = styled.p`
   }
 `;
 const ContactButton = styled.button`
-  padding: 10px 8px;
+  padding: 0.5vh 1vw;
 
   /* flex: 1; */
   /* min-width: 100px; */
-  width: 8vw;
+  /* width: 8vw; */
   /* width:80%; */
   min-height: 6vh;
   border: none;

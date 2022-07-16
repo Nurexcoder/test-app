@@ -23,7 +23,7 @@ interface TabPanelProps {
 }
 
 const Component = styled.div`
-  width: 60%;
+  width: 80%;
   display: flex;
   /* height:80vh; */
   flex-direction: column;
@@ -67,9 +67,7 @@ const TabItem = styled(Tab)`
   font-style: normal;
   /* font-weight: 700; */
   text-underline-offset: 9px;
-
-  /* text-decoration: ${(props) =>
-    props.selected ? "underline 3px !important" : "none"}; */
+  min-height: 15vh;
   border-width: 100%;
   text-transform: none !important;
   color: ${(props) => props.selectedColor} !important;
@@ -88,13 +86,14 @@ const TabPanelComponent = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 2.2vh !important;
-  line-height: 2.5vh;
+  line-height: 2.9vh;
   color: #929292;
   width: 100%;
   text-align: center;
   display: flex !important;
   align-items: center;
   justify-content: center !important;
+  min-height:6vh;
   /* overflow-y: scroll !important; */
 `;
 const Compact = styled.div`
@@ -127,12 +126,12 @@ const Underline = styled.div`
 const Indicator = styled.span`
   width: ${(props) =>
     props.value === 0
-      ? "85%"
+      ? "17ch"
       : props.value === 1
-      ? "45%"
+      ? "11ch"
       : props.value === 2
-      ? "885%"
-      : "60%"};
+      ? "19ch"
+      : "14ch"};
   height: 3px;
   background-color: ${(props) => props.selectedColor};
 `;
@@ -264,7 +263,7 @@ export default function TabsComponent() {
             {...a11yProps(2)}
           />
           <TabItem
-            label="Acident Detection"
+            label="Accident Detection"
             selectedColor={value == 3 ? color : "inherit"}
             {...a11yProps(3)}
           />

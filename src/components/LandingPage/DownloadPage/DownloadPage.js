@@ -5,6 +5,7 @@ import animationData from "./qrcode.json";
 const Component = styled.div`
   margin-top: 40px;
   width: 70%;
+  min-width: 125ch;
   min-height: 400px;
   align-items: center;
   justify-content: space-between;
@@ -61,7 +62,8 @@ const Message = styled.div`
   min-width: 600px;
   font-weight: 700;
   width: 40vw;
-  font-size: 7vh;
+  min-width:20ch;
+  font-size: 6vh;
   color: #3a3a3a;
   text-align: center;
   @media (max-width: 1000px) {

@@ -26,7 +26,7 @@ const NavLoad = keyframes`
 const Component = styled.div`
   width: 55%;
   display: flex;
-  min-height: 50vh;
+  min-height: 65vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
