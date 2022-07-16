@@ -32,7 +32,7 @@ const Component = styled.div`
 
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
   overflow: none !important;
   z-index: 100;
   
@@ -94,7 +94,7 @@ const ColoredMessage = styled(Message)`
 `;
 const MapComponent = styled.div`
   z-index: 10;
-  width: 38vw;
+  width: 35vw;
   height: auto;
   /* margin-top: 5px; */
   background: #f5f5f5;
