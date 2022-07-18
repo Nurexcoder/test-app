@@ -105,7 +105,7 @@ const MapComponent = styled.div`
   align-items: center;
   justify-content: center;
   @media(max-width:1000px){
-    width:60%;
+    width:40%;
   }
   @media (max-width: 560px) {
     width: 80%;
@@ -125,7 +125,7 @@ const ButtonComponent = styled.div`
   font-size: 0.8rem;
 
   @media (max-width: 1000px) {
-    width: 55%;
+    min-width: 35%;
     /* background-color: #fff; */
     margin-top: 10px;
   }

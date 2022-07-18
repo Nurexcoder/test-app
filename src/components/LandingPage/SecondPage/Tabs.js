@@ -14,7 +14,7 @@ import accidentDetect from "./accidentDetection.json";
 import roadBlock from "./roadBlock.json";
 import waterLogging from "./waterLogging.json";
 import { Button } from "@mui/material";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 interface TabPanelProps {
   children?: React.ReactNode;
   dir?: string;
@@ -128,10 +128,10 @@ const Indicator = styled.span`
     props.value === 0
       ? "17ch"
       : props.value === 1
-      ? "11ch"
-      : props.value === 2
-      ? "19ch"
-      : "14ch"};
+        ? "11ch"
+        : props.value === 2
+          ? "19ch"
+          : "14ch"};
   height: 3px;
   background-color: ${(props) => props.selectedColor};
 `;
@@ -298,12 +298,12 @@ export default function TabsComponent() {
           </TabPanelComponent>
         </SwipeableViews>
       </Box>
-      <LearnButton>
-        <Link to="/rcm">
+      <Link to="/rcm">
+        <LearnButton>
           <Underline>Learn More RCM</Underline>
           <Image src="images/blueArrow.png" />
-        </Link>
-      </LearnButton>
+        </LearnButton>
+      </Link>
     </Component>
   );
 }
