@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import Body from "./FirstPage/Body";
 import Landing from "./FirstPage/Main";
@@ -17,6 +17,11 @@ const Component = styled.div`
 `;
 
 const RCMMain = () => {
+  const refScroll = useRef(null)
+  useEffect(() => {
+    refScroll.current.scrollIntoView()
+  }, [])
+  
   const boxVariant = {
     visible: {
       opacity: 1,
@@ -25,13 +30,12 @@ const RCMMain = () => {
       transform: "translateX(0)",
       y: "0",
     },
-    hidden: { opacity: 0,y:"15%", scale:0.9 },
+    hidden: { opacity: 0, y: "15%", scale: 0.9 },
   };
 
   const Box = ({ page }) => {
     const control = useAnimation();
     const [ref, inView] = useInView();
-
     useEffect(() => {
       if (inView) {
         control.start("visible");
@@ -54,6 +58,7 @@ const RCMMain = () => {
   };
   return (
     <Component>
+      <div ref={refScroll} />
       <Landing />
       <Box page={<SecondMain />} />
       <Box page={<ThirdMain />} />

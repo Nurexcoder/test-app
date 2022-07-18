@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import Landing from "./FirstPage/Landing";
 import Infos from "./SecondPage/Infos";
@@ -17,7 +17,12 @@ const Component = styled.div`
   align-items: center;
 `;
 const LandingMain = () => {
+  const refScroll = useRef(null)
+  useEffect(() => {
+    refScroll.current.scrollIntoView()
+  }, [])
   const boxVariant = {
+
     visible: {
       opacity: 1,
       scale: 1,
@@ -29,6 +34,7 @@ const LandingMain = () => {
   const Box = ({ page, bgColor }) => {
     const control = useAnimation();
     const [ref, inView] = useInView();
+
 
     useEffect(() => {
       if (inView) {
@@ -59,6 +65,7 @@ const LandingMain = () => {
   };
   return (
     <Component>
+      <div ref={refScroll}/>
       <Landing />
       <Box page={<Infos />} />
       <Box page={<DownloadPage />} bgColor={"#f9f9fa"} />

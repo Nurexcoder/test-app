@@ -48,7 +48,8 @@ const Circle = styled.div`
   border-radius: 50%;
   background-color: #367b9d;
   position: absolute;
-  top: -90%;
+  top: -85%;
+  /* bottom: 25%; */
   left: -25%;
   z-index: -11;
   @media (max-width: 1000px) {

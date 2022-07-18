@@ -95,14 +95,17 @@ const CenterText = styled.div`
 `;
 const HiddenMessage = styled.p`
   z-index: 1000000;
-  width: 450px;
+  width: 32vw;
+  min-width: 50ch;
   position: absolute;
-  top: 50%;
+  top: 65%;
   left: 48%;
-  height: 55px;
-  border-radius: 10px;
+  min-height: 7vh;
+  
+  border-radius: 2vh;
   background-color: #f5f5f5;
   padding: 10px 20px;
+  font-size: 2.4vh;
   filter: drop-shadow(16px 24px 8px rgba(0, 0, 0, 0.25));
   display: ${(props) => (props.isHover ? "block" : "none")};
   color: #696969;
@@ -137,11 +140,11 @@ const HiddenMessage = styled.p`
   }
 `;
 const ContactButton = styled.button`
-  padding: 10px 8px;
+  padding: 0.5vh 1vw;
 
   /* flex: 1; */
   /* min-width: 100px; */
-  width: 8vw;
+  /* width: 8vw; */
   /* width:80%; */
   min-height: 6vh;
   border: none;

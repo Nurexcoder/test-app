@@ -25,7 +25,7 @@ const LeftComponent = styled.div`
   height: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   @media (max-width: 1000px) {
     height: 60%;
     width: 100%;
@@ -34,12 +34,12 @@ const LeftComponent = styled.div`
   }
 `;
 const MapComponent = styled.div`
-  height: auto;
+  height: 100%;
   width: 80%;
   /* background:#000; */
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 
   @media (max-width: 1000px) {
     height: 100%;
@@ -50,7 +50,7 @@ const MapComponent = styled.div`
 `;
 const RightComponent = styled.div`
   width: 30%;
-  height: 90%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -63,7 +63,7 @@ const RightComponent = styled.div`
 const ColoredRightBox = styled.div`
   width: 80%;
   height: 38%;
-  min-height:150px;
+  /* min-height:150px; */
   margin: 5px 0;
   background-color: ${(props) => (props.isActive ? "#023047" : "#f5f5f5")};
   padding: 10px 16px;
@@ -102,15 +102,10 @@ const ColoredBoxHeader = styled.div`
   font-weight: 700;
   margin-top: 7px;
   font-family: "Inter";
-  /* &:hover { */
-    /* color: #fad65d; */
-  /* } */
   @media (max-width: 1000px) {
-    /* justify-content: space-between; */
     font-size: 0.6rem;
   }
   @media (max-width: 560px) {
-    /* justify-content: space-between; */
     font-size: 0.4rem;
   }
 `;
@@ -160,7 +155,7 @@ const MoreDetails = () => {
     <Component>
       <LeftComponent>
         <MapComponent>
-          <Lottie options={defaultOptions} width="auto" height="100%" />
+          <Lottie options={defaultOptions} width="100%" height="auto" />
         </MapComponent>
       </LeftComponent>
       <RightComponent>

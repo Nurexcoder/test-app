@@ -13,6 +13,7 @@ const Component = styled.div`
   /* min-height:300px; */
   background-color: #367b9d;
   position: relative;
+
   min-height: 400px;
   /* overflow-y: scroll; */
   border-bottom: transparent;

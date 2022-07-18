@@ -46,7 +46,7 @@ const Component = styled.div`
   } */
   `;
 const BoxContainer = styled.div`
-  width: 60%;
+  width: 62%;
   height: 90%;
   /* margin-top: 50px; */
   display: flex;

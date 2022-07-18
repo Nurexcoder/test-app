@@ -57,8 +57,8 @@ const BoxContainer = styled.div`
   }
 `;
 const Box = styled.div`
-  width: 35%;
-  height: 45vh;
+  width: 30vw;
+  min-height: 60vh;
   background: ${(props) => (props.bgColor ? props.bgColor : "#ffffff")};
   box-shadow: 0px 2px 40px rgba(58, 58, 58, 0.07);
   border-radius: 1vh;
@@ -67,7 +67,7 @@ const Box = styled.div`
   align-items: center;
   padding: 10px 20px;
   margin: 15px 0%;
-  justify-content: space-between;
+  justify-content: space-around;
   
   @media (max-width: 1000px) {
     width: 80%;

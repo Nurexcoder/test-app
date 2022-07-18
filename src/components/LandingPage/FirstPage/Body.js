@@ -75,7 +75,7 @@ const Message = styled.div`
   flex-direction: column;
   align-items: center;
 
-  font-size: 7.8vh;
+  font-size: 8vh;
   letter-spacing: 1px;
   font-weight: 700;
   color: #fff;
@@ -105,38 +105,27 @@ const MapComponent = styled.div`
   align-items: center;
   justify-content: center;
   @media(max-width:1000px){
-    width:60%;
+    width:40%;
   }
   @media (max-width: 560px) {
     width: 80%;
   }
-  @media (max-width: 560px) {
-    width: 90%;
-    /* height: 458px; */
-  }
-  /* @media (min-width: 1700px) {
-    width: 700px;
-    height: 458px;
-  } */
-  /* @media (max-width: 560px) {
-    width: 280px;
-    height: auto;
-  } */
+  
 `;
 const ButtonComponent = styled.div`
   margin-top: 5px;
   z-index: 100;
-  width: 30vw;
-  /* max-width: 420px; */
+  min-width: 32vw;
+  min-width: calc(40ch);
   display: flex;
   font-family: "Roboto";
   font-weight: 600;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   font-size: 0.8rem;
 
   @media (max-width: 1000px) {
-    width: 55%;
+    min-width: 35%;
     /* background-color: #fff; */
     margin-top: 10px;
   }
@@ -147,7 +136,7 @@ const ButtonComponent = styled.div`
   }
 `;
 const LeftButton = styled.div`
-  width: 35%;
+  width: 40%;
   /* border-left: 0.8px solid rgba(0, 0, 0, 0.5); */
 `;
 const RightButton = styled.div`
@@ -170,11 +159,13 @@ const GetStartedButton = styled.button`
   
   font-size: 2vh;
   height: 5.8vh;
-  width: 10vw;
+  min-width: 18ch;
+  /* width:100%; */
   font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* display:inline-block; */
   background: #023047;
   border: 6px solid #023047;
   box-shadow: 0px 4px 58px rgba(2, 48, 71, 0.25);
@@ -185,9 +176,7 @@ const GetStartedButton = styled.button`
     border: 3px solid #000;
     transition: ease;
   }
-  /* @media (min-width: 1600px) {
-    font-size: 1rem;
-  } */
+  
   @media (max-width: 1000px) {
   padding: 8px 2px;
   font-size:1vh;
@@ -210,6 +199,7 @@ const Button = styled.button`
   font-size: 2vh;
   height: 5.5vh;
   width: 10vw;
+  min-width:16ch;
   font-weight: 600;
   display: flex;
   justify-content: center;

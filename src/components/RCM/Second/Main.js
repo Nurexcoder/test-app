@@ -6,6 +6,7 @@ import Points from "./Points";
 
 const Container = styled.div`
   width: 100%;
+  margin: 20px 0;
   /* height:80vh; */
   display: flex;
   flex-direction: column;
