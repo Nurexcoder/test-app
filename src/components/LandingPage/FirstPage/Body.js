@@ -35,14 +35,14 @@ const Component = styled.div`
   align-items: flex-start;
   overflow: none !important;
   z-index: 100;
-  
+
   @media (max-width: 560px) {
     height: 50vh;
     margin-top: 20vh;
   }
   @media (max-width: 1000px) {
-      height: 50vh;
-      margin-top:10%;
+    height: 50vh;
+    margin-top: 10%;
   }
 `;
 const BoxContainer = styled.div`
@@ -54,7 +54,6 @@ const BoxContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   @media (max-width: 1000px) {
-  
     font-size: 2.3rem;
     width: 90%;
   }
@@ -104,13 +103,12 @@ const MapComponent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media(max-width:1000px){
-    width:40%;
+  @media (max-width: 1000px) {
+    width: 40%;
   }
   @media (max-width: 560px) {
     width: 80%;
   }
-  
 `;
 const ButtonComponent = styled.div`
   margin-top: 5px;
@@ -156,7 +154,7 @@ const GetStartedButton = styled.button`
   z-index: 100;
   padding: 8px 5px;
   color: #fff;
-  
+
   font-size: 2vh;
   height: 5.8vh;
   min-width: 18ch;
@@ -168,22 +166,23 @@ const GetStartedButton = styled.button`
   /* display:inline-block; */
   background: #023047;
   border: 6px solid #023047;
-  box-shadow: 0px 4px 58px rgba(2, 48, 71, 0.25);
+  /* box-shadow: 0px 4px 58px rgba(2, 48, 71, 0.25); */
   border-radius: 4px;
   &:hover {
-    transform: scale(1.1);
+    font-size: 2vh;
+    transform: scale(1.08);
     background-color: black;
     border: 3px solid #000;
     transition: ease;
   }
-  
+
   @media (max-width: 1000px) {
-  padding: 8px 2px;
-  font-size:1vh;
+    padding: 8px 2px;
+    font-size: 1vh;
     width: 100%;
     height: 2.8vh;
-  /* width: 10vw; */
-}
+    /* width: 10vw; */
+  }
 `;
 const Line = styled.div`
   padding: 4px 0px;
@@ -199,7 +198,7 @@ const Button = styled.button`
   font-size: 2vh;
   height: 5.5vh;
   width: 10vw;
-  min-width:16ch;
+  min-width: 16ch;
   font-weight: 600;
   display: flex;
   justify-content: center;
@@ -210,24 +209,24 @@ const Button = styled.button`
   justify-content: space-evenly;
   align-items: center;
   @media (max-width: 1000px) {
-  padding: 8px 2px;
-  font-size:1vh;
+    padding: 8px 2px;
+    font-size: 1vh;
     width: 100%;
     height: 2.8vh;
-  /* width: 10vw; */
-}
+    /* width: 10vw; */
+  }
   /* @media (min-width: 1600px) {
     font-size: 1rem;
   } */
-
+  
   font-weight: 600;
   color: #696969;
-
+  
   /* box-shadow: 0px 4px 58px rgba(2, 48, 71, 0.25); */
   background-color: transparent;
   border-radius: 4px;
   /* letter-spacing: 0.15em; */
-
+  
   /* display: inline-block; */
   /* padding: 15px 20px; */
   position: relative;
@@ -235,32 +234,36 @@ const Button = styled.button`
     transform: scale(1.1);
     transition: ease-in-out;
   }
-  &:after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: yellow;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
-  &:hover:after {
-    width: 100%;
-    left: 0;
-  }
+  
   &:hover {
     /* background-color: yellow; */
   }
   @media (max-width: 1000px) {
     width: 100%;
   }
+  `;
+const ButtonText = styled.h3`
+  font-size: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 25px;
+  padding-bottom: 2px;
+  background-image: linear-gradient(#fad65d, #fad65d);
+  background-position: 0 100%; /*OR bottom left*/
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s, background-position 0s 0.3s; /*change after the size immediately*/
+
+  :hover {
+    background-position: 100% 100%; /*OR bottom right*/
+    background-size: 100% 2px;
+  }
 `;
 const Icon = styled.img`
   width: 15%;
   height: auto;
+  margin-left: 4px;
   &:parent:hover {
     background-color: yellow;
   }
@@ -300,9 +303,13 @@ const Body = () => {
           <Line />
           <RightButton>
             <Button>
-              Learn More <Icon src="/images/rightArrow.png" />
+              <ButtonText>
+                Learn More{"  "} <Icon src="/images/rightArrow.png" />
+              </ButtonText>
             </Button>
-            <Button>How we work</Button>
+            <Button>
+              <ButtonText>How we work</ButtonText>
+            </Button>
           </RightButton>
         </ButtonComponent>
       </BoxContainer>

@@ -99,7 +99,7 @@ const HiddenMessage = styled.p`
   min-width: 50ch;
   position: absolute;
   top: 65%;
-  left: 48%;
+  left: 52%;
   min-height: 7vh;
   
   border-radius: 2vh;

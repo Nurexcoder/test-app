@@ -126,7 +126,7 @@ const CircleText = styled.div`
   font-size: 1.2rem;
   position: absolute;
   top: 30%;
-  right: 20%;
+  right: 15%;
   text-align: center;
   @media (max-width: 860px) {
     font-size: 0.8rem;
@@ -143,7 +143,7 @@ const CircleText2 = styled(CircleText)`
   position: absolute;
   text-align: justify;
   top: 42%;
-  left:5%;
+  left:7%;
   @media (max-width: 860px) {
     font-size: 0.8rem;
     top: 40%;
@@ -179,6 +179,7 @@ const CircleText4 = styled(CircleText)`
   right: 49%;
   transition: 1s ease-in-out;
   opacity: ${(props) => (props.inView ? "1" : "0")};
+  color:#023047;
   transition-delay: 0.7s;
   @media (max-width: 860px) {
     font-size: 0.8rem;

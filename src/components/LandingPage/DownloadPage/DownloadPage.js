@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Lottie from "react-lottie";
-import styled from "styled-components";
+import styled from "styled-components"; 
+import { useInView } from "react-intersection-observer";
 import animationData from "./qrcode.json";
 const Component = styled.div`
   margin-top: 40px;
@@ -56,14 +57,14 @@ const RightComponent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  `;
+`;
 const Message = styled.div`
   font-family: "Poppins";
   font-style: normal;
   min-width: 600px;
   font-weight: 700;
   width: 40vw;
-  min-width:20ch;
+  min-width: 20ch;
   font-size: 6vh;
   color: #3a3a3a;
   text-align: center;
@@ -93,19 +94,23 @@ const QR = styled.div`
 const FotterText = styled.span`
   font-weight: 200;
   text-align: center;
-  font-size: 0.6rem;
+  font-size: 2vh;
 `;
 const DownloadPage = () => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  const [options, setOptions] = useState({});
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    inView?
+    setOptions({
+      loop: false,
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      },
+    }):setOptions({})
+  }, [inView]);
   return (
-    <Component>
+    <Component ref={ref}>
       <LeftComponent>
         <PlayLogo src="/images/playstore.png" />
         <MapLogo src="/images/mapLogo.png" />
@@ -116,7 +121,7 @@ const DownloadPage = () => {
           Way?
         </Message>{" "}
         <QR>
-          <Lottie options={defaultOptions} width="90%" height="auto" />
+          <Lottie  options={options} width="90%" height="auto" />
         </QR>
         <FotterText>
           Scan with your phone’s camera or QR code app to view

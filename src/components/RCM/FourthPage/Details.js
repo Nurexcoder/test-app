@@ -24,8 +24,8 @@ const HeaderTitle = styled.div`
   font-style: normal;
   text-align: center;
   color: #023047;
-  @media(max-width:1000px){
-    font-size:2rem;
+  @media (max-width: 1000px) {
+    font-size: 2rem;
   }
 `;
 const HeaderMessage = styled.p`
@@ -36,8 +36,8 @@ const HeaderMessage = styled.p`
   text-align: center;
   color: #838383;
   width: 70%;
-  @media(max-width:1000px){
-    font-size:1rem;
+  @media (max-width: 1000px) {
+    font-size: 1rem;
   }
 `;
 const BoxContainer = styled.div`
@@ -68,7 +68,7 @@ const Box = styled.div`
   padding: 10px 20px;
   margin: 15px 0%;
   justify-content: space-around;
-  
+
   @media (max-width: 1000px) {
     width: 80%;
     flex-direction: column;
@@ -96,8 +96,8 @@ const BoxLevel = styled.div`
   margin: 10px 0;
   font-family: "Inter";
   font-weight: 600;
-  @media(max-width:100px){
-    font-size:1.2rem;
+  @media (max-width: 100px) {
+    font-size: 1.2rem;
   }
 `;
 const BoxHeader = styled.div`
@@ -111,8 +111,8 @@ const BoxHeader = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  @media(max-width:1000px){
-    font-size:1.6rem;
+  @media (max-width: 1000px) {
+    font-size: 1.6rem;
   }
 `;
 const BoxAbout = styled.div`
@@ -124,8 +124,8 @@ const BoxAbout = styled.div`
   font-weight: 600;
   padding: 0 20px;
   color: ${(props) => (props.textColor ? props.textColor : "#fff")};
-  @media(max-width:1000px){
-    font-size:1.2rem;
+  @media (max-width: 1000px) {
+    font-size: 1.2rem;
   }
 `;
 const BoxDown = styled.div`
@@ -141,10 +141,10 @@ const BoxQuestion = styled.div`
   font-size: 3vh;
   text-align: center;
   font-family: "Inter";
-  @media(max-width:1000px){
-    font-size:1.2rem;
+  @media (max-width: 1000px) {
+    font-size: 1.2rem;
   }
- `;
+`;
 const BoxDetails = styled.div`
   margin-top: 10px;
   text-align: center;
@@ -157,9 +157,9 @@ const BoxDetails = styled.div`
   /* color: #023047; */
   color: ${(props) => (props.textColor ? props.textColor : "#fff")};
   text-align: center;
-  @media(max-width:1000px){
-    font-size:1rem;
-    width:100%;
+  @media (max-width: 1000px) {
+    font-size: 1rem;
+    width: 100%;
   }
 `;
 const Image = styled.img`
@@ -168,19 +168,23 @@ const Image = styled.img`
 `;
 const BoxLowerHeader = styled(HeaderTitle)`
   /* width: 70%; */
+  font-size: 7.4vh;
   margin-top: 50px;
   margin-bottom: 20px;
   text-align: center;
-
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
 `;
 const ButtonContainer = styled.div`
   /* margin-top: 50px; */
   margin-bottom: 50px;
-  width: 20vw;
+  width: 30%;
   display: flex;
   justify-content: space-between;
-  @media(max-width:1000px){
-    width:60%;
+  margin-top:30px;
+  @media (max-width: 1000px) {
+    width: 60%;
   }
 `;
 const ContactButton = styled.button`
@@ -188,9 +192,12 @@ const ContactButton = styled.button`
 
   border: none;
   outline: none;
+  width:45%;
   background: #4d4d4d;
+  padding: 2vh 0;
   box-shadow: 0px 4px 64px rgba(58, 58, 58, 0.13);
   border-radius: 4px;
+  font-size: 2.4vh;
   color: #fff;
   &:hover {
     transition: 1s ease;
@@ -203,7 +210,7 @@ const ContactButton = styled.button`
 const Button = styled(ContactButton)`
   background: #fff;
   color: #023047;
-  font-size:2vh;
+  font-size: 2.4vh;
   border: 1px solid #023047;
   &:hover {
     transition: 1s ease;

@@ -73,7 +73,7 @@ const ColoredRightBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: flex-start ;
   border-radius: 8px;
   transition: 1s ease;
   &:hover {
@@ -98,10 +98,11 @@ const RightBox = styled(ColoredRightBox)`
 
 const ColoredBoxHeader = styled.div`
   color: ${(props) => (props.isActive ? "#FAD65D" : props.isHover? "#FAD65D": "#464646")};
-  font-size: 2.5vh;
+  font-size: 2.6vh;
   font-weight: 700;
   margin-top: 7px;
   font-family: "Inter";
+  margin:  0.6em 0; 
   @media (max-width: 1000px) {
     font-size: 0.6rem;
   }
