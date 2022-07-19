@@ -70,7 +70,8 @@ const Box = styled.div`
   justify-content: space-around;
 
   @media (max-width: 1000px) {
-    width: 80%;
+    width: 60%;
+    min-width: 40ch;
     flex-direction: column;
     height: 50vh;
     justify-content: space-around;
@@ -175,6 +176,12 @@ const BoxLowerHeader = styled(HeaderTitle)`
   font-family: "Inter";
   font-style: normal;
   font-weight: 800;
+  @media (max-width: 1000px) {
+  font-size: 2.6em;
+  }
+  @media (max-width: 560px) {
+  font-size: 1.6em;
+  }
 `;
 const ButtonContainer = styled.div`
   /* margin-top: 50px; */
@@ -184,6 +191,9 @@ const ButtonContainer = styled.div`
   justify-content: space-between;
   margin-top:30px;
   @media (max-width: 1000px) {
+    width: 40%;
+  }
+  @media (max-width: 560px) {
     width: 60%;
   }
 `;
@@ -204,6 +214,7 @@ const ContactButton = styled.button`
     background-color: #000;
   }
   @media (max-width: 1000px) {
+    font-size: 0.6em !important;
     /* display: none; */
   }
 `;

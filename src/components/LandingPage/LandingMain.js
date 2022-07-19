@@ -56,7 +56,7 @@ const LandingMain = () => {
           display: "flex",
           justifyContent: "center",
           backgroundColor: bgColor ? bgColor : "transparent",
-          borderRadius: bgColor ? "66px 0" : "0",
+          borderRadius:"50px"
         }}
       >
         {page}

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import SwipeableViews from "react-swipeable-views";
 import styled from "styled-components";
 
@@ -14,7 +14,10 @@ import accidentDetect from "./accidentDetection.json";
 import roadBlock from "./roadBlock.json";
 import waterLogging from "./waterLogging.json";
 import { Button } from "@mui/material";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { Label } from "@mui/icons-material";
+import calculateTextWidth from "calculate-text-width";
+import { useInView } from "react-intersection-observer";
 interface TabPanelProps {
   children?: React.ReactNode;
   dir?: string;
@@ -23,7 +26,7 @@ interface TabPanelProps {
 }
 
 const Component = styled.div`
-  width: 80%;
+  width: 60%;
   display: flex;
   /* height:80vh; */
   flex-direction: column;
@@ -76,7 +79,7 @@ const TabItem = styled(Tab)`
   padding: 0 !important;
 
   @media (max-width: 1080px) {
-    font-size: 1.5vh !important;
+    font-size: 0.9rem !important;
     text-decoration: none !important;
     /* border-bottom: ${(props) => props.selectedColor} 1px solid !important; */
   }
@@ -93,11 +96,20 @@ const TabPanelComponent = styled.p`
   display: flex !important;
   align-items: center;
   justify-content: center !important;
-  min-height:6vh;
+  min-height: 6vh;
+  @media (max-width: 1080px) {
+    font-size: 0.8rem !important;
+    line-height: 1.8vh;
+    /* text-decoration: none !important; */
+    /* border-bottom: ${(props) => props.selectedColor} 1px solid !important; */
+  }
   /* overflow-y: scroll !important; */
 `;
 const Compact = styled.div`
-  width: 70%;
+  width: 50%;
+  @media (max-width: 560px) {
+    width: 80%;
+  }
 `;
 const LearnButton = styled(Button)`
   /* text-decoration: underline; */
@@ -126,14 +138,18 @@ const Underline = styled.div`
 const Indicator = styled.span`
   width: ${(props) =>
     props.value === 0
-      ? "17ch"
+      ? `${props.indicatorWidth + "px"}`
       : props.value === 1
-        ? "11ch"
-        : props.value === 2
-          ? "19ch"
-          : "14ch"};
+      ? `${props.indicatorWidth + "px"}`
+      : props.value === 2
+      ? `${props.indicatorWidth + "px"}`
+      : `${props.indicatorWidth + "px"}`};
   height: 3px;
   background-color: ${(props) => props.selectedColor};
+`;
+const LabelTab = styled.div`
+  text-decoration: 3px solid underline;
+  text-underline-offset: 10px;
 `;
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
@@ -171,11 +187,13 @@ function a11yProps(index: number) {
 
 export default function TabsComponent() {
   const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(2);
   const [animationData, setAnimationData] = React.useState(abnormalRoad);
   const [color, setColor] = React.useState("#F8BF01");
+  const [indicatorWidth, setIndicatorWidth] = useState();
+  const [ref, inView] = useInView();
   const defaultOptions = {
-    loop: true,
+    loop: false,
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
@@ -188,18 +206,34 @@ export default function TabsComponent() {
       case 0:
         setAnimationData(abnormalRoad);
         setColor("#F8BF01");
+        setIndicatorWidth(
+          calculateTextWidth("Abnormal Road Terrain", "normal 1000 2.2vh Inter")
+        );
         break;
       case 1:
         setAnimationData(roadBlock);
         setColor("red");
+        setIndicatorWidth(
+          calculateTextWidth("Road Blocks", "normal 1000 2.2vh Inter")
+        );
+
         break;
       case 2:
         setAnimationData(waterLogging);
         setColor("#388AB6");
+        setIndicatorWidth(
+          calculateTextWidth(
+            "Water Logging Detection",
+            "normal 1000 2.2vh Inter"
+          )
+        );
         break;
       case 3:
         setAnimationData(accidentDetect);
         setColor("black");
+        setIndicatorWidth(
+          calculateTextWidth("Accident Detection", "normal 1000 2.2vh Inter")
+        );
         break;
 
       default:
@@ -211,8 +245,20 @@ export default function TabsComponent() {
     setValue(index);
   };
   console.log(value);
+  useEffect(() => {
+    inView &&
+      setTimeout(function () {
+        setValue(0);
+        setColor("#F8BF01");
+      }, 400);
+
+    setIndicatorWidth(
+      calculateTextWidth("Abnormal Road Terrain", "normal 1000 2.2vh Inter")
+    );
+  }, [inView]);
+  // console.log(indicatorWidth);
   return (
-    <Component>
+    <Component ref={ref}>
       <MapComponent>
         <Lottie width="100%" height="auto" options={defaultOptions} />
       </MapComponent>
@@ -236,7 +282,13 @@ export default function TabsComponent() {
               backgroundColor: "transparent",
             },
 
-            children: <Indicator value={value} selectedColor={color} />,
+            children: (
+              <Indicator
+                indicatorWidth={indicatorWidth}
+                value={value}
+                selectedColor={color}
+              />
+            ),
           }}
           // selectionFollowsFocus
           textColor="inherit"
@@ -277,24 +329,28 @@ export default function TabsComponent() {
           <TabPanelComponent value={value} index={0} dir={theme.direction}>
             <Compact>
               Abnormal road terrain / potholes not identified by maps/navigation
-              <br /> Mapping of different road terrains and abnormalities
-              <br /> like: Off Road, Steep Road, potholes etc.
+              like: Off Road, Steep Road, potholes etc.
             </Compact>
           </TabPanelComponent>
 
           <TabPanelComponent value={value} index={1} dir={theme.direction}>
-            Temporary Road Blocks,Barricades,Blockages,Closed <br />
-            Roads during Night Time Real Time, Mapping of <br />
-            different Blockages along with time.
+            <Compact>
+              Temporary Road Blocks,Barricades,Blockages,Closed Roads during
+              Night Time Real Time, Mapping of different Blockages along with
+              time.
+            </Compact>
           </TabPanelComponent>
           <TabPanelComponent value={value} index={2} dir={theme.direction}>
-            For bringing awareness to driver for taking <br />
-            the better route in rainy season <br /> and avoid heavy logged
-            routes
+            <Compact>
+              For bringing awareness to driver for taking the better route in
+              rainy season and avoid heavy logged routes
+            </Compact>
           </TabPanelComponent>
           <TabPanelComponent value={value} index={3} dir={theme.direction}>
-            Roadside Service availability in case of <br />
-            Adversities(like tyre-puncture,etc)
+            <Compact>
+              Roadside Service availability in case of Adversities(like
+              tyre-puncture,etc)
+            </Compact>
           </TabPanelComponent>
         </SwipeableViews>
       </Box>

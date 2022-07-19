@@ -66,7 +66,7 @@ const Message = styled.p`
 `;
 const MapAndCompany = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin: 10px 0;
@@ -75,10 +75,11 @@ const MapAndCompany = styled.div`
 `;
 const Map = styled.div`
   flex: 3;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:flex-start;
   height: 100%;
 `;
 const MapHeader = styled.div`
@@ -89,6 +90,9 @@ const MapHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  /* width: f; */
+  flex: 3;
   color: #333333;
   @media (max-width: 1000px) {
     font-size: 1.5rem;
@@ -96,19 +100,21 @@ const MapHeader = styled.div`
 `;
 const MapMessage = styled.p`
   text-align: center;
-  font-size: 2.5vh;
+  font-size: 2.2vh;
   color: #929292;
   font-weight: 500;
   line-height: 1.3;
+  width: 40%;
   @media (max-width: 1000px) {
     font-size: 0.7rem;
   }
 `;
 const Plus = styled.div`
-  flex: 1;
+  /* flex: 1; */
+  width: 100%;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   height: 100%;
   font-size: 2.5rem;
 
@@ -121,22 +127,23 @@ const PlusIcon = styled(AddIcon)`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
 `;
 const Company = styled.div`
   flex: 3;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
 `;
 const CompanyImage = styled.img`
-  width: 16vw;
+  /* flex: 3; */
+  width: 15vw;
   /* font-size:9vh; */
-  height: auto;
-  height: 9vh;
+  /* height:80%; */
+  /* height: 9vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,15 +153,23 @@ const CompanyImage = styled.img`
 `;
 const ColoredText = styled.span`
   color: #e1b318;
-  font-size: 2.5vh;
+  font-size: 2.2vh;
+  @media (max-width: 1000px) {
+    font-size: 0.7rem;
+    /* width: 1.2em; */
+  }
 `;
 const CompanyMessage = styled.p`
   text-align: center;
-  font-size: 2.5vh;
+  /* width: 30%; */
+  font-size: 2.2vh;
   color: #929292;
   font-weight: 500;
   line-height: 1.3;
-  width: 100%;
+  width: 40%;
+  /* display: flex;
+  align-items: center;
+  justify-content: flex-end; */
   @media (max-width: 1000px) {
     font-size: 0.7rem;
   }
@@ -174,24 +189,24 @@ const Points = () => {
         there in the shortest time
       </Message>
       <MapAndCompany>
-        <Map>
+        <Plus>
           <MapHeader>Maps</MapHeader>
+          <PlusIcon />
+          <Company>
+            <CompanyImage src="/images/logoBlack.png" />
+          </Company>
+        </Plus>
+        <Map>
           <MapMessage>
             Maps are limited to Distance, <br /> Time & Navigation
           </MapMessage>
-        </Map>
-        <Plus>
-          <PlusIcon />
-        </Plus>
-        <Company>
-          <CompanyImage src="/images/logoBlack.png" />
           <CompanyMessage>
             We go beyond by
             <ColoredText> analysing </ColoredText>
             adversities
             <br /> and visualise roads for better AI data driven decisions
           </CompanyMessage>
-        </Company>
+        </Map>
       </MapAndCompany>
     </Component>
   );

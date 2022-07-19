@@ -27,7 +27,7 @@ const bodyLoad = keyframes`
 
 `;
 const Component = styled.div`
-  height: 80vh;
+  max-height: 80vh;
   width: 100%;
 
   display: flex;
@@ -35,14 +35,14 @@ const Component = styled.div`
   align-items: flex-start;
   overflow: none !important;
   z-index: 100;
-
+  margin-bottom: 3%;
   @media (max-width: 560px) {
-    height: 50vh;
-    margin-top: 20vh;
+    min-height: 55vh;
+    margin-top: 2vh;
   }
   @media (max-width: 1000px) {
-    height: 50vh;
-    margin-top: 10%;
+    /* max-height: 65vh; */
+    /* margin-top: 10%; */
   }
 `;
 const BoxContainer = styled.div`
@@ -51,10 +51,10 @@ const BoxContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   @media (max-width: 1000px) {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
     width: 90%;
   }
   @media (max-width: 560px) {
@@ -74,7 +74,7 @@ const Message = styled.div`
   flex-direction: column;
   align-items: center;
 
-  font-size: 8vh;
+  font-size: 7vh;
   letter-spacing: 1px;
   font-weight: 700;
   color: #fff;
@@ -83,7 +83,15 @@ const Message = styled.div`
     font-size: 3.8rem;
   } */
   @media (max-width: 1000px) {
-    font-size: 1.5rem;
+    font-size: 2.8rem;
+  }
+  @media (max-width: 560px) {
+    /* min-width:; */
+    font-size: 1.8rem;
+  }
+  @media (max-width: 380px) {
+    /* min-width:; */
+    font-size: 1.2rem;
   }
 `;
 
@@ -104,7 +112,9 @@ const MapComponent = styled.div`
   align-items: center;
   justify-content: center;
   @media (max-width: 1000px) {
-    width: 40%;
+    /* min-width: 40%; */
+    width: 540px;
+    /* max-width: 280px; */
   }
   @media (max-width: 560px) {
     width: 80%;
@@ -174,10 +184,17 @@ const GetStartedButton = styled.button`
     background-color: black;
     border: 3px solid #000;
     transition: ease;
+    @media (max-width: 1000px) {
+      /* padding: 8px 2px; */
+      font-size: 1vh;
+      /* width: 100%; */
+      /* height: 2.8vh; */
+      /* width: 10vw; */
+    }
   }
 
   @media (max-width: 1000px) {
-    padding: 8px 2px;
+    padding: 4px 2px;
     font-size: 1vh;
     width: 100%;
     height: 2.8vh;
@@ -244,6 +261,7 @@ const Button = styled.button`
   `;
 const ButtonText = styled.h3`
   font-size: 2vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -254,7 +272,14 @@ const ButtonText = styled.h3`
   background-size: 0% 2px;
   background-repeat: no-repeat;
   transition: background-size 0.3s, background-position 0s 0.3s; /*change after the size immediately*/
-
+  @media (max-width: 1000px) {
+    line-height: 2px;
+    padding: 0px 2px;
+    font-size: 1vh;
+    width: 100%;
+    height: 2.8vh;
+    /* width: 10vw; */
+  }
   :hover {
     background-position: 100% 100%; /*OR bottom right*/
     background-size: 100% 2px;

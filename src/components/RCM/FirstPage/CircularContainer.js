@@ -28,17 +28,12 @@ const bodyLoad = keyframes`
 
 `;
 const CircleContainer = styled.div`
-  /* display: ; */
-  /* display: ${(props) => (props.inView ? "block" : "hidden")}; */
-  /* width: ${(props) => (props.inView ? "800px" : "1500px")};
-  height: ${(props) => (props.inView ? "440px" : "600px")}; */
-  /* transition: 30s ease-in-out; */
+  
   margin: 38px 0;
   width: 800px;
   height: 440px;
 
   align-items: center;
-  /* animation: ${bodyLoad} 10000ms ease-in; */
   position: relative;
   @media (max-width: 860px) {
     width: 360px;
@@ -55,7 +50,7 @@ const Circle = styled.div`
   justify-content: flex-start;
   align-items: center;
   position: absolute;
-  top: ${(props) => (props.inView ? "0" : "0")};
+  top: ${(props) => (props.inView ? "0" : "-5%")};
   left: ${(props) => (props.inView ? "30%" : "30%")};
   transition: 1s ease-in-out;
   /* top: 0;
@@ -201,7 +196,7 @@ const CircularContainer = () => {
       scale: 1,
       transition: { duration: 0.6, ease: [0.61, 1, 0.88, 1] },
     },
-    hidden: { opacity: 0.9, scale: 0.9 },
+    hidden: { opacity: 0.9, scale: 1 },
   };
 
   // const Box = ({ page }) => {

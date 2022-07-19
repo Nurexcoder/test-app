@@ -1,5 +1,6 @@
 import { Close, Help } from "@mui/icons-material";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
 const NavLoad = keyframes`
@@ -36,6 +37,7 @@ const Component = styled.div`
     width: 98vw;
     padding: 0 20px;
     height: 90px;
+    justify-content: space-between;
   }
 
   /* animation-duration:1000ms;
@@ -44,20 +46,23 @@ const Component = styled.div`
   /* animation-timing-function: ease-in; */
 `;
 const Hidden = styled.div`
-  display: none;
-  /* @media (max-width: 1000px) {
+display: none;
+   @media (max-width: 1000px) {
     display: block;
-  } */
-`;
+  }
+  `;
 const Div = styled.div`
   min-width: 200px;
   width: 15%;
-
+  
   display: flex;
   justify-content: flex-end;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 const Logo = styled.img`
   /* flex: 1; */
@@ -99,9 +104,9 @@ const HiddenMessage = styled.p`
   min-width: 50ch;
   position: absolute;
   top: 65%;
-  left: 48%;
+  left: 52%;
   min-height: 7vh;
-  
+
   border-radius: 2vh;
   background-color: #f5f5f5;
   padding: 10px 20px;
@@ -172,17 +177,18 @@ const Manu = styled.div`
   /* display: none; */
   position: absolute;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-  z-index: 100000;
+  z-index: 10000000;
   width: 100%;
   background-color: rgba(255, 255, 255, 1);
-  height: 500px;
+  min-height: 500px;
+  height: 70vh;
   /* right: 0; */
   color: #000;
   top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-around; */
+  justify-content: space-between;
 
   transition: transform 0.4s ease-in-out;
 `;
@@ -206,7 +212,7 @@ const HCenterText = styled(CenterText)`
 `;
 const HContactButton = styled(ContactButton)`
   display: block;
-  bottom: 15%;
+  bottom: 30%;
   position: relative;
   /* margin-top: 40%; */
   width: 80%;
@@ -236,8 +242,11 @@ const Navbar = () => {
           Road Condition Mapper deticated towards Preventing Accidents and
           Fastering the Commute
         </HiddenMessage>
+
         <Div>
-          <ContactButton>Contact Us</ContactButton>
+          <Link to="/contactus">
+            <ContactButton>Contact Us</ContactButton>
+          </Link>
         </Div>
         <Hamburger onClick={() => setOpen(true)} src="/images/hamburger.png" />
       </Component>

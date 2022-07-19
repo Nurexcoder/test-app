@@ -6,15 +6,15 @@ import animationData from "./qrcode.json";
 const Component = styled.div`
   margin-top: 40px;
   width: 70%;
-  min-width: 125ch;
+  min-width: 100ch;
   min-height: 400px;
   align-items: center;
   justify-content: space-between;
   display: flex;
   overflow: hidden;
-  border-radius: 43px;
+  /* border-radius: 43px; */
   @media (max-width: 1000px) {
-    width: 60%;
+    width: 80%;
     min-height: 200px;
     min-width: 60%;
     justify-content: space-between;
@@ -39,7 +39,7 @@ const PlayLogo = styled.img`
   height: auto;
   @media (max-width: 1000px) {
     /* width: 50px; */
-    width: 15vw;
+    width: 20vw;
   }
 `;
 const MapLogo = styled.img`
@@ -47,7 +47,7 @@ const MapLogo = styled.img`
   height: auto;
   @media (max-width: 1000px) {
     /* width: 150px; */
-    width: 28vw;
+    width: 32vw;
   }
 `;
 const RightComponent = styled.div`
@@ -63,15 +63,15 @@ const Message = styled.div`
   font-style: normal;
   min-width: 600px;
   font-weight: 700;
-  width: 40vw;
+  min-width: 50ch;
   min-width: 20ch;
-  font-size: 6vh;
+  font-size: 2.5rem;
   color: #3a3a3a;
   text-align: center;
   @media (max-width: 1000px) {
     width: 200px;
     /* font-size: 1rem; */
-    font-size: 2vh;
+    font-size: 1.2em;
   }
   /* display: flex; */
 `;
@@ -84,17 +84,22 @@ const QR = styled.div`
   margin: 20px 0;
   /* background-color: #fff; */
   filter: drop-shadow(0px 8px 22px rgba(0, 0, 0, 0.12))
-    drop-shadow(0px 7px 8px rgba(0, 0, 0, 0.2));
+  drop-shadow(0px 7px 8px rgba(0, 0, 0, 0.2));
   border-radius: 20px;
   @media (max-width: 1000px) {
     width: 20vw;
-    font-size: 1rem;
+    margin: 5px 0;
+    /* font-size: 2rem; */
   }
 `;
-const FotterText = styled.span`
+const FotterText = styled.div`
   font-weight: 200;
   text-align: center;
   font-size: 2vh;
+  @media (max-width: 1000px) {
+   font-size: 0.4em;
+   min-height:2em;
+  }
 `;
 const DownloadPage = () => {
   const [options, setOptions] = useState({});

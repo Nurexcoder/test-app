@@ -14,7 +14,7 @@ const Component = styled.div`
   background-color: #367b9d;
   position: relative;
 
-  min-height: 400px;
+  /* min-height: 400px; */
   /* overflow-y: scroll; */
   border-bottom: transparent;
   display:flex;
@@ -22,13 +22,14 @@ const Component = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 1000px) {
-    height: 80vh;
+    max-height: 65vh;
     justify-content: space-between;
     /* height: auto; */
     background: linear-gradient(to bottom, #367b9d 80%, #fff 20%);
+    z-index: 100000000000000000;
   }
   @media (max-width: 560px) {
-    height: 50vh;
+    min-height: 65vh;
     /* height: auto; */
     background: linear-gradient(to bottom, #367b9d 80%, #fff 20%);
   }

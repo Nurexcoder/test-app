@@ -5,7 +5,7 @@ import points from "./Points.json";
 
 const Component = styled.div`
   margin-top: 200px;
-  width: 80%;
+  width: 70%;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +30,7 @@ const Points = () => {
   };
   return (
     <Component>
-      <Lottie options={defaultOptions} height="86%" width="96%" />
+      <Lottie options={defaultOptions} height="auto" width="96%" />
     </Component>
   );
 };
