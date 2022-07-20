@@ -18,11 +18,13 @@ const Component = styled.div`
   width: 100%;
   height: 80vh;
   margin-bottom: 20px;
-  min-height:500px;
+  /* min-height:500px; */
   display:flex;
   flex-direction: column;
   justify-content: space-between;
   align-items:center;
+  
+  /* min-height: 600px; */
   
   /* background-color: #367b9d; */
   
@@ -44,6 +46,8 @@ const Component = styled.div`
 
   @media (max-width: 560px) {
     height: 40vh;
+    min-height: 300px;
+
   }
 `;
 
@@ -58,16 +62,16 @@ const Circle = styled.div`
   left: -27%;
   z-index: -11;
   @media (max-width: 1000px) {
-    height: 400px;
-    height: 400px;
-    top: -10%;
+    height: 600px;
+    height: 600px;
+    top: -40%;
     left: -25%;
     z-index: -11;
   }
   @media (max-width: 590px) {
     height: 600px;
     height: 600px;
-    top: -50%;
+    top: -95%;
     left: -25%;
     z-index: -11;
   }

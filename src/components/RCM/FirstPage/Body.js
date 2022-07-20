@@ -37,13 +37,19 @@ const Component = styled.div`
   z-index: 100;
   flex-direction: column;
   margin-top: 30px;
-  /* @media (max-width: 1000px) {
+  min-height: 350px;
+  @media (max-width: 1000px) {
     height: 40vh;
+    min-height: 300px;
     justify-content: space-between;
-  } */
+  }
   
-  /* @media (max-width: 1000px) {
-  } */
+  @media (max-width: 560px) {
+    height: 40vh;
+    min-height: 20  0px;
+    justify-content: space-between;
+  }
+  
   `;
 const BoxContainer = styled.div`
   width: 62%;
@@ -71,7 +77,7 @@ const Message = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  min-width: 25ch;
   font-size: 4rem;
   letter-spacing: 1px;
   font-weight: 700;

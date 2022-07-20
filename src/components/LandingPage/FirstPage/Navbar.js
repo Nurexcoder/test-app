@@ -215,11 +215,11 @@ const HCenterText = styled(CenterText)`
   align-items: center;
   margin-bottom: 100px;
 `;
-const BLink=styled(Link)`
-  width:100%;
-  height:auto;
+const BLink = styled(Link)`
+  width: 100%;
+  height: auto;
   margin: 10px 0;
-`
+`;
 const HContactButton = styled(ContactButton)`
   display: block;
   bottom: 30%;
@@ -240,11 +240,11 @@ const Navbar = () => {
         <Logo src="/images/logo.png" />
 
         {/* <Div> */}
-        {/* <Link style={{ color: "#fff !important" }} to="/rcm"> */}
+        <Link style={{ color: "#fff !important" }} to="/rcm">
           <CenterText onClick={() => setIsHover(!isHover)}>
             Road Condition Mapping
           </CenterText>
-        {/* </Link> */}
+        </Link>
         {/* </Div> */}
         <HiddenMessage
           onMouseOver={() => setIsHover(true)}
@@ -256,9 +256,9 @@ const Navbar = () => {
         </HiddenMessage>
 
         <Div>
-          {/* <Link to="/contactus"> */}
+          <Link to="/contactus">
             <ContactButton>Contact Us</ContactButton>
-          {/* </Link> */}
+          </Link>
         </Div>
         <Hamburger onClick={() => setOpen(true)} src="/images/hamburger.png" />
       </Component>
@@ -268,15 +268,14 @@ const Navbar = () => {
           <Logo src="/images/logoBlack.png" />
           <Close onClick={() => setOpen(!open)} />{" "}
         </HamburgerControl>
-        {/* <Link to="/rcm"> */}
+        <Link to="/rcm">
           <HCenterText>
             Road Condition Mapping <Help style={{ margin: "0 5px" }} />
           </HCenterText>
-        {/* </Link> */}
-        {/* <BLink to="/contactus"> */}
+        </Link>
+        <BLink to="/contactus">
           <HContactButton>Contact Us</HContactButton>
-        {/* </BLink> */}
-
+        </BLink>
       </Manu>
     </>
   );

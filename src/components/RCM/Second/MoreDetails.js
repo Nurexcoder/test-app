@@ -1,34 +1,38 @@
 import { useState } from "react";
 import Lottie from "react-lottie";
 import styled from "styled-components";
-import roadBlock from "./RoadBlock.json";
+import roadBlock from "./RoadBlockNew.json";
 import roadObstruction from "./RoadObstruction.json";
 import waterLogging from "./WaterLogging.json";
 const Component = styled.div`
   width: 70%;
   height: 95vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   /* align-items: ; */
   margin-top: 50px;
   min-height: 500px;
-  
+
   @media (max-width: 1000px) {
-    min-height: 75vh;
+    /* height: 75; */
     height: auto;
     width: 90%;
     flex-direction: column;
     justify-content: flex-start;
+    margin-top: 20px;
   }
 `;
 const LeftComponent = styled.div`
   /* flex: 3;? */
-  width: 60%;
+  width: 70%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media(min-width: 1000px){
+      /* height: 800px; */
+  }
   @media (max-width: 1000px) {
     height: 60%;
     width: 100%;
@@ -43,10 +47,11 @@ const MapComponent = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
+  
   @media (max-width: 1000px) {
-    height: 100%;
+    /* height: 100%; */
     width: 60%;
+    height: auto;
     justify-content: center;
     align-items: center;
   }
@@ -61,11 +66,12 @@ const RightComponent = styled.div`
   @media (max-width: 1000px) {
     flex-direction: row;
     height: 30%;
-    width: 100%;
+    width: 100vw;
+    overflow: scroll;
   }
 `;
 const ColoredRightBox = styled.div`
-  width: 80%;
+  width: 90%;
   height: 38%;
   /* min-height:150px; */
   margin: 5px 0;
@@ -77,7 +83,7 @@ const ColoredRightBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start ;
+  justify-content: flex-start;
   border-radius: 8px;
   transition: 1s ease;
   &:hover {
@@ -88,21 +94,21 @@ const ColoredRightBox = styled.div`
     width: 30%;
     min-height: 150px;
     padding: 10px 2px;
-    
+
     border: ${(props) =>
-    props.isActive ? "1px solid transparent" : " 1px solid #367b9d"};
+      props.isActive ? "1px solid transparent" : " 1px solid #367b9d"};
 
     /* height: 54%; */
     /* justify-content: space-between; */
   }
   @media (max-width: 560px) {
     /* max-height: 20%; */
-    width: 30%;
+    width: 200px;
     min-height: 100px;
     padding: 10px 2px;
-    
+
     border: ${(props) =>
-    props.isActive ? "1px solid transparent" : " 1px solid #367b9d"};
+      props.isActive ? "1px solid transparent" : " 1px solid #367b9d"};
 
     /* height: 54%; */
     /* justify-content: space-between; */
@@ -115,12 +121,13 @@ const RightBox = styled(ColoredRightBox)`
 `;
 
 const ColoredBoxHeader = styled.div`
-  color: ${(props) => (props.isActive ? "#FAD65D" : props.isHover? "#FAD65D": "#464646")};
+  color: ${(props) =>
+    props.isActive ? "#FAD65D" : props.isHover ? "#FAD65D" : "#464646"};
   font-size: 2.6vh;
   font-weight: 700;
   margin-top: 7px;
   font-family: "Inter";
-  margin:  0.6em 0; 
+  margin: 0.6em 0;
   @media (max-width: 1000px) {
     font-size: 0.8rem;
   }
@@ -134,7 +141,8 @@ const ColoredBoxText = styled.div`
   font-weight: 500;
   font-size: 2.2vh;
 
-  color: ${(props) => (props.isActive||props.isHover ? "#FFFFFF" : "#838383")};
+  color: ${(props) =>
+    props.isActive || props.isHover ? "#FFFFFF" : "#838383"};
 
   @media (max-width: 1000px) {
     justify-content: space-between;
@@ -168,7 +176,7 @@ const MoreDetails = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  console.log(isHover)
+  console.log(isHover);
 
   return (
     <Component>
@@ -178,89 +186,88 @@ const MoreDetails = () => {
         </MapComponent>
       </LeftComponent>
       <RightComponent>
-        <ColoredRightBox
-          isActive={activeDiv === 0}
-          onClick={() => {
-            setActiveDiv(0);
-            setAnimationData(roadBlock);
-          }}
-          isHover={isHover===0}
-          onMouseOver={()=>{
-            setIsHover(0)
-          }}
-          onMouseLeave={()=>{
-            setIsHover(4)
-          }}
-          
-        >
-          <ColoredBoxHeader isHover={isHover===0} isActive={activeDiv === 0}>
-            Abnormal road terrain /  potholes not identified by {" "}
-            maps/navigation
-          </ColoredBoxHeader>
-          <ColoredBoxText isHover={isHover===0} isActive={activeDiv === 0}>
-            Mapping of different road terrains  and abnormalities like:
-            Off Road,
-            
-            Steep Road, potholes etc.
-          </ColoredBoxText>
-        </ColoredRightBox>
-        <ColoredRightBox
-          isActive={activeDiv === 1}
-          onClick={() => {
-            setActiveDiv(1);
-            setAnimationData(waterLogging);
-          }}
-
-          isHover={isHover===1}
-          onMouseOver={()=>{
-            setIsHover(1)
-          }}
-          onMouseLeave={()=>{
-            setIsHover(4)
-          }}
-          // onMouseOver={() => {
-          //   setActiveDiv(1);
-          // }}
-        >
-          <ColoredBoxHeader isHover={isHover===1} isActive={activeDiv === 1}>
-            Temporary Road Blocks,
-             Barricades, Blockages,
-             Closed Roads during Night
-             Time
-          </ColoredBoxHeader>
-          <ColoredBoxText isActive={activeDiv === 1} isHover={isHover===1}>
-            Real time, Mapping of different Blockages along with time.
-          </ColoredBoxText>
-        </ColoredRightBox>
-        <ColoredRightBox
-          isActive={activeDiv === 2}
-          onClick={() => {
-            setActiveDiv(2);
-            setAnimationData(roadObstruction);
-          }}
-
-          isHover={isHover===2}
-          onMouseOver={()=>{
-            setIsHover(2)
-          }}
-          onMouseLeave={()=>{
-            setIsHover(4)
-          }}
-          // onMouseOver={() => {
-          //   setActiveDiv(2);
-          //   setAnimationData(roadObstruction);
-          // }}
-        >
-          <ColoredBoxHeader isActive={activeDiv === 2} isHover={isHover===2}>
-            Water logging detection
-          </ColoredBoxHeader>
-          <ColoredBoxText isActive={activeDiv === 2} isHover={isHover===2}>
-            For bringing awareness to driver for  taking the better route
-            in rainy
-             seasons and avoids heavy logged
-             routes
-          </ColoredBoxText>
-        </ColoredRightBox>
+          <ColoredRightBox
+            isActive={activeDiv === 0}
+            onClick={() => {
+              setActiveDiv(0);
+              setAnimationData(roadBlock);
+            }}
+            isHover={isHover === 0}
+            onMouseOver={() => {
+              setIsHover(0);
+            }}
+            onMouseLeave={() => {
+              setIsHover(4);
+            }}
+          >
+            <ColoredBoxHeader
+              isHover={isHover === 0}
+              isActive={activeDiv === 0}
+            >
+              Abnormal road terrain / potholes not identified by maps/navigation
+            </ColoredBoxHeader>
+            <ColoredBoxText isHover={isHover === 0} isActive={activeDiv === 0}>
+              Mapping of different road terrains and abnormalities like: Off
+              Road, Steep Road, potholes etc.
+            </ColoredBoxText>
+          </ColoredRightBox>
+          <ColoredRightBox
+            isActive={activeDiv === 1}
+            onClick={() => {
+              setActiveDiv(1);
+              setAnimationData(waterLogging);
+            }}
+            isHover={isHover === 1}
+            onMouseOver={() => {
+              setIsHover(1);
+            }}
+            onMouseLeave={() => {
+              setIsHover(4);
+            }}
+            // onMouseOver={() => {
+            //   setActiveDiv(1);
+            // }}
+          >
+            <ColoredBoxHeader
+              isHover={isHover === 1}
+              isActive={activeDiv === 1}
+            >
+              Temporary Road Blocks, Barricades, Blockages, Closed Roads during
+              Night Time
+            </ColoredBoxHeader>
+            <ColoredBoxText isActive={activeDiv === 1} isHover={isHover === 1}>
+              Real time, Mapping of different Blockages along with time.
+            </ColoredBoxText>
+          </ColoredRightBox>
+          <ColoredRightBox
+            isActive={activeDiv === 2}
+            onClick={() => {
+              setActiveDiv(2);
+              setAnimationData(roadObstruction);
+            }}
+            isHover={isHover === 2}
+            onMouseOver={() => {
+              setIsHover(2);
+            }}
+            onMouseLeave={() => {
+              setIsHover(4);
+            }}
+            // onMouseOver={() => {
+            //   setActiveDiv(2);
+            //   setAnimationData(roadObstruction);
+            // }}
+          >
+            <ColoredBoxHeader
+              isActive={activeDiv === 2}
+              isHover={isHover === 2}
+            >
+              Water logging detection
+            </ColoredBoxHeader>
+            <ColoredBoxText isActive={activeDiv === 2} isHover={isHover === 2}>
+              For bringing awareness to driver for taking the better route in
+              rainy seasons and avoids heavy logged routes
+            </ColoredBoxText>
+          </ColoredRightBox>
       </RightComponent>
     </Component>
   );

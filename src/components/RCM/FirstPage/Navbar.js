@@ -34,7 +34,7 @@ const Component = styled.div`
   position: relative;
   animation: ${NavLoad} 900ms ease-in;
   @media (max-width: 1000px) {
-    width: 98vw;
+    width: 95vw;
     padding: 0 20px;
     height: 90px;
     justify-content: space-between;

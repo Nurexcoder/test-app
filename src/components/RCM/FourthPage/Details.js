@@ -19,20 +19,24 @@ const Header = styled.div`
 const HeaderTitle = styled.div`
   font-weight: 800;
   font-size: 6vh;
+  
+  font-size: clamp(2.8rem,6vh,4.5rem);
   font-family: "Inter", sans-serif;
-
+  
   font-style: normal;
   text-align: center;
   color: #023047;
   @media (max-width: 1000px) {
     font-size: 2rem;
   }
-`;
+  `;
 const HeaderMessage = styled.p`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-size: 2.5vh;
+  
+  font-size: clamp(1.6rem,2.5vh,3rem);
   text-align: center;
   color: #838383;
   width: 70%;
@@ -59,7 +63,7 @@ const BoxContainer = styled.div`
 const Box = styled.div`
   min-width: 450px;
   width: 40%;
-  max-width: 600px;
+  max-width: 650px;
   min-height: 350px;
   height: 60vh;
   max-height: 500px;
@@ -109,7 +113,8 @@ const BoxUpper = styled.div`
 
 const BoxLevel = styled.div`
   color: ${(props) => (props.textColor ? props.textColor : "#fff")};
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
+  font-size: clamp(1.2rem,2.4vh,2rem);
   text-align: center;
   margin: 10px 0;
   font-family: "Inter";
@@ -117,25 +122,27 @@ const BoxLevel = styled.div`
   @media (max-width: 100px) {
     font-size: 1.2rem;
   }
-`;
+  `;
 const BoxHeader = styled.div`
   color: #d0a100;
-  font-size: 2.3rem;
+  font-size: clamp(2.3rem,5vh,3rem);
   text-align: center;
   margin: 5px 0;
   font-family: "Inter";
   font-weight: 800;
-
+  
   display: flex;
   justify-content: space-around;
   align-items: center;
   @media (max-width: 1000px) {
     font-size: 1.6rem;
   }
-`;
+  `;
 const BoxAbout = styled.div`
   color: #023047;
-  font-size: 1.2rem;
+  /* font-size: clamp(1.3rem,5vh,3rem); */
+  /* font-size: 1.2rem; */
+  font-size: clamp(1.2rem,2.4vh,1.8rem);
   text-align: center;
   font-family: "Inter";
   margin: 5px 0;
@@ -153,27 +160,29 @@ const BoxDown = styled.div`
   align-items: center;
   height: 40%;
   font-family: "Inter";
-`;
+  `;
 const BoxQuestion = styled.div`
   color: #dbb639;
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
+  font-size: clamp(1.4rem,2.8vh,2rem);
   text-align: center;
   font-family: "Inter";
   @media (max-width: 1000px) {
     font-size: 1.2rem;
   }
-`;
+  `;
 const BoxDetails = styled.div`
-  margin-top: 10px;
-  text-align: center;
-  width: 70%;
-  font-size: 1rem;
-  font-family: "Inter";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* color: #023047; */
-  color: ${(props) => (props.textColor ? props.textColor : "#fff")};
+margin-top: 10px;
+text-align: center;
+width: 70%;
+font-size: clamp(1rem,2.2vh,1.4rem);
+/* font-size: 1rem; */
+font-family: "Inter";
+display: flex;
+justify-content: center;
+align-items: center;
+/* color: #023047; */
+color: ${(props) => (props.textColor ? props.textColor : "#fff")};
   text-align: center;
   @media (max-width: 1000px) {
     font-size: 1rem;
@@ -187,6 +196,8 @@ const Image = styled.img`
 const BoxLowerHeader = styled(HeaderTitle)`
   /* width: 70%; */
   font-size: 7.4vh;
+  
+  font-size: clamp(2.8rem,6vh,4.5rem);
   margin-top: 50px;
   margin-bottom: 20px;
   text-align: center;
@@ -199,7 +210,7 @@ const BoxLowerHeader = styled(HeaderTitle)`
   @media (max-width: 560px) {
     font-size: 1.6em;
   }
-`;
+  `;
 const ButtonContainer = styled.div`
   /* margin-top: 50px; */
   margin-bottom: 50px;
@@ -221,10 +232,12 @@ const ContactButton = styled.button`
   outline: none;
   width: 45%;
   background: #4d4d4d;
+  max-width: 25ch;
   padding: 2vh 0;
   box-shadow: 0px 4px 64px rgba(58, 58, 58, 0.13);
   border-radius: 4px;
   font-size: 2.4vh;
+  font-size: clamp(1rem,2.4vh,2rem);
   color: #fff;
   &:hover {
     transition: 1s ease;
@@ -238,7 +251,7 @@ const ContactButton = styled.button`
 const Button = styled(ContactButton)`
   background: #fff;
   color: #023047;
-  font-size: 2.4vh;
+  /* font-size: 2.4vh; */
   border: 1px solid #023047;
   &:hover {
     transition: 1s ease;

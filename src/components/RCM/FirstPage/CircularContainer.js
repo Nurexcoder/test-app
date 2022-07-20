@@ -32,12 +32,13 @@ const CircleContainer = styled.div`
   margin: 38px 0;
   width: 800px;
   height: 500px;
-
+  
   align-items: center;
   position: relative;
   @media (max-width: 860px) {
     width: 360px;
     height: 320px;
+    margin: 10px 0;
   }
 `;
 const Circle = styled.div`
@@ -58,8 +59,8 @@ const Circle = styled.div`
   @media (max-width: 860px) {
     width: 180px;
     height: 180px;
-    top: ${(props) => (props.inView ? "0" : "0")};
-    left: ${(props) => (props.inView ? "30%" : "30%")};
+    top: ${(props) => (props.inView ? "0" : "-5%")};
+    left: ${(props) => (props.inView ? "25%" : "25%")};
   }
 `;
 const Circle2 = styled.div`
@@ -124,7 +125,7 @@ const CircleText = styled.div`
   right: 15%;
   text-align: center;
   @media (max-width: 860px) {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     /* top: 40%;
     right: 7%; */
   }
@@ -140,7 +141,7 @@ const CircleText2 = styled(CircleText)`
   top: 42%;
   left:7%;
   @media (max-width: 860px) {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     top: 40%;
     left: 6%;
   }
@@ -158,7 +159,7 @@ const CircleText3 = styled(CircleText)`
   right: 3%;
   text-align: justify;
   @media (max-width: 860px) {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     top: 40%;
     right: 7%;
   }
