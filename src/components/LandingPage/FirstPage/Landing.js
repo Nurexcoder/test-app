@@ -21,17 +21,30 @@ const Component = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  min-height: 750px;
   @media (max-width: 1000px) {
     max-height: 65vh;
     justify-content: space-between;
+    min-height:600px ;
     /* height: auto; */
     background: linear-gradient(to bottom, #367b9d 80%, #fff 20%);
     z-index: 100000000000000000;
   }
   @media (max-width: 560px) {
-    min-height: 45vh;
+    /* min-height: 45vh; */
+    min-height: 600px !important;
     height: 52%;
-    min-height: 400px;
+    margin: 0;
+    /* font-size: 24px; */
+    /* height: auto; */
+    background: linear-gradient(to bottom, #367b9d 79%, #fff 18%);
+  }
+  
+  @media (max-width: 450px) {
+    /* min-height: 45vh; */
+    min-height: 500px !important;
+    height: 52%;
+    margin: 0;
     /* height: auto; */
     background: linear-gradient(to bottom, #367b9d 79%, #fff 18%);
   }

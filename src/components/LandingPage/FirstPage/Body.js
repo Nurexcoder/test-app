@@ -29,20 +29,19 @@ const bodyLoad = keyframes`
 const Component = styled.div`
   max-height: 80vh;
   width: 100%;
-
+  min-height: 600px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   overflow: none !important;
   z-index: 100;
   margin-bottom: 3%;
-  @media (max-width: 560px) {
-    min-height: 40vh;
-    margin-top: 2vh;
-  }
   @media (max-width: 1000px) {
-    /* max-height: 65vh; */
-    /* margin-top: 10%; */
+    min-height: 450px;
+  }
+  @media (max-width: 560px) {
+    min-height: 350px;
+    margin-top: 2vh;
   }
 `;
 const BoxContainer = styled.div`
@@ -91,11 +90,11 @@ const Message = styled.div`
   }
   @media (max-width: 560px) {
     /* min-width:; */
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   @media (max-width: 380px) {
     /* min-width:; */
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 `;
 
@@ -105,7 +104,9 @@ const ColoredMessage = styled(Message)`
 `;
 const MapComponent = styled.div`
   z-index: 10;
-  width: 35vw;
+  width: max(35vw, 500px);
+
+  min-width: calc(48ch);
   height: auto;
   /* margin-top: 5px; */
   background: #f5f5f5;
@@ -117,11 +118,12 @@ const MapComponent = styled.div`
   justify-content: center;
   @media (max-width: 1000px) {
     /* min-width: 40%; */
-    width: 540px;
+    min-width: 540px;
     /* max-width: 280px; */
   }
   @media (max-width: 560px) {
-    width: 80%;
+    min-width: 250px;
+    width: 100%;
   }
 `;
 const ButtonComponent = styled.div`

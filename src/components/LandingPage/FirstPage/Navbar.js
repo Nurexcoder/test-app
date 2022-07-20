@@ -49,18 +49,18 @@ const Hidden = styled.div`
   display: none;
   @media (max-width: 1000px) {
     display: block;
-    width: 30%;
+    width: 20%;
   }
 `;
 const Div = styled.div`
   min-width: 200px;
-  width: 15%;
+  width: 20%;
 
   display: flex;
   justify-content: flex-end;
   display: flex;
   align-items: center;
-  justify-contimgent: center;
+  justify-content: center;
   @media (max-width: 1000px) {
     display: none;
   }
@@ -76,7 +76,7 @@ const Logo = styled.img`
   @media (max-width: 1000px) {
     /* margin-left: 30%; */
     /* width: 30%; */
-    min-width: 30%;
+    width: 20%;
     height: auto;
   }
 `;
