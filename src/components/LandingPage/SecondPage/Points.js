@@ -28,13 +28,15 @@ const Component = styled.div`
   display: flex;
   min-height: 65vh;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-family: "Montserrat", sans-serif;
   margin: 30px 0;
   @media (max-width: 1000px) {
     width: 98%;
-    margin: 20px 0;
+    min-height: 45vh;
+    margin: 10px 0;
+    /* margin: 20px 0; */
   }
 `;
 const Header = styled.div`
@@ -198,13 +200,13 @@ const Points = () => {
         </Plus>
         <Map>
           <MapMessage>
-            Maps are limited to Distance, <br /> Time & Navigation
+            Maps are limited to Distance,  Time & Navigation
           </MapMessage>
           <CompanyMessage>
             We go beyond by
             <ColoredText> analysing </ColoredText>
             adversities
-            <br /> and visualise roads for better AI data driven decisions
+             and visualise roads for better AI data driven decisions
           </CompanyMessage>
         </Map>
       </MapAndCompany>

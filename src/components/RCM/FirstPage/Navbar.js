@@ -230,9 +230,9 @@ const Navbar = () => {
         <Logo src="/images/logo.png" />
 
         {/* <Div> */}
-        <CenterText onClick={() => setIsHover(!isHover)}>
+        {/* <CenterText onClick={() => setIsHover(!isHover)}>
           Road Condition Mapping
-        </CenterText>
+        </CenterText> */}
         {/* </Div> */}
         <HiddenMessage
           onMouseOver={() => setIsHover(true)}
@@ -256,9 +256,9 @@ const Navbar = () => {
           <Logo src="/images/logoBlack.png" />
           <Close onClick={() => setOpen(!open)} />{" "}
         </HamburgerControl>
-        <HCenterText onClick={() => setIsHover(!isHover)}>
+        {/* <HCenterText onClick={() => setIsHover(!isHover)}>
           Road Condition Mapping <Help style={{ margin: "0 5px" }} />
-        </HCenterText>
+        </HCenterText> */}
         <HContactButton>Contact Us</HContactButton>
       </Manu>
     </>

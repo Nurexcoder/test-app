@@ -57,8 +57,12 @@ const BoxContainer = styled.div`
   }
 `;
 const Box = styled.div`
-  width: 30vw;
-  min-height: 60vh;
+  min-width: 450px;
+  width: 40%;
+  max-width: 600px;
+  min-height: 350px;
+  height: 60vh;
+  max-height: 500px;
   background: ${(props) => (props.bgColor ? props.bgColor : "#ffffff")};
   box-shadow: 0px 2px 40px rgba(58, 58, 58, 0.07);
   border-radius: 1vh;
@@ -73,14 +77,27 @@ const Box = styled.div`
     width: 60%;
     min-width: 40ch;
     flex-direction: column;
-    height: 50vh;
+    height: 400px;
+    max-height: 50vh;
+
     justify-content: space-around;
   }
   @media (max-width: 560px) {
+    min-width: 30ch;
     width: 80%;
     flex-direction: column;
-    height: 50vh;
+    height: 150px;
+    max-height: 40vh;
     justify-content: space-around;
+  }
+`;
+const BoxHolder = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @media (max-width: 1000px) {
+    flex-direction: column;
   }
 `;
 const BoxUpper = styled.div`
@@ -92,7 +109,7 @@ const BoxUpper = styled.div`
 
 const BoxLevel = styled.div`
   color: ${(props) => (props.textColor ? props.textColor : "#fff")};
-  font-size: 2.5vh;
+  font-size: 1.2em;
   text-align: center;
   margin: 10px 0;
   font-family: "Inter";
@@ -103,7 +120,7 @@ const BoxLevel = styled.div`
 `;
 const BoxHeader = styled.div`
   color: #d0a100;
-  font-size: 4vh;
+  font-size: 2.3rem;
   text-align: center;
   margin: 5px 0;
   font-family: "Inter";
@@ -118,7 +135,7 @@ const BoxHeader = styled.div`
 `;
 const BoxAbout = styled.div`
   color: #023047;
-  font-size: 2.7vh;
+  font-size: 1.2rem;
   text-align: center;
   font-family: "Inter";
   margin: 5px 0;
@@ -139,7 +156,7 @@ const BoxDown = styled.div`
 `;
 const BoxQuestion = styled.div`
   color: #dbb639;
-  font-size: 3vh;
+  font-size: 1.4rem;
   text-align: center;
   font-family: "Inter";
   @media (max-width: 1000px) {
@@ -150,7 +167,7 @@ const BoxDetails = styled.div`
   margin-top: 10px;
   text-align: center;
   width: 70%;
-  font-size: 2.7vh;
+  font-size: 1rem;
   font-family: "Inter";
   display: flex;
   justify-content: center;
@@ -177,10 +194,10 @@ const BoxLowerHeader = styled(HeaderTitle)`
   font-style: normal;
   font-weight: 800;
   @media (max-width: 1000px) {
-  font-size: 2.6em;
+    font-size: 2.6em;
   }
   @media (max-width: 560px) {
-  font-size: 1.6em;
+    font-size: 1.6em;
   }
 `;
 const ButtonContainer = styled.div`
@@ -189,7 +206,7 @@ const ButtonContainer = styled.div`
   width: 30%;
   display: flex;
   justify-content: space-between;
-  margin-top:30px;
+  margin-top: 30px;
   @media (max-width: 1000px) {
     width: 40%;
   }
@@ -202,7 +219,7 @@ const ContactButton = styled.button`
 
   border: none;
   outline: none;
-  width:45%;
+  width: 45%;
   background: #4d4d4d;
   padding: 2vh 0;
   box-shadow: 0px 4px 64px rgba(58, 58, 58, 0.13);
@@ -239,81 +256,85 @@ const Details = () => {
         </HeaderMessage>
       </Header>
       <BoxContainer>
-        <Box>
-          <BoxUpper>
-            <BoxLevel textColor="#023047">Level 1</BoxLevel>
-            <BoxHeader>
-              <Image src="/images/dayLogo.png" />
-              Near Realtime
-            </BoxHeader>
-            <BoxAbout textColor="#023047">
-              Last Mile Delivery Companies & Maps Companies
-            </BoxAbout>
-          </BoxUpper>
-          <BoxDown>
-            <BoxQuestion>How it bring a change in their system?</BoxQuestion>
-            <BoxDetails textColor="#023047">
-              Their system will get data about different road activities and
-              road environment a particular route or city posses
-            </BoxDetails>
-          </BoxDown>
-        </Box>
-        <Box bgColor="#023047">
-          <BoxUpper>
-            <BoxLevel>Level 2</BoxLevel>
-            <BoxHeader>
-              <Image src="/images/weekLogo.png" />
-              Weekly Data
-            </BoxHeader>
-            <BoxAbout>
-              OEMs, Courier Co., Long route Delivery Companies, Long Route Trips
-              Agencies{" "}
-            </BoxAbout>
-          </BoxUpper>
-          <BoxDown>
-            <BoxQuestion>How it bring a change in their system?</BoxQuestion>
-            <BoxDetails>
-              Commuter will be aware about daily activities and hazards on the
-              route
-            </BoxDetails>
-          </BoxDown>
-        </Box>
-        <Box bgColor="#023047">
-          <BoxUpper>
-            <BoxLevel>Level 3</BoxLevel>
-            <BoxHeader>
-              <Image src="/images/biWeekLogo.png" />
-              BiWeekly Data
-            </BoxHeader>
-            <BoxAbout>Public Sector Road Agencies</BoxAbout>
-          </BoxUpper>
-          <BoxDown>
-            <BoxQuestion>How it bring a change in their system?</BoxQuestion>
-            <BoxDetails>
-              Their system will get data about different road activities and
-              road environment a particular route or city posses.
-            </BoxDetails>
-          </BoxDown>
-        </Box>
-        <Box>
-          <BoxUpper>
-            <BoxLevel textColor="#023047">Level 4</BoxLevel>
-            <BoxHeader>
-              <Image src="/images/monthLogo.png" />
-              Monthly Data
-            </BoxHeader>
-            <BoxAbout textColor="#023047">
-              Marketing & Insurance Companies
-            </BoxAbout>
-          </BoxUpper>
-          <BoxDown>
-            <BoxQuestion>How it bring a change in their system?</BoxQuestion>
-            <BoxDetails textColor="#023047">
-              Their system will get data about different road hazard patterns
-              and statistics of different cities and states.
-            </BoxDetails>
-          </BoxDown>
-        </Box>
+        <BoxHolder>
+          <Box>
+            <BoxUpper>
+              <BoxLevel textColor="#023047">Level 1</BoxLevel>
+              <BoxHeader>
+                <Image src="/images/dayLogo.png" />
+                Near Realtime
+              </BoxHeader>
+              <BoxAbout textColor="#023047">
+                Last Mile Delivery Companies & Maps Companies
+              </BoxAbout>
+            </BoxUpper>
+            <BoxDown>
+              <BoxQuestion>How it bring a change in their system?</BoxQuestion>
+              <BoxDetails textColor="#023047">
+                Their system will get data about different road activities and
+                road environment a particular route or city posses
+              </BoxDetails>
+            </BoxDown>
+          </Box>
+          <Box bgColor="#023047">
+            <BoxUpper>
+              <BoxLevel>Level 2</BoxLevel>
+              <BoxHeader>
+                <Image src="/images/weekLogo.png" />
+                Weekly Data
+              </BoxHeader>
+              <BoxAbout>
+                OEMs, Courier Co., Long route Delivery Companies, Long Route
+                Trips Agencies{" "}
+              </BoxAbout>
+            </BoxUpper>
+            <BoxDown>
+              <BoxQuestion>How it bring a change in their system?</BoxQuestion>
+              <BoxDetails>
+                Commuter will be aware about daily activities and hazards on the
+                route
+              </BoxDetails>
+            </BoxDown>
+          </Box>
+        </BoxHolder>
+        <BoxHolder>
+          <Box bgColor="#023047">
+            <BoxUpper>
+              <BoxLevel>Level 3</BoxLevel>
+              <BoxHeader>
+                <Image src="/images/biWeekLogo.png" />
+                BiWeekly Data
+              </BoxHeader>
+              <BoxAbout>Public Sector Road Agencies</BoxAbout>
+            </BoxUpper>
+            <BoxDown>
+              <BoxQuestion>How it bring a change in their system?</BoxQuestion>
+              <BoxDetails>
+                Their system will get data about different road activities and
+                road environment a particular route or city posses.
+              </BoxDetails>
+            </BoxDown>
+          </Box>
+          <Box>
+            <BoxUpper>
+              <BoxLevel textColor="#023047">Level 4</BoxLevel>
+              <BoxHeader>
+                <Image src="/images/monthLogo.png" />
+                Monthly Data
+              </BoxHeader>
+              <BoxAbout textColor="#023047">
+                Marketing & Insurance Companies
+              </BoxAbout>
+            </BoxUpper>
+            <BoxDown>
+              <BoxQuestion>How it bring a change in their system?</BoxQuestion>
+              <BoxDetails textColor="#023047">
+                Their system will get data about different road hazard patterns
+                and statistics of different cities and states.
+              </BoxDetails>
+            </BoxDown>
+          </Box>
+        </BoxHolder>
       </BoxContainer>
       <BoxLowerHeader>
         Let’s bring a new vision <br /> towards commute

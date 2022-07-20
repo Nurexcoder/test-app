@@ -13,10 +13,13 @@ const Component = styled.div`
   /* align-items: ; */
   margin-top: 50px;
   min-height: 500px;
-
+  
   @media (max-width: 1000px) {
-    height: 45vh;
+    min-height: 75vh;
+    height: auto;
+    width: 90%;
     flex-direction: column;
+    justify-content: flex-start;
   }
 `;
 const LeftComponent = styled.div`
@@ -43,7 +46,7 @@ const MapComponent = styled.div`
 
   @media (max-width: 1000px) {
     height: 100%;
-    width: 100%;
+    width: 60%;
     justify-content: center;
     align-items: center;
   }
@@ -57,6 +60,7 @@ const RightComponent = styled.div`
   justify-content: space-between;
   @media (max-width: 1000px) {
     flex-direction: row;
+    height: 30%;
     width: 100%;
   }
 `;
@@ -80,13 +84,27 @@ const ColoredRightBox = styled.div`
     background-color: #023047;
   }
   @media (max-width: 1000px) {
-    min-height: 30%;
-    width: 25%;
-    padding: 10px 6px;
+    /* max-height: 20%; */
+    width: 30%;
+    min-height: 150px;
+    padding: 10px 2px;
+    
     border: ${(props) =>
     props.isActive ? "1px solid transparent" : " 1px solid #367b9d"};
 
-    height: 54%;
+    /* height: 54%; */
+    /* justify-content: space-between; */
+  }
+  @media (max-width: 560px) {
+    /* max-height: 20%; */
+    width: 30%;
+    min-height: 100px;
+    padding: 10px 2px;
+    
+    border: ${(props) =>
+    props.isActive ? "1px solid transparent" : " 1px solid #367b9d"};
+
+    /* height: 54%; */
     /* justify-content: space-between; */
   }
 
@@ -104,10 +122,10 @@ const ColoredBoxHeader = styled.div`
   font-family: "Inter";
   margin:  0.6em 0; 
   @media (max-width: 1000px) {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
   @media (max-width: 560px) {
-    font-size: 0.4rem;
+    font-size: 0.5rem;
   }
 `;
 const ColoredBoxText = styled.div`
@@ -120,11 +138,11 @@ const ColoredBoxText = styled.div`
 
   @media (max-width: 1000px) {
     justify-content: space-between;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
   @media (max-width: 560px) {
     justify-content: space-between;
-    font-size: 0.4rem;
+    font-size: 0.5rem;
   }
 `;
 const BoxHeader = styled.div`

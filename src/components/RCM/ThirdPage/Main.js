@@ -6,9 +6,10 @@ const Component = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height:100vh ;
+  margin: 9vh 0;
+  height:100vh;
   overflow: hidden;
-  @media(max-width:860px){
+  @media(max-width:1000px){
     height: auto;
   }
 `;

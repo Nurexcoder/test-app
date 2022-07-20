@@ -30,6 +30,7 @@ const Component = styled.div`
   position: relative;
   border-bottom-left-radius: 35%;
     border-bottom-right-radius: 35%;
+    min-height: 500px;
   /* display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +39,11 @@ const Component = styled.div`
   /* clip-path: polygon(100% 100%, 100% 100%, 100% 100%); */
 
   @media (max-width: 1000px) {
-    height: 60vh;
+    height: 50vh;
+  }
+
+  @media (max-width: 560px) {
+    height: 40vh;
   }
 `;
 
@@ -48,14 +53,14 @@ const Circle = styled.div`
   border-radius: 50%;
   background-color: #367b9d;
   position: absolute;
-  top: -85%;
+  top: -90%;
   /* bottom: 25%; */
-  left: -25%;
+  left: -27%;
   z-index: -11;
   @media (max-width: 1000px) {
     height: 400px;
     height: 400px;
-    top: -18%;
+    top: -10%;
     left: -25%;
     z-index: -11;
   }

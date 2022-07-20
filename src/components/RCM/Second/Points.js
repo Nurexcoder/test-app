@@ -14,6 +14,7 @@ const Component = styled.div`
 
   @media (max-width: 1000px) {
    margin-top: 10px;
+   width: 95%;
   }
   /* filter: drop-shadow(0px 4px 56px rgba(58, 58, 58, 0.15)); */
 

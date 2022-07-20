@@ -57,6 +57,13 @@ const BoxContainer = styled.div`
   /* animation-delay:200ms; */
   overflow: none !important;
   /* background-color: #fff; */
+  @media(max-width:560px){
+    height: 90%;
+    width: 80%;
+    br{
+      display: none;
+    }
+  }
 `;
 
 const Message = styled.div`
@@ -65,7 +72,7 @@ const Message = styled.div`
   flex-direction: column;
   align-items: center;
 
-  font-size: 9.7vh;
+  font-size: 4rem;
   letter-spacing: 1px;
   font-weight: 700;
   color: #fff;

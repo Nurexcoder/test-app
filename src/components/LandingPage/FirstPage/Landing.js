@@ -29,9 +29,11 @@ const Component = styled.div`
     z-index: 100000000000000000;
   }
   @media (max-width: 560px) {
-    min-height: 65vh;
+    min-height: 45vh;
+    height: 52%;
+    min-height: 400px;
     /* height: auto; */
-    background: linear-gradient(to bottom, #367b9d 80%, #fff 20%);
+    background: linear-gradient(to bottom, #367b9d 79%, #fff 18%);
   }
   /* clip-path: polygon(100% 100%, 100% 100%, 100% 100%); */
 `;
@@ -49,8 +51,16 @@ const Triangle = styled.div`
   @media (max-width: 1000px) {
     border-left: 50vw solid transparent;
     border-right: 50vw solid transparent;
-    border-bottom: 9vh solid #fff;
+    border-bottom: 10vh solid #fff;
     bottom: 20%;
+    height: 10px;
+  }
+  @media (max-width: 560px) {
+    border-left: 52vw solid transparent;
+    border-right: 52vw solid transparent;
+    border-bottom: 10vh solid #fff;
+    bottom: 20%;
+    /* height: 10px; */
   }
 `;
 

@@ -49,6 +49,7 @@ const Hidden = styled.div`
   display: none;
   @media (max-width: 1000px) {
     display: block;
+    width: 30%;
   }
 `;
 const Div = styled.div`
@@ -59,7 +60,7 @@ const Div = styled.div`
   justify-content: flex-end;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-contimgent: center;
   @media (max-width: 1000px) {
     display: none;
   }
@@ -74,7 +75,8 @@ const Logo = styled.img`
 
   @media (max-width: 1000px) {
     /* margin-left: 30%; */
-    min-width: 120px;
+    /* width: 30%; */
+    min-width: 30%;
     height: auto;
   }
 `;
@@ -172,6 +174,7 @@ const Hamburger = styled.img`
   display: none;
   @media (max-width: 1000px) {
     display: block;
+    /* width:30%; */
   }
 `;
 const Manu = styled.div`

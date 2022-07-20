@@ -51,12 +51,13 @@ const MapComponent = styled.div`
     height: 400px;
   }
   @media (max-width: 820px) {
-    width: 560px;
-    height: 320px;
-  }
-  @media (max-width: 580px) {
-    width: 360px;
-    height: 220px;
+      width:80%;
+      height: auto;
+    }
+    @media (max-width: 580px) {
+      width: 360px;
+      width:90%;
+      height: auto;
   }
 `;
 const Menu = styled.div`
@@ -71,6 +72,7 @@ const TabItem = styled(Tab)`
   /* font-weight: 700; */
   text-underline-offset: 9px;
   min-height: 15vh;
+  /* min-width:100px !important; */
   border-width: 100%;
   text-transform: none !important;
   color: ${(props) => props.selectedColor} !important;
@@ -81,6 +83,7 @@ const TabItem = styled(Tab)`
   @media (max-width: 1080px) {
     font-size: 0.9rem !important;
     text-decoration: none !important;
+    /* margin: 0 5px !important; */
     /* border-bottom: ${(props) => props.selectedColor} 1px solid !important; */
   }
 `;
@@ -262,11 +265,12 @@ export default function TabsComponent() {
       <MapComponent>
         <Lottie width="100%" height="auto" options={defaultOptions} />
       </MapComponent>
-      <Box sx={{ width: "90%", height: "25vh", marginBottom: "30px" }}>
+      <Box sx={{ width: "90%", maxHeight: "25vh", marginBottom: "30px" }}>
         {/* <Menu position="static"> */}
         <Tabs
           value={value}
           onChange={handleChange}
+          
           // TabIndicatorProps={{
           //   style: {
           //     background: color,

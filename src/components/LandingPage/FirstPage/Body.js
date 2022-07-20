@@ -37,7 +37,7 @@ const Component = styled.div`
   z-index: 100;
   margin-bottom: 3%;
   @media (max-width: 560px) {
-    min-height: 55vh;
+    min-height: 40vh;
     margin-top: 2vh;
   }
   @media (max-width: 1000px) {
@@ -82,6 +82,10 @@ const Message = styled.div`
   /* @media (min-width: 1500px) {
     font-size: 3.8rem;
   } */
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  margin: 10px 0;
   @media (max-width: 1000px) {
     font-size: 2.8rem;
   }
@@ -235,15 +239,15 @@ const Button = styled.button`
   /* @media (min-width: 1600px) {
     font-size: 1rem;
   } */
-  
+
   font-weight: 600;
   color: #696969;
-  
+
   /* box-shadow: 0px 4px 58px rgba(2, 48, 71, 0.25); */
   background-color: transparent;
   border-radius: 4px;
   /* letter-spacing: 0.15em; */
-  
+
   /* display: inline-block; */
   /* padding: 15px 20px; */
   position: relative;
@@ -251,14 +255,14 @@ const Button = styled.button`
     transform: scale(1.1);
     transition: ease-in-out;
   }
-  
+
   &:hover {
     /* background-color: yellow; */
   }
   @media (max-width: 1000px) {
     width: 100%;
   }
-  `;
+`;
 const ButtonText = styled.h3`
   font-size: 2vh;
   width: 100%;

@@ -31,18 +31,18 @@ const CircleContainer = styled.div`
   
   margin: 38px 0;
   width: 800px;
-  height: 440px;
+  height: 500px;
 
   align-items: center;
   position: relative;
   @media (max-width: 860px) {
     width: 360px;
-    height: 300px;
+    height: 320px;
   }
 `;
 const Circle = styled.div`
-  width: 260px;
-  height: 260px;
+  width: 320px;
+  height: 320px;
   border: 2px solid #fad65d;
   border-radius: 50%;
   display: flex;
@@ -63,8 +63,8 @@ const Circle = styled.div`
   }
 `;
 const Circle2 = styled.div`
-  width: 260px;
-  height: 260px;
+  width: 320px;
+  height: 320px;
   border: 2px solid #fad65d;
   border-radius: 50%;
   display: flex;
@@ -74,8 +74,8 @@ const Circle2 = styled.div`
   position: absolute;
   /* top: 40%;
   left: 20%; */
-  top: ${(props) => (props.inView ? "34%" : "34%")};
-  left: ${(props) => (props.inView ? "20%" : "5%")};
+  top: ${(props) => (props.inView ? "38%" : "38%")};
+  left: ${(props) => (props.inView ? "15%" : "5%")};
   transition: 1s ease-in-out;
 
   @media (max-width: 860px) {
@@ -88,8 +88,8 @@ const Circle2 = styled.div`
   }
 `;
 const Circle3 = styled.div`
-  width: 260px;
-  height: 260px;
+  width: 320px;
+  height: 320px;
   border: 2px solid #fad65d;
   border-radius: 50%;
   display: flex;
@@ -99,8 +99,8 @@ const Circle3 = styled.div`
   position: absolute;
   /* top: 40%;
   right: 20%; */
-  top: ${(props) => (props.inView ? "34%" : "34%")};
-  right: ${(props) => (props.inView ? "24%" : "10%")};
+  top: ${(props) => (props.inView ? "38%" : "38%")};
+  right: ${(props) => (props.inView ? "18%" : "5%")};
   transition: 1s ease-in-out;
   @media (max-width: 860px) {
     width: 180px;
