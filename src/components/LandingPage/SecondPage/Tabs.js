@@ -358,12 +358,12 @@ export default function TabsComponent() {
           </TabPanelComponent>
         </SwipeableViews>
       </Box>
-      <Link to="/rcm">
+      {/* <Link to="/rcm"> */}
         <LearnButton>
           <Underline>Learn More RCM</Underline>
           <Image src="images/blueArrow.png" />
         </LearnButton>
-      </Link>
+      {/* </Link> */}
     </Component>
   );
 }

@@ -34,9 +34,9 @@ const Component = styled.div`
   position: relative;
   animation: ${NavLoad} 900ms ease-in;
   @media (max-width: 1000px) {
-    width: 98vw;
+    width: 95vw;
     padding: 0 20px;
-    height: 90px;
+    height: 120px;
     justify-content: space-between;
   }
 
@@ -49,18 +49,18 @@ const Hidden = styled.div`
   display: none;
   @media (max-width: 1000px) {
     display: block;
-    width: 30%;
+    width: 20%;
   }
 `;
 const Div = styled.div`
   min-width: 200px;
-  width: 15%;
+  width: 20%;
 
   display: flex;
   justify-content: flex-end;
   display: flex;
   align-items: center;
-  justify-contimgent: center;
+  justify-content: center;
   @media (max-width: 1000px) {
     display: none;
   }
@@ -76,7 +76,7 @@ const Logo = styled.img`
   @media (max-width: 1000px) {
     /* margin-left: 30%; */
     /* width: 30%; */
-    min-width: 30%;
+    width: 20%;
     height: auto;
   }
 `;
@@ -91,7 +91,7 @@ const CenterText = styled.div`
   font-weight: 600;
   text-align: center;
   height: 100%;
-  color:#fff;
+  color: #fff;
   /* margin-right: 10px; */
   font-size: 2.8vh;
   :hover {
@@ -185,7 +185,7 @@ const Manu = styled.div`
   width: 100%;
   background-color: rgba(255, 255, 255, 1);
   min-height: 500px;
-  height: 70vh;
+  max-height: 100vh;
   /* right: 0; */
   color: #000;
   top: 0;
@@ -201,6 +201,7 @@ const HamburgerControl = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
+  /* max-height: ; */
   /* margin-top: 10px; */
   /* padding: 0 10px; */
 `;
@@ -214,6 +215,11 @@ const HCenterText = styled(CenterText)`
   align-items: center;
   margin-bottom: 100px;
 `;
+const BLink=styled(Link)`
+  width:100%;
+  height:auto;
+  margin: 10px 0;
+`
 const HContactButton = styled(ContactButton)`
   display: block;
   bottom: 30%;
@@ -234,11 +240,11 @@ const Navbar = () => {
         <Logo src="/images/logo.png" />
 
         {/* <Div> */}
-        <Link style={{ color: "#fff !important" }} to="/rcm">
+        {/* <Link style={{ color: "#fff !important" }} to="/rcm"> */}
           <CenterText onClick={() => setIsHover(!isHover)}>
             Road Condition Mapping
           </CenterText>
-        </Link>
+        {/* </Link> */}
         {/* </Div> */}
         <HiddenMessage
           onMouseOver={() => setIsHover(true)}
@@ -250,9 +256,9 @@ const Navbar = () => {
         </HiddenMessage>
 
         <Div>
-          <Link to="/contactus">
+          {/* <Link to="/contactus"> */}
             <ContactButton>Contact Us</ContactButton>
-          </Link>
+          {/* </Link> */}
         </Div>
         <Hamburger onClick={() => setOpen(true)} src="/images/hamburger.png" />
       </Component>
@@ -262,10 +268,14 @@ const Navbar = () => {
           <Logo src="/images/logoBlack.png" />
           <Close onClick={() => setOpen(!open)} />{" "}
         </HamburgerControl>
-        <HCenterText onClick={() => setIsHover(!isHover)}>
-          Road Condition Mapping <Help style={{ margin: "0 5px" }} />
-        </HCenterText>
-        <HContactButton>Contact Us</HContactButton>
+        {/* <Link to="/rcm"> */}
+          <HCenterText>
+            Road Condition Mapping <Help style={{ margin: "0 5px" }} />
+          </HCenterText>
+        {/* </Link> */}
+        {/* <BLink to="/contactus"> */}
+          <HContactButton>Contact Us</HContactButton>
+        {/* </BLink> */}
       </Manu>
     </>
   );
