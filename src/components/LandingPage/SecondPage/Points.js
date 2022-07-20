@@ -31,11 +31,11 @@ const Component = styled.div`
   justify-content: flex-start;
   align-items: center;
   font-family: "Montserrat", sans-serif;
-  margin: 30px 0;
+  margin: 10px 0;
   @media (max-width: 1000px) {
-    width: 98%;
-    min-height: 45vh;
-    margin: 10px 0;
+    width: 90%;
+    min-height: fit-content;
+    margin: 20px 0;
     /* margin: 20px 0; */
   }
 `;
@@ -55,7 +55,7 @@ const Message = styled.p`
   width: 50%;
   text-align: center;
   font-weight: 500;
-  line-height: 3vh;
+  line-height:3vh;
   font-size: 3vh;
   font-family: "Montserrat";
   font-style: normal;
@@ -64,6 +64,7 @@ const Message = styled.p`
   @media (max-width: 1000px) {
     font-size: 1rem;
     width: 85%;
+    line-height:1.2rem;
   }
 `;
 const MapAndCompany = styled.div`
@@ -98,6 +99,7 @@ const MapHeader = styled.div`
   color: #333333;
   @media (max-width: 1000px) {
     font-size: 1.5rem;
+    height: fit-content;
   }
 `;
 const MapMessage = styled.p`
@@ -151,6 +153,9 @@ const CompanyImage = styled.img`
   justify-content: center;
   @media (max-width: 1000px) {
     width: 150px;
+  }
+  @media (max-width: 560px) {
+    width: 120px;
   }
 `;
 const ColoredText = styled.span`

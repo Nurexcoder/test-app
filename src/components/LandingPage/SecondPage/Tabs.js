@@ -15,7 +15,7 @@ import roadBlock from "./roadBlock.json";
 import waterLogging from "./waterLogging.json";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import { Label } from "@mui/icons-material";
+import { CarCrash, Label, PlusOne } from "@mui/icons-material";
 import calculateTextWidth from "calculate-text-width";
 import { useInView } from "react-intersection-observer";
 interface TabPanelProps {
@@ -32,9 +32,10 @@ const Component = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 20px 0;
+  margin: 10px 0;
   @media (max-width: 1000px) {
     width: 98%;
+    margin: 10px 0;
   }
 `;
 const MapComponent = styled.div`
@@ -44,25 +45,35 @@ const MapComponent = styled.div`
   background-color: #f3f3f3;
   display: flex;
   align-items: center;
-  width: 90%;
+  width: 100%;
 
   @media (max-width: 1000px) {
     width: 700px;
     height: 400px;
+    margin: 0 0;
   }
   @media (max-width: 820px) {
-      width:80%;
-      height: auto;
-    }
-    @media (max-width: 580px) {
-      width: 360px;
-      width:90%;
-      height: auto;
+    width: 80%;
+    height: auto;
+  }
+  @media (max-width: 580px) {
+    width: 360px;
+    width: 95%;
+    height: auto;
   }
 `;
 const Menu = styled.div`
   background-color: transparent !important;
   color: ${(props) => (props.selected ? "#F8BF01" : "#636363 !important")};
+`;
+const TabBox = styled(Box)`
+  width: 100%;
+  max-height: 25vh;
+  margin: 15px 0;
+  @media (max-width: 1000px) {
+    margin: 15px;
+    height: auto;
+  }
 `;
 const TabItem = styled(Tab)`
   font-size: 2.2vh !important;
@@ -79,10 +90,12 @@ const TabItem = styled(Tab)`
 
   border-bottom: #eeedeb 3px solid !important;
   padding: 0 !important;
+  min-width: ${(props) => props.tabWidthBg + "px"} !important;
 
   @media (max-width: 1080px) {
-    font-size: 0.9rem !important;
+    font-size: 0.82rem !important;
     text-decoration: none !important;
+    min-width: ${(props) => props.tabWidth + "px"} !important;
     /* margin: 0 5px !important; */
     /* border-bottom: ${(props) => props.selectedColor} 1px solid !important; */
   }
@@ -102,7 +115,9 @@ const TabPanelComponent = styled.p`
   min-height: 6vh;
   @media (max-width: 1080px) {
     font-size: 0.8rem !important;
-    line-height: 1.8vh;
+    line-height: 1rem;
+    width: 100%;
+    margin:5px 0;
     /* text-decoration: none !important; */
     /* border-bottom: ${(props) => props.selectedColor} 1px solid !important; */
   }
@@ -110,13 +125,13 @@ const TabPanelComponent = styled.p`
 `;
 const Compact = styled.div`
   width: 50%;
-  @media (max-width: 560px) {
-    width: 80%;
+  @media (max-width: 1000px) {
+    width: 100%;
   }
 `;
 const LearnButton = styled(Button)`
   /* text-decoration: underline; */
-  margin-top: 15px !important;
+  margin-top: 10px !important;
   font-size: 2vh !important;
   display: flex !important;
   align-items: center !important;
@@ -125,8 +140,10 @@ const LearnButton = styled(Button)`
   font-weight: 600 !important;
   text-transform: none !important;
   min-width: 20vw !important;
-  @media (max-width: 780px) {
-    margin-top: 35px !important;
+
+  @media (max-width: 1000px) {
+    margin-top: 5px !important;
+    font-size: 0.8rem !important;
   }
 `;
 const Image = styled.img`
@@ -134,6 +151,11 @@ const Image = styled.img`
   /* background-color: blue; */
   width: 2vh;
   margin: 2px 5px;
+  @media (max-width: 1000px) {
+    /* margin-top: 10px !important; */
+    width: 0.6rem !important;
+    margin: 0 5px;
+  }
 `;
 const Underline = styled.div`
   border-bottom: 1px solid #388ab6 !important;
@@ -195,6 +217,57 @@ export default function TabsComponent() {
   const [color, setColor] = React.useState("#F8BF01");
   const [indicatorWidth, setIndicatorWidth] = useState();
   const [ref, inView] = useInView();
+  const [windowDimenion, detectHW] = useState({
+    winWidth: window.innerWidth,
+    winHeight: window.innerHeight,
+  });
+  console.log(windowDimenion)
+  const detectSize = () => {
+    detectHW({
+      winWidth: window.innerWidth,
+      winHeight: window.innerHeight,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", detectSize);
+
+    return () => {
+      window.removeEventListener("resize", detectSize);
+    };
+  }, [windowDimenion]);
+  const tabWidth1 = calculateTextWidth(
+    "Abnormal Road Terrain",
+    "normal 1000 0.9rem Inter"
+  );
+  const tabWidthBg1 = calculateTextWidth(
+    "Abnormal Road Terrain",
+    "normal 1000 2.2vh Inter"
+  );
+  const tabWidth2 = calculateTextWidth(
+    "Road Blocks",
+    "normal 1000 0.9rem Inter"
+  );
+  const tabWidthBg2 = calculateTextWidth(
+    "Road Blocks",
+    "normal 1000 2.2vh Inter"
+  );
+  const tabWidth3 = calculateTextWidth(
+    "Water Logging Detection",
+    "normal 1000 0.9rem Inter"
+  );
+  const tabWidthBg3 = calculateTextWidth(
+    "Water Logging Detection",
+    "normal 1000 2.2vh Inter"
+  );
+  const tabWidth4 = calculateTextWidth(
+    "Accident Detection",
+    "normal 1000 0.9rem Inter"
+  );
+  const tabWidthBg4 = calculateTextWidth(
+    "Accident Detection",
+    "normal 1000 2.2vh Inter"
+  );
   const defaultOptions = {
     loop: false,
     autoplay: true,
@@ -203,6 +276,7 @@ export default function TabsComponent() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+  // };
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
     switch (newValue) {
@@ -259,18 +333,19 @@ export default function TabsComponent() {
       calculateTextWidth("Abnormal Road Terrain", "normal 1000 2.2vh Inter")
     );
   }, [inView]);
+
   // console.log(indicatorWidth);
   return (
     <Component ref={ref}>
       <MapComponent>
         <Lottie width="100%" height="auto" options={defaultOptions} />
       </MapComponent>
-      <Box sx={{ width: "90%", maxHeight: "25vh", marginBottom: "30px" }}>
+      <TabBox sx={{}}>
         {/* <Menu position="static"> */}
         <Tabs
           value={value}
           onChange={handleChange}
-          
+          style={{ width: "100% !important", overflowY: "hidden !important" }}
           // TabIndicatorProps={{
           //   style: {
           //     background: color,
@@ -278,6 +353,7 @@ export default function TabsComponent() {
           //     width: "13px",
           //   },
           // }}
+          // scrollButtons="auto"
           TabIndicatorProps={{
             style: {
               display: "flex",
@@ -297,30 +373,46 @@ export default function TabsComponent() {
           // selectionFollowsFocus
           textColor="inherit"
           colorIndicator="none"
-          variant="fullWidth"
+          variant={windowDimenion.winWidth>750?"fullWidth":"scrollable"}
+          // variant="scrollable"
+          scrollButtons="auto"
+          TabScrollButtonProps={{
+            sx: {
+              width: "10px",
+            }
+          }}
+          // allowScrollButtonsMobile
+
           // style={{ overflowX: "scroll", }}
-          aria-label="wrapped label tabs example"
         >
           <TabItem
             selectedColor={value == 0 ? color : "inherit"}
             label="Abnormal Road Terrain"
             indicatorColor="#000000"
             wrapped
+            tabWidth={tabWidth1 + 8}
+            tabWidthBg={tabWidthBg1 + 8}
           />
           <TabItem
             label="Road Blocks"
             selectedColor={value == 1 ? color : "inherit"}
+            tabWidth={tabWidth2 + 20}
+            tabWidthBg={tabWidthBg2 + 8}
             {...a11yProps(1)}
           />
           <TabItem
             label="Water Logging Detection"
             selectedColor={value == 2 ? color : "inherit"}
+            tabWidth={tabWidth3 + 8}
+            tabWidthBg={tabWidthBg3 + 8}
             wrapped
             {...a11yProps(2)}
           />
           <TabItem
             label="Accident Detection"
             selectedColor={value == 3 ? color : "inherit"}
+            tabWidth={tabWidth4}
+            tabWidthBg={tabWidthBg4 + 8}
             {...a11yProps(3)}
           />
         </Tabs>
@@ -357,8 +449,11 @@ export default function TabsComponent() {
             </Compact>
           </TabPanelComponent>
         </SwipeableViews>
-      </Box>
+      
+      {/* </Box> */}
       {/* <Link to="/rcm"> */}
+      </TabBox>
+      {/* // <Link to="/rcm"> */}
         <LearnButton>
           <Underline>Learn More RCM</Underline>
           <Image src="images/blueArrow.png" />

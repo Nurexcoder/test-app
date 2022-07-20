@@ -11,6 +11,9 @@ const Component=styled.div`
   align-items: center;
   margin: 40px 0;
   padding: 0;
+  @media(max-width:1000px){
+    margin: 0;
+  }
 `;
 
 

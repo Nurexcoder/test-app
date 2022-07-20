@@ -16,13 +16,26 @@ const Component = styled.div`
   justify-content: center;
   align-items: center;
 `;
+const MotionDiv = styled(motion.div)`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: ${(props) =>
+    props.bgColor ? props.bgColor : "transparent"};
+  border-radius: 30px;
+  @media (max-width: 1000px) {
+    border-radius: 20px;
+  }
+  @media (max-width: 560px) {
+    border-radius: 10px;
+  }
+`;
 const LandingMain = () => {
-  const refScroll = useRef(null)
+  const refScroll = useRef(null);
   useEffect(() => {
-    refScroll.current.scrollIntoView()
-  }, [])
+    refScroll.current.scrollIntoView();
+  }, []);
   const boxVariant = {
-
     visible: {
       opacity: 1,
       scale: 1,
@@ -35,7 +48,6 @@ const LandingMain = () => {
     const control = useAnimation();
     const [ref, inView] = useInView();
 
-
     useEffect(() => {
       if (inView) {
         control.start("visible");
@@ -45,27 +57,20 @@ const LandingMain = () => {
     }, [control, inView]);
 
     return (
-      <motion.div
+      <MotionDiv
         className="box"
         ref={ref}
         variants={boxVariant}
         initial="hidden"
         animate={control}
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          backgroundColor: bgColor ? bgColor : "transparent",
-          borderRadius:"50px"
-        }}
       >
         {page}
-      </motion.div>
+      </MotionDiv>
     );
   };
   return (
     <Component>
-      <div ref={refScroll}/>
+      <div ref={refScroll} />
       <Landing />
       <Box page={<Infos />} />
       <Box page={<DownloadPage />} bgColor={"#f9f9fa"} />
