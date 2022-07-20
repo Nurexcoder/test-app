@@ -29,7 +29,7 @@ const bodyLoad = keyframes`
 const Component = styled.div`
   max-height: 80vh;
   width: 100%;
-  min-height: 600px;
+  min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -90,11 +90,11 @@ const Message = styled.div`
   }
   @media (max-width: 560px) {
     /* min-width:; */
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   @media (max-width: 380px) {
     /* min-width:; */
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -184,24 +184,26 @@ const GetStartedButton = styled.button`
   border: 6px solid #023047;
   /* box-shadow: 0px 4px 58px rgba(2, 48, 71, 0.25); */
   border-radius: 4px;
-  &:hover {
-    font-size: 2vh;
-    transform: scale(1.08);
-    background-color: black;
-    border: 3px solid #000;
-    transition: ease;
-    @media (max-width: 1000px) {
-      /* padding: 8px 2px; */
-      font-size: 1vh;
-      /* width: 100%; */
-      /* height: 2.8vh; */
-      /* width: 10vw; */
+  @media (min-width: 1000px) {
+    &:hover {
+      font-size: 2vh;
+      transform: scale(1.08);
+      background-color: black;
+      border: 3px solid #000;
+      transition: ease;
     }
+  }
+  @media (max-width: 1000px) {
+    /* padding: 8px 2px; */
+    font-size: 1.2rem;
+    /* width: 100%; */
+    /* height: 2.8vh; */
+    /* width: 10vw; */
   }
 
   @media (max-width: 1000px) {
-    padding: 4px 2px;
-    font-size: 1vh;
+    padding: 7px 2px;
+    font-size: 0.6rem;
     width: 100%;
     height: 2.8vh;
     /* width: 10vw; */
@@ -231,13 +233,6 @@ const Button = styled.button`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  @media (max-width: 1000px) {
-    padding: 8px 2px;
-    font-size: 1vh;
-    width: 100%;
-    height: 2.8vh;
-    /* width: 10vw; */
-  }
   /* @media (min-width: 1600px) {
     font-size: 1rem;
   } */
@@ -253,9 +248,11 @@ const Button = styled.button`
   /* display: inline-block; */
   /* padding: 15px 20px; */
   position: relative;
-  &:hover {
-    transform: scale(1.1);
-    transition: ease-in-out;
+  @media (min-width: 1000px) {
+    &:hover {
+      transform: scale(1.1);
+      transition: ease-in-out;
+    }
   }
 
   &:hover {
@@ -263,6 +260,7 @@ const Button = styled.button`
   }
   @media (max-width: 1000px) {
     width: 100%;
+    min-width: 10ch;
   }
 `;
 const ButtonText = styled.h3`
@@ -278,17 +276,18 @@ const ButtonText = styled.h3`
   background-size: 0% 2px;
   background-repeat: no-repeat;
   transition: background-size 0.3s, background-position 0s 0.3s; /*change after the size immediately*/
-  @media (max-width: 1000px) {
-    line-height: 2px;
-    padding: 0px 2px;
-    font-size: 1vh;
-    width: 100%;
-    height: 2.8vh;
-    /* width: 10vw; */
-  }
-  :hover {
+  &:hover {
     background-position: 100% 100%; /*OR bottom right*/
     background-size: 100% 2px;
+  }
+  @media (max-width: 1000px) {
+    line-height: 5px;
+    padding: 7px 2px;
+    font-size: 0.6rem;
+    width: 100%;
+    height: 2.8vh;
+
+    /* width: 10vw; */
   }
 `;
 const Icon = styled.img`

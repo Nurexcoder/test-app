@@ -21,7 +21,7 @@ const Component = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-height: 750px;
+  min-height: 600px;
   @media (max-width: 1000px) {
     max-height: 65vh;
     justify-content: space-between;
@@ -62,10 +62,10 @@ const Triangle = styled.div`
   bottom: 0;
   
   @media (max-width: 1000px) {
-    border-left: 50vw solid transparent;
-    border-right: 50vw solid transparent;
+    border-left: 52vw solid transparent;
+    border-right: 52vw solid transparent;
     border-bottom: 10vh solid #fff;
-    bottom: 20%;
+    bottom: 19%;
     height: 10px;
   }
   @media (max-width: 560px) {

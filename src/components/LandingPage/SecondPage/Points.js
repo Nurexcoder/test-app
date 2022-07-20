@@ -31,10 +31,10 @@ const Component = styled.div`
   justify-content: flex-start;
   align-items: center;
   font-family: "Montserrat", sans-serif;
-  margin: 30px 0;
+  margin: 10px 0;
   @media (max-width: 1000px) {
     width: 90%;
-    min-height: 320px;
+    min-height: fit-content;
     margin: 20px 0;
     /* margin: 20px 0; */
   }
@@ -99,6 +99,7 @@ const MapHeader = styled.div`
   color: #333333;
   @media (max-width: 1000px) {
     font-size: 1.5rem;
+    height: fit-content;
   }
 `;
 const MapMessage = styled.p`
@@ -152,6 +153,9 @@ const CompanyImage = styled.img`
   justify-content: center;
   @media (max-width: 1000px) {
     width: 150px;
+  }
+  @media (max-width: 560px) {
+    width: 120px;
   }
 `;
 const ColoredText = styled.span`
