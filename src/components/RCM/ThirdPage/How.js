@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import roadBlock from "./RoadBlock.json";
 const Component = styled.div`
-  width: 80%;
+  width: 70%;
   /* height: 600px; */
   /* background-color: #000; */
   margin: 40px 0;

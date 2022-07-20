@@ -2,13 +2,14 @@ import { useState } from "react";
 import Lottie from "react-lottie";
 import styled from "styled-components";
 import roadBlock from "./RoadBlockNew1.json";
-import roadObstruction from "./RoadObstruction.json";
-import waterLogging from "./WaterLogging.json";
+import roadObstruction from "./RoadObstructionNew.json";
+import waterLogging from "./WaterLoggingNew.json";
 const Component = styled.div`
   width: 70%;
   max-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   /* align-items: ; */
   margin-top: 50px;
@@ -20,8 +21,8 @@ const Component = styled.div`
     width: 90%;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 20px;
-    min-height: 200px;
+    margin: 20px 0;
+    min-height: 400px;
   }
 `;
 const LeftComponent = styled.div`
@@ -60,7 +61,7 @@ const MapComponent = styled.div`
 `;
 const RightComponent = styled.div`
   margin-top: 20px;
-  width: 100%;
+  width: 90%;
   height: 40%;
   display: flex;
   flex-direction: row;
@@ -74,7 +75,7 @@ const RightComponent = styled.div`
     width: 95vw;
     flex-direction: row;
     height: fit-content;
-    min-height: 200px;
+    min-height: 220px;
     /* width: 100vw; */
   }
 `;
@@ -118,9 +119,9 @@ const ColoredRightBox = styled.div`
   @media (max-width: 560px) {
     /* max-height: 20%; */
     margin-top: 10px;
-    min-width: 250px;
-    min-height: 150px;
-    height: 25%;
+    min-width: 220px;
+    min-height: 130px;
+    height: 100%;
     padding: 10px 12px;
     margin: 0 10px;
     border: ${(props) =>
