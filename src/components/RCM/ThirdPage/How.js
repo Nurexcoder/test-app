@@ -5,15 +5,16 @@ import styled from "styled-components";
 
 import roadBlock from "./RoadBlock.json";
 const Component = styled.div`
-  width: 95%;
+  width: 80%;
   /* height: 600px; */
   /* background-color: #000; */
   margin: 40px 0;
-
+  
   overflow: hidden;
   @media(max-width:560px){
     width:100%;
     border-radius: 0px;
+    margin: 10px 0;
   }
 `;
 const How = () => {

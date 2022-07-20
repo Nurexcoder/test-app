@@ -46,7 +46,7 @@ const Component = styled.div`
   
   @media (max-width: 560px) {
     height: 40vh;
-    min-height: 20  0px;
+    min-height: 200px;
     justify-content: space-between;
   }
   

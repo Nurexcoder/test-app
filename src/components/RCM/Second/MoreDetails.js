@@ -1,82 +1,89 @@
 import { useState } from "react";
 import Lottie from "react-lottie";
 import styled from "styled-components";
-import roadBlock from "./RoadBlockNew.json";
+import roadBlock from "./RoadBlockNew1.json";
 import roadObstruction from "./RoadObstruction.json";
 import waterLogging from "./WaterLogging.json";
 const Component = styled.div`
   width: 70%;
-  height: 95vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   /* align-items: ; */
   margin-top: 50px;
-  min-height: 500px;
-
+  
+  min-height: 800px;  
   @media (max-width: 1000px) {
-    /* height: 75; */
-    height: auto;
+    max-height: 60vh;
+    /* height: auto; */
     width: 90%;
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 20px;
+    min-height: 200px;
   }
 `;
 const LeftComponent = styled.div`
   /* flex: 3;? */
-  width: 70%;
+  width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   @media(min-width: 1000px){
       /* height: 800px; */
   }
   @media (max-width: 1000px) {
-    height: 60%;
+    /* height: 60%; */
     width: 100%;
+    height: auto;
     justify-content: center;
     align-items: center;
   }
 `;
 const MapComponent = styled.div`
   height: 100%;
-  width: 80%;
+  width: 100%;
   /* background:#000; */
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   
   @media (max-width: 1000px) {
     /* height: 100%; */
-    width: 60%;
+    width: 100%;
     height: auto;
     justify-content: center;
     align-items: center;
   }
 `;
 const RightComponent = styled.div`
-  width: 30%;
-  height: 100%;
+  margin-top: 20px;
+  width: 100%;
+  height: 40%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: space-between;
+  min-height: 400px;
   @media (max-width: 1000px) {
+    overflow: scroll !important;
+    overflow-y: visible;
+    margin-top: 10px;
+    width: 95vw;
     flex-direction: row;
-    height: 30%;
-    width: 100vw;
-    overflow: scroll;
+    height: fit-content;
+    min-height: 200px;
+    /* width: 100vw; */
   }
 `;
 const ColoredRightBox = styled.div`
-  width: 90%;
-  height: 38%;
+  width: 30%;
   /* min-height:150px; */
   margin: 5px 0;
   background-color: ${(props) => (props.isActive ? "#023047" : "#f5f5f5")};
-  padding: 10px 16px;
+  padding: 10px 8px;
   border: ${(props) =>
     props.isActive ? "0.5vh solid transparent" : " 0.5vh solid #367b9d"};
   /* box-shadow: 0px 4px 44px rgba(54, 123, 157, 0.25); */
@@ -86,15 +93,22 @@ const ColoredRightBox = styled.div`
   justify-content: flex-start;
   border-radius: 8px;
   transition: 1s ease;
+  min-height: 200px;
+  height: 30vh;
   &:hover {
     background-color: #023047;
   }
   @media (max-width: 1000px) {
     /* max-height: 20%; */
-    width: 30%;
-    min-height: 150px;
-    padding: 10px 2px;
+    border-radius: 4px;
+    min-width:300px;
 
+    width: 40%;
+    min-height: 180px;
+  
+    height: fit-content;
+    padding: 10px 12px;
+    margin: 0 10px;
     border: ${(props) =>
       props.isActive ? "1px solid transparent" : " 1px solid #367b9d"};
 
@@ -103,10 +117,12 @@ const ColoredRightBox = styled.div`
   }
   @media (max-width: 560px) {
     /* max-height: 20%; */
-    width: 200px;
-    min-height: 100px;
-    padding: 10px 2px;
-
+    margin-top: 10px;
+    min-width: 250px;
+    min-height: 150px;
+    height: 25%;
+    padding: 10px 12px;
+    margin: 0 10px;
     border: ${(props) =>
       props.isActive ? "1px solid transparent" : " 1px solid #367b9d"};
 
@@ -129,10 +145,10 @@ const ColoredBoxHeader = styled.div`
   font-family: "Inter";
   margin: 0.6em 0;
   @media (max-width: 1000px) {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
   @media (max-width: 560px) {
-    font-size: 0.5rem;
+    font-size: 0.9rem;
   }
 `;
 const ColoredBoxText = styled.div`
@@ -146,11 +162,11 @@ const ColoredBoxText = styled.div`
 
   @media (max-width: 1000px) {
     justify-content: space-between;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
   @media (max-width: 560px) {
     justify-content: space-between;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
 `;
 const BoxHeader = styled.div`

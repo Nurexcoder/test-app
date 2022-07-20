@@ -11,6 +11,7 @@ const Component = styled.div`
   overflow: hidden;
   @media(max-width:1000px){
     height: auto;
+    margin: 1vh 0;
   }
 `;
 const ThirdMain = () => {
